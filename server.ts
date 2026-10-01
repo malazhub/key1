@@ -1,4 +1,4 @@
-import express from "express";
+﻿import express from "express";
 import path from "path";
 import fs from "fs";
 import os from "os";
@@ -33,7 +33,7 @@ interface CloudUserRecord {
 export interface AdminVersionRecord {
   versionNumber: number;
   versionTag: string; // e.g., "key", "keyv1", "keyv2"
-  repoUrl: string; // e.g., "https://github.com/malazhub/keyv1"
+  repoUrl: string; // e.g., "https://github.com/malazhub/key1v1"
   taskDescription: string;
   summary: string;
   previewHtml: string;
@@ -76,9 +76,9 @@ function readAdminVersions(): AdminVersionRecord[] {
   const baseVersion: AdminVersionRecord = {
     versionNumber: 0,
     versionTag: "key",
-    repoUrl: "https://github.com/malazhub/key",
+    repoUrl: "https://github.com/malazhub/key1",
     taskDescription: "Base Multi-AI Consensus Application (Original Release)",
-    summary: "Original baseline version of Key on https://github.com/malazhub/key",
+    summary: "Original baseline version of Key on https://github.com/malazhub/key1",
     previewHtml: "",
     createdAt: new Date().toISOString(),
     status: "base",
@@ -385,12 +385,12 @@ function extractWorkingMemoryFacts(windowPairs: SavedQAPair[]): string[] {
  * (Matching Frontier AI Multi-Turn History & Working Memory Systems):
  * Let `previous` = cumulative saved (Ask + Reply) history (`windowPairs`).
  *
- * Stage 1 — Multi-Signal Relation Proof:
+ * Stage 1 â€” Multi-Signal Relation Proof:
  *   1. Lexical & Stem Cosine Similarity + Bigram Overlap + Domain Entity Match (`key1`, `key`, `wifi`, `scanner`, `button`, `preview`, `browser`, etc.)
  *   2. Referential Coreference & Pronouns (`"it"`, `"them"`, `"this"`, `"that"`, `"these"`, `"those"`, `"do it"`, `"test it"`, `"as agreed"`, `"as i said"`, `"the above"`, `"all these options"`, etc.)
  *   3. Pragmatic Dialogue-Act Correction / Repetition / Follow-up Complaint Detection (`"u did not"`, `"i got this from u"`, `"means nothing"`, `"still need"`, `"i expect"`, `"plz revise"`, `"same answer"`, etc.)
  *
- * Stage 2 — Strict Branching & Anti-Repetition Query Reformulation:
+ * Stage 2 â€” Strict Branching & Anti-Repetition Query Reformulation:
  *   - Case A (`hasRelation = false` -> `NEW_QUERY_ONLY`):
  *     Mathematical proof confirms 0% relation with `previous`. Sends ONLY `currentQuery` to the engines while keeping all saved turns in cumulative storage.
  *   - Case B (`hasRelation = true` -> `MERGED_WITH_SAVED`):
@@ -600,9 +600,9 @@ function calculateMathematicalRelationWithPrevious(
   // Build Cumulative User Specification (Ask_1 + Ask_2 + ... + Current_Ask)
   const userRequirementsChain = [
     ...uniqueSynthPairs.map(
-      (p) => `• [Saved Ask #${p.pairIndex}]: ${p.userQuery.trim()}`
+      (p) => `â€¢ [Saved Ask #${p.pairIndex}]: ${p.userQuery.trim()}`
     ),
-    `• [Current Ask #${windowPairs.length + 1} (HIGHEST PRIORITY)]: ${cleanQ}`,
+    `â€¢ [Current Ask #${windowPairs.length + 1} (HIGHEST PRIORITY)]: ${cleanQ}`,
   ].join("\n");
 
   // Build compact previous Q&A context WITHOUT polluting the prompt with repetitive apologies
@@ -613,7 +613,7 @@ function calculateMathematicalRelationWithPrevious(
       .replace(/\s+/g, " ")
       .trim()
       .slice(0, 260);
-    return `[Previous Q&A #${p.pairIndex}] Ask: "${p.userQuery}" → Prior Reply Summary: "${compactReply}"`;
+    return `[Previous Q&A #${p.pairIndex}] Ask: "${p.userQuery}" â†’ Prior Reply Summary: "${compactReply}"`;
   });
 
   const memoryLedgerBlock =
@@ -647,7 +647,7 @@ function calculateMathematicalRelationWithPrevious(
 
 /**
  * Detects if the query (or cumulative related query chain) is asking for Direct GitHub Force-Deploy
- * to `https://github.com/malazhub/key` and live entry point `https://malazhub.github.io/key/`.
+ * to `https://github.com/malazhub/key1` and live entry point `https://malazhub.github.io/key1/`.
  */
 function isKey1CloneOrButtonRequest(text: string): boolean {
   if (!text) return false;
@@ -659,7 +659,7 @@ function isKey1CloneOrButtonRequest(text: string): boolean {
 }
 
 /**
- * Option 1 — Automatic Hardware/System Utility Intent Disambiguator:
+ * Option 1 â€” Automatic Hardware/System Utility Intent Disambiguator:
  * Detects when the user asks for a Wi-Fi scanner, nearby network detector, Bluetooth/device scanner,
  * or local hardware utility so Key provides BOTH a live interactive scanner dashboard (connected to
  * `/api/local-hardware-scan`) AND ready-to-run native OS scripts (Windows/macOS/Linux/Python) instead of a sandbox refusal.
@@ -856,9 +856,9 @@ function extractRawHtmlFromAnswer(rawText: string): {
 }
 
 /**
- * Builds the Direct GitHub Force-Deploy & Live AI Key Portal HTML (`https://github.com/malazhub/key` -> `https://malazhub.github.io/key/`).
+ * Builds the Direct GitHub Force-Deploy & Live AI Key Portal HTML (`https://github.com/malazhub/key1` -> `https://malazhub.github.io/key1/`).
  * Purges all secondary instances (key1/key2) and provides a 1-click force-commit & push of the complete
- * 23-file Multi-AI Consensus Engine (`Key`) architecture directly to `https://github.com/malazhub/key`.
+ * 23-file Multi-AI Consensus Engine (`Key`) architecture directly to `https://github.com/malazhub/key1`.
  */
 function buildKey1ZeroDivergencePortalHtml(): string {
   return `<!DOCTYPE html>
@@ -866,7 +866,7 @@ function buildKey1ZeroDivergencePortalHtml(): string {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Key — Direct GitHub Force-Deploy &amp; Live Entry Point (malazhub/key)</title>
+  <title>Key â€” Direct GitHub Force-Deploy &amp; Live Entry Point (malazhub/key1)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { background-color: #020617; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; }
@@ -883,31 +883,31 @@ function buildKey1ZeroDivergencePortalHtml(): string {
           <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
             <h1 class="text-lg font-extrabold text-white tracking-tight">
-              Direct GitHub Force-Deployment — <code class="text-emerald-300">malazhub/key</code>
+              Direct GitHub Force-Deployment â€” <code class="text-emerald-300">malazhub/key1</code>
             </h1>
           </div>
           <p class="text-xs text-slate-300">
-            All secondary instances removed. Hard-coded exclusively to <strong class="text-emerald-300">https://github.com/malazhub/key</strong> and live entry URL <strong class="text-sky-300">https://malazhub.github.io/key/</strong>.
+            All secondary instances removed. Hard-coded exclusively to <strong class="text-emerald-300">https://github.com/malazhub/key1</strong> and live entry URL <strong class="text-sky-300">https://malazhub.github.io/key1/</strong>.
           </p>
         </div>
         <div class="flex flex-wrap items-center gap-2">
           <a
-            href="https://malazhub.github.io/key/"
+            href="https://malazhub.github.io/key1/"
             target="_blank"
             rel="noopener noreferrer"
             class="px-4 py-2 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-extrabold text-xs flex items-center gap-1.5 shadow-lg transition"
           >
-            <span>🌐 Open AI Key (malazhub.github.io/key)</span>
-            <span>↗</span>
+            <span>ðŸŒ Open AI Key (malazhub.github.io/key)</span>
+            <span>â†—</span>
           </a>
           <a
-            href="https://github.com/malazhub/key"
+            href="https://github.com/malazhub/key1"
             target="_blank"
             rel="noopener noreferrer"
             class="px-3.5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-100 font-bold text-xs flex items-center gap-1.5 transition"
           >
-            <span>📁 github.com/malazhub/key</span>
-            <span>↗</span>
+            <span>ðŸ“ github.com/malazhub/key1</span>
+            <span>â†—</span>
           </a>
         </div>
       </div>
@@ -917,7 +917,7 @@ function buildKey1ZeroDivergencePortalHtml(): string {
         <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
           <div class="font-bold text-emerald-400">1. Direct Repository Targeting</div>
           <div class="text-slate-300 leading-relaxed">
-            Exclusively targets <code class="text-emerald-300">https://github.com/malazhub/key</code> (branch <code class="text-emerald-300">main</code>). All secondary instance references have been completely purged.
+            Exclusively targets <code class="text-emerald-300">https://github.com/malazhub/key1</code> (branch <code class="text-emerald-300">main</code>). All secondary instance references have been completely purged.
           </div>
         </div>
         <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
@@ -929,13 +929,13 @@ function buildKey1ZeroDivergencePortalHtml(): string {
         <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
           <div class="font-bold text-sky-400">3. Primary URL Integration</div>
           <div class="text-slate-300 leading-relaxed">
-            Sets <a href="https://malazhub.github.io/key/" target="_blank" rel="noopener noreferrer" class="text-sky-300 underline font-mono">https://malazhub.github.io/key/</a> as the live entry point in your GitHub repository &amp; README.
+            Sets <a href="https://malazhub.github.io/key1/" target="_blank" rel="noopener noreferrer" class="text-sky-300 underline font-mono">https://malazhub.github.io/key1/</a> as the live entry point in your GitHub repository &amp; README.
           </div>
         </div>
         <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1">
           <div class="font-bold text-amber-300">4. 1-Click Execution</div>
           <div class="text-slate-300 leading-relaxed">
-            Click <strong class="text-emerald-300">Deploy</strong> below to execute the clean-slate Git force-commit and push to <code class="text-emerald-300">malazhub/key</code>.
+            Click <strong class="text-emerald-300">Deploy</strong> below to execute the clean-slate Git force-commit and push to <code class="text-emerald-300">malazhub/key1</code>.
           </div>
         </div>
       </div>
@@ -944,7 +944,7 @@ function buildKey1ZeroDivergencePortalHtml(): string {
       <div class="p-4 rounded-xl bg-slate-950 border border-emerald-500/40 space-y-3">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <label class="text-xs font-bold text-slate-200">
-            GitHub Personal Access Token (<code class="text-emerald-300">repo</code> scope) — Saved Automatically for 1-Click Deploys:
+            GitHub Personal Access Token (<code class="text-emerald-300">repo</code> scope) â€” Saved Automatically for 1-Click Deploys:
           </label>
           <span id="tokenSavedBadge" class="text-[11px] font-mono text-emerald-400"></span>
         </div>
@@ -960,13 +960,13 @@ function buildKey1ZeroDivergencePortalHtml(): string {
             type="button"
             class="px-6 py-2.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-sm cursor-pointer shadow-lg shadow-emerald-500/20 transition flex items-center justify-center gap-2"
           >
-            <span>🚀 Deploy to malazhub/key</span>
+            <span>ðŸš€ Deploy to malazhub/key1</span>
           </button>
         </div>
 
         <!-- Optional 1-Time Device Auth Box (Shown only if no token is provided yet) -->
         <div id="deviceAuthBox" class="hidden p-3.5 rounded-xl bg-amber-500/15 border border-amber-400 space-y-2 text-xs">
-          <div class="font-bold text-amber-300">🔒 1-Click GitHub Device Authorization (Alternative to Token)</div>
+          <div class="font-bold text-amber-300">ðŸ”’ 1-Click GitHub Device Authorization (Alternative to Token)</div>
           <div id="deviceAuthText" class="text-slate-200"></div>
           <div class="flex flex-wrap items-center gap-2 pt-1">
             <a id="deviceVerifyLink" href="https://github.com/login/device" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 rounded-lg bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-xs">
@@ -979,14 +979,14 @@ function buildKey1ZeroDivergencePortalHtml(): string {
       <!-- Live Force-Deploy Execution Log Console -->
       <div class="rounded-xl bg-slate-950 border border-slate-800 p-4 space-y-2">
         <div class="flex items-center justify-between text-xs border-b border-slate-800 pb-2">
-          <span class="font-bold text-emerald-400 font-mono">● Direct Git Force-Push Console (malazhub/key · branch: main)</span>
-          <a href="https://github.com/malazhub/key/actions" target="_blank" rel="noopener noreferrer" class="text-sky-300 hover:underline font-mono text-[11px]">
-            Verify on GitHub Actions ↗
+          <span class="font-bold text-emerald-400 font-mono">â— Direct Git Force-Push Console (malazhub/key1 Â· branch: main)</span>
+          <a href="https://github.com/malazhub/key1/actions" target="_blank" rel="noopener noreferrer" class="text-sky-300 hover:underline font-mono text-[11px]">
+            Verify on GitHub Actions â†—
           </a>
         </div>
-        <pre id="deployLogConsole" class="text-xs font-mono text-slate-200 whitespace-pre-wrap leading-relaxed max-h-64 overflow-y-auto">[READY] Target Repository: https://github.com/malazhub/key (branch: main)
-[READY] Primary Live URL: https://malazhub.github.io/key/
-[READY] Click "🚀 Deploy to malazhub/key" above to force-commit and push the complete 23-file Multi-AI Consensus Engine structure.</pre>
+        <pre id="deployLogConsole" class="text-xs font-mono text-slate-200 whitespace-pre-wrap leading-relaxed max-h-64 overflow-y-auto">[READY] Target Repository: https://github.com/malazhub/key1 (branch: main)
+[READY] Primary Live URL: https://malazhub.github.io/key1/
+[READY] Click "ðŸš€ Deploy to malazhub/key1" above to force-commit and push the complete 23-file Multi-AI Consensus Engine structure.</pre>
       </div>
     </div>
   </div>
@@ -1032,7 +1032,7 @@ function buildKey1ZeroDivergencePortalHtml(): string {
         var saved = discoverBrowserToken();
         if (saved) {
           tokenInp.value = saved;
-          badge.textContent = '✓ Saved token detected in browser — Auto-Deploying...';
+          badge.textContent = 'âœ“ Saved token detected in browser â€” Auto-Deploying...';
         }
       } catch (e) {}
 
@@ -1067,11 +1067,11 @@ function buildKey1ZeroDivergencePortalHtml(): string {
             localStorage.setItem('malaz_github_pat', tok);
             localStorage.setItem('malaz_github_oauth_token_v1', tok);
           } catch (e) {}
-          badge.textContent = '✓ Token saved for automatic 1-click deploys';
+          badge.textContent = 'âœ“ Token saved for automatic 1-click deploys';
         }
         btn.disabled = true;
-        btn.textContent = '⏳ Force-Deploying to malazhub/key...';
-        logEl.textContent = '[INFO] Starting Direct Force-Commit & Push to https://github.com/malazhub/key (branch: main)...';
+        btn.textContent = 'â³ Force-Deploying to malazhub/key1...';
+        logEl.textContent = '[INFO] Starting Direct Force-Commit & Push to https://github.com/malazhub/key1 (branch: main)...';
         appendLog('[INFO] Building & packaging complete Key Multi-AI Consensus Engine structure (compiled index.html + assets/* + src/* + server.ts + README.md)...');
 
         try {
@@ -1088,19 +1088,19 @@ function buildKey1ZeroDivergencePortalHtml(): string {
             files.forEach(function(f) {
               appendLog('[SUCCESS] Overwritten & pushed: ' + f);
             });
-            appendLog('[SUCCESS] GitHub Repository Homepage & README linked to: https://malazhub.github.io/key/');
+            appendLog('[SUCCESS] GitHub Repository Homepage & README linked to: https://malazhub.github.io/key1/');
             appendLog('[COMPLETE] All ' + (data.pushedCount || files.length) + ' files force-pushed in Commit ' + (data.commitSha || 'main') + '!');
-            appendLog('👉 Verify Repository: https://github.com/malazhub/key');
-            appendLog('👉 Verify GitHub Actions: https://github.com/malazhub/key/actions');
-            appendLog('👉 Open Live AI Key App: https://malazhub.github.io/key/');
-            btn.textContent = '✓ Deployed to malazhub/key!';
+            appendLog('ðŸ‘‰ Verify Repository: https://github.com/malazhub/key1');
+            appendLog('ðŸ‘‰ Verify GitHub Actions: https://github.com/malazhub/key1/actions');
+            appendLog('ðŸ‘‰ Open Live AI Key App: https://malazhub.github.io/key1/');
+            btn.textContent = 'âœ“ Deployed to malazhub/key1!';
             btn.disabled = false;
             return;
           }
 
           if (data && data.needsGitHubAuth) {
             appendLog('[INFO] Local Git commit completed (' + (data.localGitCommitSha || 'committed') + ').');
-            appendLog('[AUTH] GitHub requires authorization once to push to https://github.com/malazhub/key.');
+            appendLog('[AUTH] GitHub requires authorization once to push to https://github.com/malazhub/key1.');
             appendLog('[AUTH] Either paste your ghp_... Personal Access Token in the box above and click Deploy, OR use the 1-Click GitHub Device Code below:');
 
             var devData = await callBackend('/api/admin/github-device-start', {});
@@ -1111,7 +1111,7 @@ function buildKey1ZeroDivergencePortalHtml(): string {
                 }
               } catch (e) {}
               devBox.classList.remove('hidden');
-              devText.innerHTML = 'Code <strong class="text-emerald-300 font-mono text-sm">' + devData.user_code + '</strong> copied to clipboard! Click <strong>Open GitHub &amp; Authorize</strong> below and paste the code — all 23 files will push automatically.';
+              devText.innerHTML = 'Code <strong class="text-emerald-300 font-mono text-sm">' + devData.user_code + '</strong> copied to clipboard! Click <strong>Open GitHub &amp; Authorize</strong> below and paste the code â€” all 23 files will push automatically.';
               devLink.href = devData.verification_uri || 'https://github.com/login/device';
               if (pollTimer) clearInterval(pollTimer);
               pollTimer = setInterval(async function() {
@@ -1122,9 +1122,9 @@ function buildKey1ZeroDivergencePortalHtml(): string {
                     devBox.classList.add('hidden');
                     var pFiles = Array.isArray(p.pushedFiles) ? p.pushedFiles : [];
                     pFiles.forEach(function(f) { appendLog('[SUCCESS] Overwritten & pushed: ' + f); });
-                    appendLog('[COMPLETE] All ' + (p.pushedCount || pFiles.length) + ' files force-pushed to https://github.com/malazhub/key (Commit ' + (p.commitSha || 'main') + ')!');
-                    appendLog('👉 Open Live AI Key App: https://malazhub.github.io/key/');
-                    btn.textContent = '✓ Deployed to malazhub/key!';
+                    appendLog('[COMPLETE] All ' + (p.pushedCount || pFiles.length) + ' files force-pushed to https://github.com/malazhub/key1 (Commit ' + (p.commitSha || 'main') + ')!');
+                    appendLog('ðŸ‘‰ Open Live AI Key App: https://malazhub.github.io/key1/');
+                    btn.textContent = 'âœ“ Deployed to malazhub/key1!';
                   }
                 } catch (e) {}
               }, 4500);
@@ -1136,7 +1136,7 @@ function buildKey1ZeroDivergencePortalHtml(): string {
           appendLog('[ERROR] ' + (err && err.message ? err.message : 'Network error while deploying.'));
         }
         btn.disabled = false;
-        btn.textContent = '🚀 Deploy to malazhub/key';
+        btn.textContent = 'ðŸš€ Deploy to malazhub/key1';
       }
 
       btn.addEventListener('click', runDirectForceDeploy);
@@ -1149,7 +1149,7 @@ function buildKey1ZeroDivergencePortalHtml(): string {
 }
 
 /**
- * Option 1 & Option 6 — Live Interactive Wi-Fi & Local Network Hardware Scanner + Native OS Script Bundle:
+ * Option 1 & Option 6 â€” Live Interactive Wi-Fi & Local Network Hardware Scanner + Native OS Script Bundle:
  * Connects directly to `/api/local-hardware-scan` for live host network interface & wireless telemetry,
  * displays real-time SSID/BSSID/RSSI/Channel/Security tables and signal meters, AND includes 1-click
  * Native OS Scanner Scripts (Windows netsh, Linux nmcli, macOS airport, and Python Cross-Platform Scanner).
@@ -1183,10 +1183,10 @@ function buildWifiAndNetworkScannerPortalHtml(): string {
       </div>
       <div class="flex flex-wrap items-center gap-2">
         <button id="scanWifiBtn" type="button" class="px-4 py-2 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-xs cursor-pointer transition shadow-md">
-          📡 Scan Nearby Wi-Fi Now
+          ðŸ“¡ Scan Nearby Wi-Fi Now
         </button>
         <button id="toggleNativeScriptsBtn" type="button" class="px-3.5 py-2 rounded-xl bg-sky-500/20 hover:bg-sky-500/30 border border-sky-500/40 text-sky-300 font-bold text-xs cursor-pointer transition">
-          💻 Native OS Scripts (Win / Mac / Linux / Python)
+          ðŸ’» Native OS Scripts (Win / Mac / Linux / Python)
         </button>
       </div>
     </div>
@@ -1226,7 +1226,7 @@ function buildWifiAndNetworkScannerPortalHtml(): string {
     <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden">
       <div class="px-4 py-2.5 bg-slate-900 border-b border-slate-800 flex items-center justify-between text-xs">
         <span class="font-bold text-white">Nearby Wireless Access Points (Live Scan Results)</span>
-        <span id="scanStatusNote" class="text-emerald-400 font-mono">✓ Ready</span>
+        <span id="scanStatusNote" class="text-emerald-400 font-mono">âœ“ Ready</span>
       </div>
       <div class="overflow-x-auto">
         <table class="w-full text-left border-collapse text-xs">
@@ -1265,10 +1265,10 @@ function buildWifiAndNetworkScannerPortalHtml(): string {
           Copy Native Scripts
         </button>
       </div>
-      <pre id="nativeScriptsCode" class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] font-mono text-emerald-300 overflow-x-auto leading-relaxed"># 1. Windows (Command Prompt / PowerShell — Raw BSSID + RSSI + Channel):
+      <pre id="nativeScriptsCode" class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-[11px] font-mono text-emerald-300 overflow-x-auto leading-relaxed"># 1. Windows (Command Prompt / PowerShell â€” Raw BSSID + RSSI + Channel):
 netsh wlan show networks mode=bssid
 
-# 2. Linux (NetworkManager CLI — Live Wi-Fi Rescan & Table):
+# 2. Linux (NetworkManager CLI â€” Live Wi-Fi Rescan & Table):
 nmcli dev wifi rescan &amp;&amp; nmcli -f SSID,BSSID,SIGNAL,BARS,FREQ,CHAN,SECURITY dev wifi list
 
 # 3. macOS (Airport / System Profiler Wireless Scan):
@@ -1326,11 +1326,11 @@ print(subprocess.check_output(cmd, text=True, errors="ignore"))</pre>
                 '<span class="font-mono text-emerald-300">' + n.rssi + ' dBm (' + n.quality + '%)</span>' +
               '</div>' +
             '</td>' +
-            '<td class="py-2.5 px-3 font-mono text-sky-300">' + n.band + ' · ' + n.channel + '</td>' +
+            '<td class="py-2.5 px-3 font-mono text-sky-300">' + n.band + ' Â· ' + n.channel + '</td>' +
             '<td class="py-2.5 px-3"><span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-200 font-mono text-[11px]">' + n.security + '</span></td>' +
             '<td class="py-2.5 px-3 text-right"><button type="button" class="inspect-btn px-2.5 py-1 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 font-semibold cursor-pointer">Inspect</button></td>';
           tr.querySelector('.inspect-btn').addEventListener('click', function() {
-            document.getElementById('scanStatusNote').textContent = '✓ Inspected ' + n.ssid + ' (' + n.bssid + ' · ' + n.rssi + ' dBm · ' + n.channel + ')';
+            document.getElementById('scanStatusNote').textContent = 'âœ“ Inspected ' + n.ssid + ' (' + n.bssid + ' Â· ' + n.rssi + ' dBm Â· ' + n.channel + ')';
           });
           tbody.appendChild(tr);
         });
@@ -1338,7 +1338,7 @@ print(subprocess.check_output(cmd, text=True, errors="ignore"))</pre>
 
       async function runHardwareScan() {
         var note = document.getElementById('scanStatusNote');
-        note.textContent = '⟳ Scanning nearby Wi-Fi channels & querying host interfaces...';
+        note.textContent = 'âŸ³ Scanning nearby Wi-Fi channels & querying host interfaces...';
 
         // Slight live jitter on RSSI to reflect active sweep
         networks = networks.map(function(n) {
@@ -1361,7 +1361,7 @@ print(subprocess.check_output(cmd, text=True, errors="ignore"))</pre>
               ifaceBox.innerHTML = data.interfaces.map(function(ifc) {
                 return '<div class="p-2.5 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-between">' +
                   '<div><span class="text-emerald-400 font-bold">' + ifc.name + '</span> <span class="text-slate-400">(' + ifc.family + ')</span></div>' +
-                  '<div class="text-slate-200">' + ifc.address + (ifc.mac ? ' · <span class="text-slate-400">' + ifc.mac + '</span>' : '') + '</div>' +
+                  '<div class="text-slate-200">' + ifc.address + (ifc.mac ? ' Â· <span class="text-slate-400">' + ifc.mac + '</span>' : '') + '</div>' +
                 '</div>';
               }).join('');
             }
@@ -1371,7 +1371,7 @@ print(subprocess.check_output(cmd, text=True, errors="ignore"))</pre>
         }
 
         document.getElementById('statLastSweep').textContent = new Date().toLocaleTimeString();
-        note.textContent = '✓ Live Sweep Complete (' + networks.length + ' APs)';
+        note.textContent = 'âœ“ Live Sweep Complete (' + networks.length + ' APs)';
         renderTable();
       }
 
@@ -1386,7 +1386,7 @@ print(subprocess.check_output(cmd, text=True, errors="ignore"))</pre>
             navigator.clipboard.writeText(document.getElementById('nativeScriptsCode').textContent).catch(function(){});
           }
         } catch (e) {}
-        this.textContent = '✓ Copied Scripts!';
+        this.textContent = 'âœ“ Copied Scripts!';
         var self = this;
         setTimeout(function() { self.textContent = 'Copy Native Scripts'; }, 1800);
       });
@@ -1452,7 +1452,7 @@ function buildFallbackInteractivePortalHtml(
     <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
       <div>
         <h2 class="text-base font-extrabold text-white">${safeTitle}</h2>
-        <p class="text-xs text-slate-400">Context-Generated Interactive Game Arena · Prompt: "${safeQuery}"</p>
+        <p class="text-xs text-slate-400">Context-Generated Interactive Game Arena Â· Prompt: "${safeQuery}"</p>
       </div>
       <div class="flex items-center gap-2 text-xs font-mono">
         <span id="gameScoreBadge" class="px-2.5 py-1 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold">Player: 0 | AI: 0</span>
@@ -1461,7 +1461,7 @@ function buildFallbackInteractivePortalHtml(
     </div>
 
     <div id="gameStatusBanner" class="p-3 rounded-xl bg-slate-950 border border-slate-800 text-xs text-emerald-300 font-semibold text-center">
-      Your Turn (X) — Click any square on the board below to play against the AI Engine!
+      Your Turn (X) â€” Click any square on the board below to play against the AI Engine!
     </div>
 
     <div id="boardGrid" class="grid grid-cols-3 gap-2.5 max-w-xs mx-auto py-2"></div>
@@ -1497,7 +1497,7 @@ function buildFallbackInteractivePortalHtml(
         if (checkWin(board, 'X')) {
           playerScore++;
           gameOver = true;
-          status.textContent = '🎉 Victory! You defeated the AI Engine! Click "New Match" to play again.';
+          status.textContent = 'ðŸŽ‰ Victory! You defeated the AI Engine! Click "New Match" to play again.';
           badge.textContent = 'Player: ' + playerScore + ' | AI: ' + aiScore;
           render();
           return;
@@ -1505,7 +1505,7 @@ function buildFallbackInteractivePortalHtml(
         var empty = board.map(function(v, i) { return v === '' ? i : -1; }).filter(function(i) { return i !== -1; });
         if (empty.length === 0) {
           gameOver = true;
-          status.textContent = '🤝 Draw Match! Click "New Match" for a rematch.';
+          status.textContent = 'ðŸ¤ Draw Match! Click "New Match" for a rematch.';
           render();
           return;
         }
@@ -1514,10 +1514,10 @@ function buildFallbackInteractivePortalHtml(
         if (checkWin(board, 'O')) {
           aiScore++;
           gameOver = true;
-          status.textContent = '⚡ AI Engine won this round! Click "New Match" to challenge again.';
+          status.textContent = 'âš¡ AI Engine won this round! Click "New Match" to challenge again.';
           badge.textContent = 'Player: ' + playerScore + ' | AI: ' + aiScore;
         } else {
-          status.textContent = 'Your Turn (X) — Select your next move!';
+          status.textContent = 'Your Turn (X) â€” Select your next move!';
         }
         render();
       }
@@ -1525,7 +1525,7 @@ function buildFallbackInteractivePortalHtml(
       document.getElementById('resetGameBtn').addEventListener('click', function() {
         board = ['', '', '', '', '', '', '', '', ''];
         gameOver = false;
-        status.textContent = 'New Match Started — Your Turn (X)!';
+        status.textContent = 'New Match Started â€” Your Turn (X)!';
         render();
       });
 
@@ -1552,8 +1552,8 @@ function buildFallbackInteractivePortalHtml(
   <div class="max-w-3xl mx-auto rounded-2xl bg-slate-900 border border-sky-500/40 p-5 shadow-xl space-y-4">
     <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-3">
       <div>
-        <h2 class="text-base font-extrabold text-white">☀️ Live Interactive Weather &amp; Forecast Station</h2>
-        <p class="text-xs text-slate-400">Context-Generated Weather Application · Query: "${safeQuery}"</p>
+        <h2 class="text-base font-extrabold text-white">â˜€ï¸ Live Interactive Weather &amp; Forecast Station</h2>
+        <p class="text-xs text-slate-400">Context-Generated Weather Application Â· Query: "${safeQuery}"</p>
       </div>
       <div class="flex items-center gap-2">
         <input id="cityInput" type="text" value="London" placeholder="Enter city..." class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-700 text-xs text-white focus:outline-none focus:border-sky-400" />
@@ -1563,7 +1563,7 @@ function buildFallbackInteractivePortalHtml(
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 text-xs">
       <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
         <div class="text-slate-400">Temperature</div>
-        <div id="wTemp" class="text-xl font-extrabold text-emerald-400 font-mono mt-1">22°C / 72°F</div>
+        <div id="wTemp" class="text-xl font-extrabold text-emerald-400 font-mono mt-1">22Â°C / 72Â°F</div>
       </div>
       <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
         <div class="text-slate-400">Condition</div>
@@ -1584,9 +1584,9 @@ function buildFallbackInteractivePortalHtml(
       var city = document.getElementById('cityInput').value.trim() || 'Global';
       var c = Math.floor(16 + Math.random() * 16);
       var f = Math.round(c * 9 / 5 + 32);
-      var conds = ['Clear Sky ☀️', 'Partly Cloudy ⛅', 'Light Breeze 🌤️', 'Warm & Sunny 🌞'];
-      document.getElementById('wTemp').textContent = c + '°C / ' + f + '°F';
-      document.getElementById('wCond').textContent = city + ' · ' + conds[Math.floor(Math.random() * conds.length)];
+      var conds = ['Clear Sky â˜€ï¸', 'Partly Cloudy â›…', 'Light Breeze ðŸŒ¤ï¸', 'Warm & Sunny ðŸŒž'];
+      document.getElementById('wTemp').textContent = c + 'Â°C / ' + f + 'Â°F';
+      document.getElementById('wCond').textContent = city + ' Â· ' + conds[Math.floor(Math.random() * conds.length)];
       document.getElementById('wHum').textContent = Math.floor(40 + Math.random() * 35) + '%';
       document.getElementById('wWind').textContent = Math.floor(8 + Math.random() * 18) + ' km/h';
     });
@@ -1608,7 +1608,7 @@ function buildFallbackInteractivePortalHtml(
         <h2 class="text-base font-bold text-white">${safeTitle}</h2>
         <p class="text-xs text-slate-400 mt-0.5">Interactive Application Generated from Conversation Context</p>
       </div>
-      <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">● Interactive</span>
+      <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">â— Interactive</span>
     </div>
 
     <div class="space-y-3">
@@ -1638,7 +1638,7 @@ function buildFallbackInteractivePortalHtml(
       count += 1;
       const val = inp.value.trim() || 'Default Action';
       const now = new Date().toLocaleTimeString();
-      resText.innerHTML = '✓ <strong>Executed (#' + count + ' at ' + now + '):</strong> Active output for <code>' + val.replace(/</g, '&lt;') + '</code>';
+      resText.innerHTML = 'âœ“ <strong>Executed (#' + count + ' at ' + now + '):</strong> Active output for <code>' + val.replace(/</g, '&lt;') + '</code>';
     });
     document.getElementById('secondaryResetBtn').addEventListener('click', () => {
       inp.value = '';
@@ -1696,7 +1696,7 @@ function sanitizeAndEnrichConsensusResult(
   if (isKey1Request) {
     hasAppPreview = true;
     appTitle =
-      "Direct GitHub Force-Deployment — https://github.com/malazhub/key (https://malazhub.github.io/key/)";
+      "Direct GitHub Force-Deployment â€” https://github.com/malazhub/key1 (https://malazhub.github.io/key1/)";
     generatedAppHtml = buildKey1ZeroDivergencePortalHtml();
   } else if (isWifiRequest) {
     hasAppPreview = true;
@@ -1751,7 +1751,7 @@ function sanitizeAndEnrichConsensusResult(
     shouldGenerateAppPreview &&
     !/Preview Application|Download Application/i.test(finalAnswer)
   ) {
-    finalAnswer = `${finalAnswer}\n\n---\n👉 **Ready to Test or Run:** Click **\`Preview Application\`** below (above the input box) to open and test this application in full screen, or click **\`Download Application\`** beside it to automatically download and execute the application on any environment (Android, Safari/iOS, Windows, macOS, or Linux).`;
+    finalAnswer = `${finalAnswer}\n\n---\nðŸ‘‰ **Ready to Test or Run:** Click **\`Preview Application\`** below (above the input box) to open and test this application in full screen, or click **\`Download Application\`** beside it to automatically download and execute the application on any environment (Android, Safari/iOS, Windows, macOS, or Linux).`;
   }
 
   // Extract meaningful sentences/sections from finalAnswer to enrich any lazy/identical engine replies
@@ -1833,7 +1833,7 @@ function sanitizeAndEnrichConsensusResult(
 
     const finalMatchedReply = isExistingFinalGood
       ? rawFinal
-      : `[${modelName} Final Consensus (${achieved}% Match)]: Converged on the complete structured solution — ${summarySnippet}. ${
+      : `[${modelName} Final Consensus (${achieved}% Match)]: Converged on the complete structured solution â€” ${summarySnippet}. ${
           hasAppPreview
             ? "Verified that all interactive buttons (Dashboard, Settings, Sync, and Confirm & Send) switch views and execute live inside the preview."
             : "Verified all headings, numbered steps, and technical details."
@@ -1851,7 +1851,7 @@ function sanitizeAndEnrichConsensusResult(
     const detailedResponse =
       rawDetailed.length >= 160
         ? rawDetailed
-        : `### ${modelName} — Independent Detailed Engine Response (${engineScore}% Match)\n\n` +
+        : `### ${modelName} â€” Independent Detailed Engine Response (${engineScore}% Match)\n\n` +
           `1. **Primary Analytical Focus (Engine #${idx + 1}):** ${angle}. Specifically evaluated: *"${detailSnippet}"*.\n` +
           `2. **Round #1 Initial Formulation:** ${
             rawInit || initialReply
@@ -1897,7 +1897,7 @@ function sanitizeAndEnrichConsensusResult(
           {
             round: 2,
             similarityScore: achieved,
-            note: `Cross-examined and merged all ${modelsList.length} engine outputs until reaching ${achieved}% consensus agreement (target ≥ ${safeTarget}%).`,
+            note: `Cross-examined and merged all ${modelsList.length} engine outputs until reaching ${achieved}% consensus agreement (target â‰¥ ${safeTarget}%).`,
           },
         ];
 
@@ -1918,7 +1918,7 @@ function sanitizeAndEnrichConsensusResult(
 }
 
 /**
- * Option 4 — Live Google Search & Real-Time Web Grounding:
+ * Option 4 â€” Live Google Search & Real-Time Web Grounding:
  * Fetches verified web citations when a query asks for live facts, current events, prices, or documentation.
  */
 async function fetchGoogleSearchGrounding(
@@ -2008,7 +2008,7 @@ async function runSmartMemoryConsensusLoop(
   const isKey1CloneTarget = isKey1CloneOrButtonRequest(question);
   const isWifiScannerTarget = isWifiOrHardwareScannerRequest(question);
 
-  // Option 5 — Instant Repeat-Query LRU Cache Check (only for standalone non-correction queries without attachments)
+  // Option 5 â€” Instant Repeat-Query LRU Cache Check (only for standalone non-correction queries without attachments)
   const cacheKey = getNormalizedCacheKey(
     question,
     modelsList,
@@ -2045,7 +2045,7 @@ Each time the user presses Send, the application opens a NEW session on the sele
 CRITICAL PRIORITY, SINGLE-TOPIC & ANTI-REPETITION RULES FOR "finalAnswer":
 - Give 100% priority to answering the CURRENT USER QUERY ("${question}")!
 - NEVER split "finalAnswer" into 2 parts (one part for a previous conversation and another part for the current query)!
-- Respond ONLY to the current query. Even when cumulative previous context and Working Memory Ledger facts are provided as background, use them strictly to inform the answer to the current query — NEVER re-answer or summarize previous unrelated topics.
+- Respond ONLY to the current query. Even when cumulative previous context and Working Memory Ledger facts are provided as background, use them strictly to inform the answer to the current query â€” NEVER re-answer or summarize previous unrelated topics.
 - ${
     relation.isCorrectionOrRepetition
       ? `ANTI-REPETITION & SELF-CORRECTION ALERT: The user is repeating or refining their query because the previous answer was incomplete or showed a dummy text status instead of a real working implementation. DO NOT write a generic apology ("I sincerely apologize...") and DO NOT repeat the previous text! Directly provide the exact working solution and confirm how every requirement in the Cumulative User Specification is now active.`
@@ -2066,7 +2066,7 @@ CRITICAL PRIORITY, SINGLE-TOPIC & ANTI-REPETITION RULES FOR "finalAnswer":
   3. Use **Numbered Lists** (` + "`1. **Step One:** ...\\n2. **Step Two:** ...\\n3. **Step Three:** ...`" + `) with sequential numbers (1, 2, 3...) or **Bullet Points** (` + "`- **Highlight:** Detail`" + `).
   4. Provide a comprehensive, detailed explanation focused 100% on the current query.
 
-STEP 1 — MATHEMATICAL CONTEXT ROUTING & WORKING MEMORY LEDGER (PRE-VERIFIED):
+STEP 1 â€” MATHEMATICAL CONTEXT ROUTING & WORKING MEMORY LEDGER (PRE-VERIFIED):
 - Mathematical Relation Result: contextMode = "${relation.contextMode}", historyMatchScore = ${relation.historyMatchScore}%.
 - ${
     relation.hasRelation
@@ -2074,22 +2074,22 @@ STEP 1 — MATHEMATICAL CONTEXT ROUTING & WORKING MEMORY LEDGER (PRE-VERIFIED):
       : `Mathematical proof confirmed NO relation between the current query and previous history. Therefore, ONLY the current query ("${question}") is sent to the engines ("NEW_QUERY_ONLY").`
   }
 
-STEP 2 — MULTI-AI ITERATIVE CONSENSUS LOOP ON "payloadSentToEngines" (DETAILED PER-ENGINE REPLIES REQUIRED):
+STEP 2 â€” MULTI-AI ITERATIVE CONSENSUS LOOP ON "payloadSentToEngines" (DETAILED PER-ENGINE REPLIES REQUIRED):
 - Open a new session on each selected AI engine (${modelsList.join(", ")}) and send the exact query payload.
 - Round 1: Collect each engine's initial answer and compute their initial similarity score.
 - Iterative Loop: Collect the initial answers and resend them back to the selected engines until their similarity score reaches >= ${safeTarget}% (between ${safeTarget}% and 100%).
-- CRITICAL FOR "nodeContributions": You MUST include one entry for each of the ${modelsList.length} selected engines (${modelsList.join(", ")}). Each engine's "initialReply" and "finalMatchedReply" MUST be a detailed, substantive 2-3 sentence summary of that specific engine's technical response to the CURRENT query — NEVER use short 3-word placeholders or identical copy-pasted text across engines!
+- CRITICAL FOR "nodeContributions": You MUST include one entry for each of the ${modelsList.length} selected engines (${modelsList.join(", ")}). Each engine's "initialReply" and "finalMatchedReply" MUST be a detailed, substantive 2-3 sentence summary of that specific engine's technical response to the CURRENT query â€” NEVER use short 3-word placeholders or identical copy-pasted text across engines!
 
-STEP 3 — LIVE INTERACTIVE APPLICATION / BUTTON / PORTAL PREVIEW GENERATION:
+STEP 3 â€” LIVE INTERACTIVE APPLICATION / BUTTON / PORTAL PREVIEW GENERATION:
 ${
   isKey1CloneTarget
-    ? `- DIRECT GITHUB FORCE-DEPLOYMENT TO "https://github.com/malazhub/key" MODE IS ACTIVE:
-  - All secondary instances have been purged. The system targets https://github.com/malazhub/key (branch: main) and live entry point https://malazhub.github.io/key/ exclusively.
-  - Set "hasAppPreview" = true and "appTitle" = "Direct GitHub Force-Deployment — https://github.com/malazhub/key (https://malazhub.github.io/key/)".
+    ? `- DIRECT GITHUB FORCE-DEPLOYMENT TO "https://github.com/malazhub/key1" MODE IS ACTIVE:
+  - All secondary instances have been purged. The system targets https://github.com/malazhub/key1 (branch: main) and live entry point https://malazhub.github.io/key1/ exclusively.
+  - Set "hasAppPreview" = true and "appTitle" = "Direct GitHub Force-Deployment â€” https://github.com/malazhub/key1 (https://malazhub.github.io/key1/)".
   - In "finalAnswer", clearly explain:
-    1. **Direct Repository Targeting (\`https://github.com/malazhub/key\`):** All secondary instances have been removed; the architecture points exclusively to \`https://github.com/malazhub/key\`.
+    1. **Direct Repository Targeting (\`https://github.com/malazhub/key1\`):** All secondary instances have been removed; the architecture points exclusively to \`https://github.com/malazhub/key1\`.
     2. **Clean-Slate Git Force-Commit & Push:** Pushes all 21 compiled and source files (including compiled \`index.html\` with inlined CSS, \`./assets/*\`, \`.nojekyll\`, \`src/App.tsx\`, \`server.ts\`, \`package.json\`, and \`README.md\`) directly to \`main\`.
-    3. **Live Entry Point (\`https://malazhub.github.io/key/\`):** Configured as the repository homepage and live URL.`
+    3. **Live Entry Point (\`https://malazhub.github.io/key1/\`):** Configured as the repository homepage and live URL.`
     : isWifiScannerTarget
     ? `- LIVE WI-FI & HARDWARE NETWORK SCANNER SUITE MODE IS ACTIVE:
   - Set "hasAppPreview" = true and "appTitle" = "ProScan Live Wi-Fi & Hardware Network Discovery Suite (Web + Native OS Bridge)".
@@ -2100,7 +2100,7 @@ ${
     ? `- ADMIN SELF-UPGRADE MODE IS ACTIVE (Target Version: https://github.com/malazhub/${nextVer}):
   - The Admin is requesting an upgrade/modification to the Key Multi-AI Consensus Application ("${question}").
   - In "finalAnswer", clearly present the detailed upgrade plan, new features added for ${nextVer}, and how it improves Key (using bold headings and sequential 1, 2, 3 numbered points).
-  - Set "hasAppPreview" = true and "appTitle" = "Key Upgraded (${nextVer}) — Live Preview".
+  - Set "hasAppPreview" = true and "appTitle" = "Key Upgraded (${nextVer}) â€” Live Preview".
   - In "generatedAppHtml", generate a COMPLETE, self-contained, interactive HTML5 document (using <script src="https://cdn.tailwindcss.com"></script>) that renders the upgraded Key Multi-AI Consensus Application incorporating the Admin's requested upgrade ("${question}"), complete with working buttons, real DOM state updates (NEVER use alert()), dark slate styling, and a badge showing "https://github.com/malazhub/${nextVer}"!`
     : shouldGenerateAppPreview
     ? `- LIVE APP / INTERACTIVE BUTTON BUILDER MODE IS ACTIVE:
@@ -2271,7 +2271,7 @@ Mode: ${
     ],
   };
 
-  // Option 2 — Parallel Fast-Track Hedged Engine Execution (`Promise.any` across top healthy models with automatic 503 retry)
+  // Option 2 â€” Parallel Fast-Track Hedged Engine Execution (`Promise.any` across top healthy models with automatic 503 retry)
   const healthyModels = getOrderedCandidateModels().filter(isModelAvailable);
   const parallelCandidates = healthyModels.slice(0, 4);
 
@@ -2396,7 +2396,7 @@ Mode: ${
           iterationsRequired: 2,
           consensusSummary: relation.hasRelation
             ? `Merged cumulative related history + current query into one query and iterated across ${modelsList.length} engines until ${achieved}% agreement was reached.`
-            : `Mathematical proof showed 0% relation with prior history — sent ONLY the current query to ${modelsList.length} engines and reached ${achieved}% agreement.`,
+            : `Mathematical proof showed 0% relation with prior history â€” sent ONLY the current query to ${modelsList.length} engines and reached ${achieved}% agreement.`,
           convergenceRounds: [],
           nodeContributions: [],
         };
@@ -2452,23 +2452,23 @@ Mode: ${
   const synthesizedText = isGreetingQuery
     ? priorGreetingCount === 0
       ? `Hello! Welcome to **Key Multi-AI Consensus**. All **${modelsList.length} active AI engines** are online and synchronized with the **Full-History Indexing Engine** and **Working Memory Ledger**.\n\nHow can I help you today? You can ask any question, cross-verify solutions across all ${modelsList.length} AI engines, or build and preview live interactive applications.`
-      : `Hello again! (Turn **#${windowPairs.length + 1}** in our continuous session — I see we have already exchanged **${priorGreetingCount}** prior greeting${priorGreetingCount > 1 ? "s" : ""} in our **Working Memory Ledger**: ${windowPairs
+      : `Hello again! (Turn **#${windowPairs.length + 1}** in our continuous session â€” I see we have already exchanged **${priorGreetingCount}** prior greeting${priorGreetingCount > 1 ? "s" : ""} in our **Working Memory Ledger**: ${windowPairs
           .map((p) => `Turn #${p.pairIndex}: *"${p.userQuery}"*`)
           .join(", ")}).\n\nOur **Persistent Contextual Router (PCR)** and **Global State Sync** are actively tracking every turn in real time with zero data loss. What topic, task, or application would you like us to work on next?`
     : isKey1CloneTarget
-    ? `### Final Architectural Resolution: Direct GitHub Deployment (\`https://github.com/malazhub/key\`)\n\nI have completely purged all references to secondary instances. The system is now hard-coded to target your primary repository at **\`https://github.com/malazhub/key\`** and primary entry URL **\`https://malazhub.github.io/key/\`** (**${achievedFallback}% consensus** across all **${modelsList.length} AI engines**):\n\n1. **Direct Repository Targeting:**\n   - The application points exclusively to **\`https://github.com/malazhub/key\`** (branch \`main\`). All previous references to secondary instances have been removed from the source code and version ledger.\n\n2. **One-Click Full Structure Force-Deployment:**\n   - Clicking **\`Deploy\`** in the Admin panel (or inside the **Direct GitHub Force-Deployment** preview below) triggers a clean-slate Git commit and force-push of all 23 project files (including the compiled production \`index.html\`, \`assets/*\`, \`src/App.tsx\`, \`server.ts\`, \`package.json\`, and \`README.md\`) directly to **\`https://github.com/malazhub/key\`**.\n\n3. **URL Integration (\`https://malazhub.github.io/key/\`):**\n   - The primary link **\`https://malazhub.github.io/key/\`** is integrated into your GitHub repository homepage, \`README.md\`, and internal routing so clicking it opens the live **Key Multi-AI Consensus Engine**.\n\n4. **Execution:**\n   - Click the **\`Deploy\`** button in the Admin panel on the left (or click **\`Preview Application\`** below and click **\`🚀 Deploy to malazhub/key\`**) to execute the clean-slate force-push to your repository.`
+    ? `### Final Architectural Resolution: Direct GitHub Deployment (\`https://github.com/malazhub/key1\`)\n\nI have completely purged all references to secondary instances. The system is now hard-coded to target your primary repository at **\`https://github.com/malazhub/key1\`** and primary entry URL **\`https://malazhub.github.io/key1/\`** (**${achievedFallback}% consensus** across all **${modelsList.length} AI engines**):\n\n1. **Direct Repository Targeting:**\n   - The application points exclusively to **\`https://github.com/malazhub/key1\`** (branch \`main\`). All previous references to secondary instances have been removed from the source code and version ledger.\n\n2. **One-Click Full Structure Force-Deployment:**\n   - Clicking **\`Deploy\`** in the Admin panel (or inside the **Direct GitHub Force-Deployment** preview below) triggers a clean-slate Git commit and force-push of all 23 project files (including the compiled production \`index.html\`, \`assets/*\`, \`src/App.tsx\`, \`server.ts\`, \`package.json\`, and \`README.md\`) directly to **\`https://github.com/malazhub/key1\`**.\n\n3. **URL Integration (\`https://malazhub.github.io/key1/\`):**\n   - The primary link **\`https://malazhub.github.io/key1/\`** is integrated into your GitHub repository homepage, \`README.md\`, and internal routing so clicking it opens the live **Key Multi-AI Consensus Engine**.\n\n4. **Execution:**\n   - Click the **\`Deploy\`** button in the Admin panel on the left (or click **\`Preview Application\`** below and click **\`ðŸš€ Deploy to malazhub/key1\`**) to execute the clean-slate force-push to your repository.`
     : isWifiScannerTarget
-    ? `### ProScan Live Wi-Fi & Hardware Network Discovery Suite (Web + Native OS Bridge)\n\nAll **${modelsList.length} active AI engines** converged (**${achievedFallback}% consensus**) and deployed your complete **Live Wi-Fi & Hardware Network Scanner** below:\n\n1. **Live Interactive Wi-Fi & Network Discovery Dashboard (Active Below):**\n   - Click **\`📡 Scan Nearby Wi-Fi Now\`** inside the live preview below to sweep nearby wireless access points (**SSID**, **BSSID MAC**, **RSSI Signal Strength in dBm & %**, **2.4 GHz / 5 GHz / 6 GHz Bands**, **Channels**, and **WPA3/WPA2 Security**).\n   - Connects automatically to \`/api/local-hardware-scan\` to inspect active host OS network adapters in real time.\n\n2. **Direct Native OS Hardware Scanner Commands (Windows / Linux / macOS / Python):**\n   - Click **\`💻 Native OS Scripts\`** inside the preview (or run the commands below in your terminal) to query your raw 802.11 Wi-Fi adapter directly on your computer:\n   - **Windows:** \`netsh wlan show networks mode=bssid\`\n   - **Linux:** \`nmcli dev wifi rescan && nmcli -f SSID,BSSID,SIGNAL,BARS,FREQ,CHAN,SECURITY dev wifi list\`\n   - **macOS:** \`/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s\``
+    ? `### ProScan Live Wi-Fi & Hardware Network Discovery Suite (Web + Native OS Bridge)\n\nAll **${modelsList.length} active AI engines** converged (**${achievedFallback}% consensus**) and deployed your complete **Live Wi-Fi & Hardware Network Scanner** below:\n\n1. **Live Interactive Wi-Fi & Network Discovery Dashboard (Active Below):**\n   - Click **\`ðŸ“¡ Scan Nearby Wi-Fi Now\`** inside the live preview below to sweep nearby wireless access points (**SSID**, **BSSID MAC**, **RSSI Signal Strength in dBm & %**, **2.4 GHz / 5 GHz / 6 GHz Bands**, **Channels**, and **WPA3/WPA2 Security**).\n   - Connects automatically to \`/api/local-hardware-scan\` to inspect active host OS network adapters in real time.\n\n2. **Direct Native OS Hardware Scanner Commands (Windows / Linux / macOS / Python):**\n   - Click **\`ðŸ’» Native OS Scripts\`** inside the preview (or run the commands below in your terminal) to query your raw 802.11 Wi-Fi adapter directly on your computer:\n   - **Windows:** \`netsh wlan show networks mode=bssid\`\n   - **Linux:** \`nmcli dev wifi rescan && nmcli -f SSID,BSSID,SIGNAL,BARS,FREQ,CHAN,SECURITY dev wifi list\`\n   - **macOS:** \`/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -s\``
     : isKeyUpgradeQuery
-    ? `### Direct GitHub Force-Deployment: \`https://github.com/malazhub/key\` → \`https://malazhub.github.io/key/\`\n\nAll **${modelsList.length} active AI engines** verified and executed the direct force-deployment architecture for **\`https://github.com/malazhub/key\`** (**${achievedFallback}% consensus**):\n\n1. **Direct Repository Targeting:** Hard-coded exclusively to **\`https://github.com/malazhub/key\`** (\`main\` branch) with all secondary instances purged.\n2. **Full Compiled + Source Key Structure Force-Push:** Pushes the compiled production \`index.html\` (with inlined CSS), \`./assets/*\`, \`.nojekyll\`, \`src/App.tsx\`, \`server.ts\`, \`package.json\`, and \`README.md\`.\n3. **Primary Live URL (\`https://malazhub.github.io/key/\`):** Linked directly in the repository homepage and header.`
+    ? `### Direct GitHub Force-Deployment: \`https://github.com/malazhub/key1\` â†’ \`https://malazhub.github.io/key1/\`\n\nAll **${modelsList.length} active AI engines** verified and executed the direct force-deployment architecture for **\`https://github.com/malazhub/key1\`** (**${achievedFallback}% consensus**):\n\n1. **Direct Repository Targeting:** Hard-coded exclusively to **\`https://github.com/malazhub/key1\`** (\`main\` branch) with all secondary instances purged.\n2. **Full Compiled + Source Key Structure Force-Push:** Pushes the compiled production \`index.html\` (with inlined CSS), \`./assets/*\`, \`.nojekyll\`, \`src/App.tsx\`, \`server.ts\`, \`package.json\`, and \`README.md\`.\n3. **Primary Live URL (\`https://malazhub.github.io/key1/\`):** Linked directly in the repository homepage and header.`
     : isContextRouterQuery
-    ? `### Upgraded Key Cumulative Context & Query Priority Logic\n\nAll **${modelsList.length} active AI engines** verified and upgraded the **Mathematical Context Router & Cumulative Memory Logic** (**${achievedFallback}% consensus**):\n\n1. **Mathematical Proof of Relation Before Calling Engines:**\n   - Every completed turn saves \`(User Ask + Agreed Reply)\` into the cumulative memory bank (\`previous = Ask_1 + Reply_1 + Ask_2 + Reply_2 ...\`).\n   - When a new query arrives, Key first calculates the mathematical similarity and referential dependency between the **Current Query** and **\`previous\`**.\n\n2. **Case 1 — No Mathematical Relation (\`NEW_QUERY_ONLY\`):**\n   - If mathematical proof shows **no relation** between the current query and saved \`previous\`, Key gives **100% priority to the current query**.\n   - Key sends **ONLY the current query** to all selected AI engines (it never sends unrelated saved history to the engines).\n   - The AI engines respond **exclusively to the current query** in a single focused response (never splitting into 2 parts), and the UI displays **only the current query and its answer** while appending \`(Current Ask + Current Reply)\` to cumulative \`previous\`.\n\n3. **Case 2 — Has Mathematical Relation (\`MERGED_WITH_SAVED\`):**\n   - If the current query relates to \`previous\`, Key merges cumulative \`previous (Ask + Reply) + Current Query\` into **one unified query** and sends that single combined query to all selected AI engines.\n   - After the engines converge on the answer, \`Current Ask + Current Reply + previous\` becomes the new cumulative \`previous\` for the next session.`
+    ? `### Upgraded Key Cumulative Context & Query Priority Logic\n\nAll **${modelsList.length} active AI engines** verified and upgraded the **Mathematical Context Router & Cumulative Memory Logic** (**${achievedFallback}% consensus**):\n\n1. **Mathematical Proof of Relation Before Calling Engines:**\n   - Every completed turn saves \`(User Ask + Agreed Reply)\` into the cumulative memory bank (\`previous = Ask_1 + Reply_1 + Ask_2 + Reply_2 ...\`).\n   - When a new query arrives, Key first calculates the mathematical similarity and referential dependency between the **Current Query** and **\`previous\`**.\n\n2. **Case 1 â€” No Mathematical Relation (\`NEW_QUERY_ONLY\`):**\n   - If mathematical proof shows **no relation** between the current query and saved \`previous\`, Key gives **100% priority to the current query**.\n   - Key sends **ONLY the current query** to all selected AI engines (it never sends unrelated saved history to the engines).\n   - The AI engines respond **exclusively to the current query** in a single focused response (never splitting into 2 parts), and the UI displays **only the current query and its answer** while appending \`(Current Ask + Current Reply)\` to cumulative \`previous\`.\n\n3. **Case 2 â€” Has Mathematical Relation (\`MERGED_WITH_SAVED\`):**\n   - If the current query relates to \`previous\`, Key merges cumulative \`previous (Ask + Reply) + Current Query\` into **one unified query** and sends that single combined query to all selected AI engines.\n   - After the engines converge on the answer, \`Current Ask + Current Reply + previous\` becomes the new cumulative \`previous\` for the next session.`
     : `### Response to "${question}" (Turn #${windowPairs.length + 1})\n\n${
         windowPairs.length > 0
           ? `Cross-referenced against **${windowPairs.length} prior session turn${windowPairs.length > 1 ? "s" : ""}** in the **Working Memory Ledger** (${windowPairs
               .slice(-3)
               .map((p) => `Turn #${p.pairIndex}: *"${p.userQuery.slice(0, 50)}"*`)
-              .join(" → ")}):\n\n`
+              .join(" â†’ ")}):\n\n`
           : ""
       }Here is the consolidated multi-engine response to **"${question}"**:\n\n- **Direct Resolution:** Your input **"${question}"** has been indexed as **Turn #${windowPairs.length + 1}** in the Working Memory Ledger and synchronized across all **${modelsList.length} active AI engines** (**${achievedFallback}% consensus**).\n- **Continuous Session State:** ${
         relation.hasRelation
@@ -2484,14 +2484,14 @@ Mode: ${
     finalAnswer: synthesizedText,
     hasAppPreview: shouldGenerateAppPreview,
     appTitle: shouldGenerateAppPreview
-      ? `Key Upgraded (${nextVer}) — Interactive Application Preview`
+      ? `Key Upgraded (${nextVer}) â€” Interactive Application Preview`
       : "",
     generatedAppHtml: "",
     achievedAgreement: achievedFallback,
     iterationsRequired: 2,
     consensusSummary: relation.hasRelation
       ? `Merged cumulative previous (Ask + Reply) with current query into one unified query and reached ${achievedFallback}% consensus across ${modelsList.length} AI engines.`
-      : `Mathematical proof confirmed no relation with previous history — sent ONLY the current query to ${modelsList.length} AI engines and reached ${achievedFallback}% consensus.`,
+      : `Mathematical proof confirmed no relation with previous history â€” sent ONLY the current query to ${modelsList.length} AI engines and reached ${achievedFallback}% consensus.`,
     convergenceRounds: [],
     nodeContributions: [],
   };
@@ -2543,7 +2543,7 @@ async function startServer() {
 
   app.use(express.json({ limit: "50mb" }));
 
-  // Admin Authentication & Direct Repository Endpoints (exclusively targeting https://github.com/malazhub/key)
+  // Admin Authentication & Direct Repository Endpoints (exclusively targeting https://github.com/malazhub/key1)
   app.post("/api/admin/login", (req, res) => {
     const { email, password } = req.body || {};
     const cleanEmail = String(email || "")
@@ -2566,11 +2566,11 @@ async function startServer() {
       authenticated: true,
       adminEmail: cleanEmail,
       currentVersionTag: "key",
-      currentRepoUrl: "https://github.com/malazhub/key",
-      liveDeployUrl: "https://malazhub.github.io/key/",
+      currentRepoUrl: "https://github.com/malazhub/key1",
+      liveDeployUrl: "https://malazhub.github.io/key1/",
       nextVersionNumber: 0,
       nextVersionTag: "key",
-      nextRepoUrl: "https://github.com/malazhub/key",
+      nextRepoUrl: "https://github.com/malazhub/key1",
       versions,
     });
   });
@@ -2579,11 +2579,11 @@ async function startServer() {
     const versions = readAdminVersions();
     res.json({
       currentVersionTag: "key",
-      currentRepoUrl: "https://github.com/malazhub/key",
-      liveDeployUrl: "https://malazhub.github.io/key/",
+      currentRepoUrl: "https://github.com/malazhub/key1",
+      liveDeployUrl: "https://malazhub.github.io/key1/",
       nextVersionNumber: 0,
       nextVersionTag: "key",
-      nextRepoUrl: "https://github.com/malazhub/key",
+      nextRepoUrl: "https://github.com/malazhub/key1",
       versions,
     });
   });
@@ -2617,7 +2617,7 @@ async function startServer() {
     const lastModifiedVersion =
       versions.length > 0 ? versions[versions.length - 1] : null;
     const nextVersionTag = "key";
-    const nextRepoUrl = "https://github.com/malazhub/key";
+    const nextRepoUrl = "https://github.com/malazhub/key1";
 
     const inheritedPreviewHtml =
       typeof previewHtml === "string" && previewHtml.trim().length > 0
@@ -2627,7 +2627,7 @@ async function startServer() {
     const cumulativeTaskDescription = String(
       taskDescription ||
         lastModifiedVersion?.taskDescription ||
-        "Direct GitHub Force-Deployment to https://github.com/malazhub/key"
+        "Direct GitHub Force-Deployment to https://github.com/malazhub/key1"
     );
 
     if (githubToken) {
@@ -2637,11 +2637,11 @@ async function startServer() {
     const newRecord: AdminVersionRecord = {
       versionNumber: 0,
       versionTag: "key",
-      repoUrl: "https://github.com/malazhub/key",
+      repoUrl: "https://github.com/malazhub/key1",
       taskDescription: cumulativeTaskDescription,
       summary: String(
         summary ||
-          "Direct deployment to https://github.com/malazhub/key (Live: https://malazhub.github.io/key/)"
+          "Direct deployment to https://github.com/malazhub/key1 (Live: https://malazhub.github.io/key1/)"
       ),
       previewHtml: inheritedPreviewHtml,
       createdAt: new Date().toISOString(),
@@ -2657,10 +2657,10 @@ async function startServer() {
       admittedVersion: newRecord,
       currentVersionTag: nextVersionTag,
       currentRepoUrl: nextRepoUrl,
-      liveDeployUrl: "https://malazhub.github.io/key/",
+      liveDeployUrl: "https://malazhub.github.io/key1/",
       nextVersionNumber: 0,
       nextVersionTag: "key",
-      nextRepoUrl: "https://github.com/malazhub/key",
+      nextRepoUrl: "https://github.com/malazhub/key1",
       versions: updatedVersions,
     });
   });
@@ -2794,7 +2794,7 @@ async function startServer() {
     });
   });
 
-  // Option 1 & Option 6 — Local Hardware & Network Interface Scanner Bridge
+  // Option 1 & Option 6 â€” Local Hardware & Network Interface Scanner Bridge
   app.get("/api/local-hardware-scan", async (_req, res) => {
     const rawIfaces = os.networkInterfaces();
     const interfaces: Array<{
@@ -2869,7 +2869,7 @@ async function startServer() {
     });
   });
 
-  // Option 3 — Live Server-Sent Events (SSE) Streaming Endpoint (/api/consensus-stream)
+  // Option 3 â€” Live Server-Sent Events (SSE) Streaming Endpoint (/api/consensus-stream)
   app.post("/api/consensus-stream", async (req, res) => {
     res.setHeader("Content-Type", "text/event-stream");
     res.setHeader("Cache-Control", "no-cache");
@@ -3005,9 +3005,9 @@ async function startServer() {
         },
         {
           id: 3,
-          title: "Direct GitHub Force-Deployment (malazhub/key)",
+          title: "Direct GitHub Force-Deployment (malazhub/key1)",
           description:
-            "Purged all secondary instances; targets https://github.com/malazhub/key and https://malazhub.github.io/key/ exclusively.",
+            "Purged all secondary instances; targets https://github.com/malazhub/key1 and https://malazhub.github.io/key1/ exclusively.",
           status: "Active & Verified",
         },
         {
@@ -3269,7 +3269,7 @@ export const KEY_AUTONOMOUS_UPGRADE_MANIFEST = ${JSON.stringify(
             {
               versionNumber: 0,
               versionTag: "key",
-              repoUrl: "https://github.com/malazhub/key",
+              repoUrl: "https://github.com/malazhub/key1",
               taskDescription: effectiveQuestion,
               summary:
                 finalApiPayload.selfModificationApplied?.summaryTitle ||
@@ -3398,7 +3398,7 @@ export const KEY_AUTONOMOUS_UPGRADE_MANIFEST = ${JSON.stringify(
     }
   });
 
-  // Project Folder & Source Code Exporter for GitHub (malazhub/key)
+  // Project Folder & Source Code Exporter for GitHub (malazhub/key1)
   const PROJECT_EXPORT_PATHS: Array<{ path: string; category: string }> = [
     { path: "README.md", category: "Root Configuration & Docs" },
     { path: "package.json", category: "Root Configuration & Docs" },
@@ -3657,7 +3657,7 @@ jobs:
 
     walkDirectory("src", "Frontend Application (src/)");
 
-    // Ensure compiled production bundle (dist/index.html + dist/assets/*) exists so GitHub Pages (https://malazhub.github.io/key/) serves the live React Key application immediately
+    // Ensure compiled production bundle (dist/index.html + dist/assets/*) exists so GitHub Pages (https://malazhub.github.io/key1/) serves the live React Key application immediately
     try {
       const distIndex = path.join(__dirname, "dist", "index.html");
       const distAssetsDir = path.join(__dirname, "dist", "assets");
@@ -3818,7 +3818,7 @@ jobs:
       }
       await new Promise<void>((resolve) => {
         exec(
-          `git init -b ${targetBranch} && git config user.name "malazhub" && git config user.email "malazjanbeih@gmail.com" && git add -A && git commit -m "Force deploy full Key Multi-AI Consensus Engine structure to malazhub/key — Live: https://malazhub.github.io/key/" && git rev-parse --short HEAD`,
+          `git init -b ${targetBranch} && git config user.name "malazhub" && git config user.email "malazjanbeih@gmail.com" && git add -A && git commit -m "Force deploy full Key Multi-AI Consensus Engine structure to malazhub/key1 â€” Live: https://malazhub.github.io/key1/" && git rev-parse --short HEAD`,
           { cwd: stageDir, timeout: 10000 },
           (_err, stdout) => {
             if (stdout) {
@@ -3842,7 +3842,7 @@ jobs:
         actionsUrl: `https://github.com/${owner}/${repo}/actions`,
         liveDeployUrl: `https://${owner}.github.io/${repo}/`,
         error:
-          "GitHub authorization required once to force-push commits to https://github.com/malazhub/key.",
+          "GitHub authorization required once to force-push commits to https://github.com/malazhub/key1.",
       };
     }
 
@@ -3877,7 +3877,7 @@ jobs:
       };
     }
 
-    // Token is verified valid against GitHub API — persist it to disk for all future 1-click deploys
+    // Token is verified valid against GitHub API â€” persist it to disk for all future 1-click deploys
     writeSavedGitHubToken(token);
 
     if (checkRepo.status === 404) {
@@ -3887,27 +3887,27 @@ jobs:
         body: JSON.stringify({
           name: repo,
           description:
-            "Key — Multi-AI Consensus Engine (Live Application: https://malazhub.github.io/key/)",
-          homepage: "https://malazhub.github.io/key/",
+            "Key â€” Multi-AI Consensus Engine (Live Application: https://malazhub.github.io/key1/)",
+          homepage: "https://malazhub.github.io/key1/",
           private: false,
           auto_init: true,
         }),
       });
     } else {
-      // Update repository description & homepage link URL on GitHub to https://malazhub.github.io/key/
+      // Update repository description & homepage link URL on GitHub to https://malazhub.github.io/key1/
       await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
         method: "PATCH",
         headers: ghHeaders,
         body: JSON.stringify({
           description:
-            "Key — Multi-AI Consensus Engine (Live Application: https://malazhub.github.io/key/)",
-          homepage: "https://malazhub.github.io/key/",
+            "Key â€” Multi-AI Consensus Engine (Live Application: https://malazhub.github.io/key1/)",
+          homepage: "https://malazhub.github.io/key1/",
         }),
       }).catch(() => {});
     }
 
     // METHOD 1 (PRIMARY): Native Git CLI `git push --force` from clean-slate `/tmp/malazhub_key_force_deploy`
-    // Replaces the entire branch commit history/tree on https://github.com/malazhub/key in one compressed packfile!
+    // Replaces the entire branch commit history/tree on https://github.com/malazhub/key1 in one compressed packfile!
     try {
       const gitPushSucceeded = await new Promise<boolean>((resolve) => {
         const remoteUrl = `https://x-access-token:${encodeURIComponent(
@@ -4033,7 +4033,7 @@ jobs:
                       method: "POST",
                       headers: ghHeaders,
                       body: JSON.stringify({
-                        message: `Force deploy full Key Multi-AI Consensus Engine structure (${treeItems.length} files) to malazhub/key — Live: https://malazhub.github.io/key/`,
+                        message: `Force deploy full Key Multi-AI Consensus Engine structure (${treeItems.length} files) to malazhub/key1 â€” Live: https://malazhub.github.io/key1/`,
                         tree: tJson.sha,
                         parents: [],
                       }),
@@ -4133,7 +4133,7 @@ jobs:
         repoUrl: `https://github.com/${owner}/${repo}`,
         actionsUrl: `https://github.com/${owner}/${repo}/actions`,
         error:
-          "GitHub rejected the push. Please authorize with a token that has 'repo' write access to malazhub/key.",
+          "GitHub rejected the push. Please authorize with a token that has 'repo' write access to malazhub/key1.",
         failedFiles,
       };
     }
@@ -4186,8 +4186,8 @@ jobs:
     const files = await collectProjectFiles();
     res.json({
       repoName: "key",
-      defaultRepoUrl: "https://github.com/malazhub/key",
-      liveDeployUrl: "https://malazhub.github.io/key/",
+      defaultRepoUrl: "https://github.com/malazhub/key1",
+      liveDeployUrl: "https://malazhub.github.io/key1/",
       hasSavedGitHubToken: Boolean(readSavedGitHubToken()),
       totalFiles: files.length,
       files,
@@ -4197,7 +4197,7 @@ jobs:
   // Server-Side Autonomous GitHub Device OAuth Session & Background Poller
   // Ensures that even after the user clicks Deploy -> Copy Code -> Logout, the backend server itself
   // continues polling GitHub at the exact required interval (>= 6s, avoiding slow_down penalties) and
-  // immediately executes the full git push --force to https://github.com/malazhub/key the moment the code is authorized!
+  // immediately executes the full git push --force to https://github.com/malazhub/key1 the moment the code is authorized!
   interface ServerDeviceSession {
     deviceCode: string;
     userCode: string;
@@ -4556,3 +4556,4 @@ jobs:
 }
 
 startServer();
+

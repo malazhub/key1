@@ -1,4 +1,4 @@
-/**
+﻿/**
  * @license
  * SPDX-License-Identifier: Apache-2.0
  */
@@ -155,8 +155,8 @@ const ALL_10 = [
   "Command R+",
 ];
 
-const PRIMARY_GITHUB_REPO_URL = "https://github.com/malazhub/key";
-const PRIMARY_AI_KEY_LIVE_URL = "https://malazhub.github.io/key/";
+const PRIMARY_GITHUB_REPO_URL = "https://github.com/malazhub/key1";
+const PRIMARY_AI_KEY_LIVE_URL = "https://malazhub.github.io/key1/";
 
 const GUEST_STORAGE_KEY = "malaz_key_chat_history_v5";
 const AUTH_EMAIL_STORAGE_KEY = "malaz_key_signed_in_user_v1";
@@ -284,7 +284,7 @@ function readCumulativeBuildState(): {
         ) {
           return {
             title:
-              "Key — Direct GitHub Force-Deploy & Live AI Key Portal (https://github.com/malazhub/key → https://malazhub.github.io/key/)",
+              "Key â€” Direct GitHub Force-Deploy & Live AI Key Portal (https://github.com/malazhub/key1 â†’ https://malazhub.github.io/key1/)",
             html: buildClientKey1ZeroDivergenceHtml(),
             updatedAt: new Date().toISOString(),
           };
@@ -346,7 +346,7 @@ async function executeBrowserNativeRoute(
     }
   }
 
-  // 1. /api/consensus-chat — Execute the 100% identical shared Multi-AI Consensus Engine (runSmartMemoryConsensusLoop)
+  // 1. /api/consensus-chat â€” Execute the 100% identical shared Multi-AI Consensus Engine (runSmartMemoryConsensusLoop)
   if (cleanPath === "/api/consensus-chat" && method === "POST") {
     const {
       question,
@@ -448,7 +448,7 @@ async function executeBrowserNativeRoute(
     return createJsonResponse(responsePayload, 200);
   }
 
-  // 2. /api/user-cloud — Identical Cloud User History & Quota Management
+  // 2. /api/user-cloud â€” Identical Cloud User History & Quota Management
   if (cleanPath === "/api/user-cloud") {
     const queryStr = apiPath.includes("?") ? apiPath.split("?")[1] : "";
     const params = new URLSearchParams(queryStr);
@@ -580,11 +580,11 @@ async function executeBrowserNativeRoute(
       authenticated: true,
       adminEmail: cleanEmail,
       currentVersionTag: "key",
-      currentRepoUrl: "https://github.com/malazhub/key",
-      liveDeployUrl: "https://malazhub.github.io/key/",
+      currentRepoUrl: "https://github.com/malazhub/key1",
+      liveDeployUrl: "https://malazhub.github.io/key1/",
       nextVersionNumber: 0,
       nextVersionTag: "key",
-      nextRepoUrl: "https://github.com/malazhub/key",
+      nextRepoUrl: "https://github.com/malazhub/key1",
       versions: [],
     });
   }
@@ -594,11 +594,11 @@ async function executeBrowserNativeRoute(
       success: true,
       githubSynced: true,
       currentVersionTag: "key",
-      currentRepoUrl: "https://github.com/malazhub/key",
-      liveDeployUrl: "https://malazhub.github.io/key/",
+      currentRepoUrl: "https://github.com/malazhub/key1",
+      liveDeployUrl: "https://malazhub.github.io/key1/",
       nextVersionNumber: 0,
       nextVersionTag: "key",
-      nextRepoUrl: "https://github.com/malazhub/key",
+      nextRepoUrl: "https://github.com/malazhub/key1",
       versions: [],
     });
   }
@@ -654,7 +654,7 @@ async function fetchFromKeyBackend(
     }
   }
 
-  // Always try LIVE_BACKEND_ORIGINS before browser fallback so GitHub Pages (https://malazhub.github.io/key/)
+  // Always try LIVE_BACKEND_ORIGINS before browser fallback so GitHub Pages (https://malazhub.github.io/key1/)
   // executes against the exact same live server, Gemini API key, and mirrored state as the left workspace!
   let lastErr: unknown = null;
   for (const origin of LIVE_BACKEND_ORIGINS) {
@@ -1023,7 +1023,7 @@ function enrichAndRepairAssistantMessage(
   ) {
     hasAppPreview = true;
     appTitle =
-      "KEY v2.6 Self-Upgraded Architecture — 2026 OWASP & MITRE ATLAS Unified Defense Matrix (Parts I–IV Live)";
+      "KEY v2.6 Self-Upgraded Architecture â€” 2026 OWASP & MITRE ATLAS Unified Defense Matrix (Parts Iâ€“IV Live)";
     generatedAppHtml = buildFramework2026SelfUpgradedPortalHtml();
     cleanContent = buildFramework2026SelfUpgradedExecutionReport(
       msg.achievedAgreement || 99,
@@ -1046,7 +1046,7 @@ function enrichAndRepairAssistantMessage(
     generatedAppHtml = "";
     if (
       !cleanContent ||
-      /Key Continuous Mathematical Self-Upgrade|The Logic Flow of Multi-AI Consensus|Returned Updated Key View|S_\d+\s*=\s*Φ|ContinuousUpgradeStateManager|KEY_CODEBASE_STRUCTURE_REGISTRY/i.test(
+      /Key Continuous Mathematical Self-Upgrade|The Logic Flow of Multi-AI Consensus|Returned Updated Key View|S_\d+\s*=\s*Î¦|ContinuousUpgradeStateManager|KEY_CODEBASE_STRUCTURE_REGISTRY/i.test(
         cleanContent
       )
     ) {
@@ -1092,7 +1092,7 @@ function enrichAndRepairAssistantMessage(
   } else if (isJetSimMsg) {
     hasAppPreview = true;
     appTitle =
-      "AeroStrike 3D — Windows 11 Integrated-GPU Jet Fighter Flight & Missile Simulator (Arrow Keys + Q Missile)";
+      "AeroStrike 3D â€” Windows 11 Integrated-GPU Jet Fighter Flight & Missile Simulator (Arrow Keys + Q Missile)";
     if (!generatedAppHtml || !generatedAppHtml.includes("jetSimCanvas")) {
       generatedAppHtml = buildUltraJetFlightSimulationPortalHtml();
     }
@@ -1102,18 +1102,18 @@ function enrichAndRepairAssistantMessage(
         cleanContent
       )
     ) {
-      cleanContent = `### AeroStrike 3D — High-Performance 3D Jet Fighter Flight & Missile Combat Simulator (Windows 11 iGPU Optimized)\n\n1. **Flight Controls, Cruise Velocity & Dynamic 3rd-Person Chase Camera:**\n   - **PC Arrow Keys (\`↑\` / \`↓\` Pitch & \`←\` / \`→\` Roll):** Press **\`↑\` / \`↓\`** to control Pitch (climb/dive) and **\`←\` / \`→\`** to control Roll (banking/turning) at supersonic cruise speed (~640 Knots / Mach 0.97).\n   - **Dynamic Chase Camera:** Positioned tightly behind the twin-afterburner jet tail with speed-reactive tilt and subtle high-G airframe vibration.\n\n2. **Atmospheric Skybox, Blinding Sun Bloom & Beer's-Law Shaded Volumetric Clouds:**\n   - **Dynamic Sky & Sun Glare:** Real-time sky gradient with angle-dependent radial sun bloom that intensifies as you bank toward the sun.\n   - **Beer's Law Volumetric-Style Cloud Billboards:** High-performance instanced billboard cloud clusters shaded via CPU-calculated Beer's Law light transmittance (\`T = exp(-opticalDepth)\`) and strict frustum culling.\n   - **Endless Mountain Terrain with Distance LOD:** Rolling procedural mountain ridges with rock/grass altitude shading and distance-based polygon Level of Detail (LOD).\n\n3. **\`Q\`-Key Wing Missile Combat & Military Aviation HUD:**\n   - **\`Q\` Key (Missile Launch):** Fires a high-speed wing-mounted missile with immediate muzzle flash ignition light, persistent supersonic smoke/vapor trail particles, and Web Audio jet turbine + missile launch synthesis.\n   - **Military Aviation HUD:** Displays live **Airspeed (Knots)**, **Altitude (Feet)**, **Mach / G-Force**, and a bank-stabilized **Target Horizon Line**. Fly live in the interactive viewport directly below or click **\`Expand Full Screen ↗\`**.`;
+      cleanContent = `### AeroStrike 3D â€” High-Performance 3D Jet Fighter Flight & Missile Combat Simulator (Windows 11 iGPU Optimized)\n\n1. **Flight Controls, Cruise Velocity & Dynamic 3rd-Person Chase Camera:**\n   - **PC Arrow Keys (\`â†‘\` / \`â†“\` Pitch & \`â†\` / \`â†’\` Roll):** Press **\`â†‘\` / \`â†“\`** to control Pitch (climb/dive) and **\`â†\` / \`â†’\`** to control Roll (banking/turning) at supersonic cruise speed (~640 Knots / Mach 0.97).\n   - **Dynamic Chase Camera:** Positioned tightly behind the twin-afterburner jet tail with speed-reactive tilt and subtle high-G airframe vibration.\n\n2. **Atmospheric Skybox, Blinding Sun Bloom & Beer's-Law Shaded Volumetric Clouds:**\n   - **Dynamic Sky & Sun Glare:** Real-time sky gradient with angle-dependent radial sun bloom that intensifies as you bank toward the sun.\n   - **Beer's Law Volumetric-Style Cloud Billboards:** High-performance instanced billboard cloud clusters shaded via CPU-calculated Beer's Law light transmittance (\`T = exp(-opticalDepth)\`) and strict frustum culling.\n   - **Endless Mountain Terrain with Distance LOD:** Rolling procedural mountain ridges with rock/grass altitude shading and distance-based polygon Level of Detail (LOD).\n\n3. **\`Q\`-Key Wing Missile Combat & Military Aviation HUD:**\n   - **\`Q\` Key (Missile Launch):** Fires a high-speed wing-mounted missile with immediate muzzle flash ignition light, persistent supersonic smoke/vapor trail particles, and Web Audio jet turbine + missile launch synthesis.\n   - **Military Aviation HUD:** Displays live **Airspeed (Knots)**, **Altitude (Feet)**, **Mach / G-Force**, and a bank-stabilized **Target Horizon Line**. Fly live in the interactive viewport directly below or click **\`Expand Full Screen â†—\`**.`;
     }
   } else if (isCarSimMsg) {
     hasAppPreview = true;
     appTitle =
-      "UltraDrive 3D Pro — Real Street, Traffic, Buildings & V8 Motor Simulator (Windows 11 · Arrow Keys + Q Horn)";
+      "UltraDrive 3D Pro â€” Real Street, Traffic, Buildings & V8 Motor Simulator (Windows 11 Â· Arrow Keys + Q Horn)";
     generatedAppHtml = buildUltraCarSimulationPortalHtml();
     if (
       !cleanContent ||
       /Returned Updated Key View|Top Text "Key"/i.test(cleanContent)
     ) {
-      cleanContent = `### UltraDrive 3D Pro — High-Weight Windows 11 Street, Traffic & V8 Motor Simulation\n\n1. **Live Interactive 3D Car Simulation Embedded Directly Below:**\n   - Your **UltraDrive 3D Pro Simulator** (60 FPS 3D perspective multi-lane street, AI traffic vehicles, illuminated city buildings, and Web Audio V8 motor synthesizer) is running **live right below in this message**.\n\n2. **Persistent \`🚗 Car\` Button Added Down in the Bottom Control Bar:**\n   - Click the **` + "`🚗 Car`" + `** button down in the bottom bar (beside \`Attach\`, \`Preview Application\`, and \`Download Application\`) at any time to immediately launch the Car Simulation in full screen.\n\n3. **Self-Tested PC Keyboard Controls (Windows 11 Integrated Graphics):**\n   - **\`↑\` / \`↓\` Arrow Keys:** Accelerate forward up to 255 km/h or brake & shift into **Reverse (\`R\`)** to drive backward.\n   - **\`←\` / \`→\` Arrow Keys:** Steer smoothly left and right across all 3 lanes.\n   - **\`Q\` Key:** Blast the authentic dual-tone motor horn (traffic ahead clears your lane).`;
+      cleanContent = `### UltraDrive 3D Pro â€” High-Weight Windows 11 Street, Traffic & V8 Motor Simulation\n\n1. **Live Interactive 3D Car Simulation Embedded Directly Below:**\n   - Your **UltraDrive 3D Pro Simulator** (60 FPS 3D perspective multi-lane street, AI traffic vehicles, illuminated city buildings, and Web Audio V8 motor synthesizer) is running **live right below in this message**.\n\n2. **Persistent \`ðŸš— Car\` Button Added Down in the Bottom Control Bar:**\n   - Click the **` + "`ðŸš— Car`" + `** button down in the bottom bar (beside \`Attach\`, \`Preview Application\`, and \`Download Application\`) at any time to immediately launch the Car Simulation in full screen.\n\n3. **Self-Tested PC Keyboard Controls (Windows 11 Integrated Graphics):**\n   - **\`â†‘\` / \`â†“\` Arrow Keys:** Accelerate forward up to 255 km/h or brake & shift into **Reverse (\`R\`)** to drive backward.\n   - **\`â†\` / \`â†’\` Arrow Keys:** Steer smoothly left and right across all 3 lanes.\n   - **\`Q\` Key:** Blast the authentic dual-tone motor horn (traffic ahead clears your lane).`;
     }
   } else if (isSelfModMessage) {
     const spec = parseKeySelfModificationSpec(rawUserAsk, selfModContextText);
@@ -1146,7 +1146,7 @@ function enrichAndRepairAssistantMessage(
   } else if (isKeyDeployMessage) {
     hasAppPreview = true;
     appTitle =
-      "Key — Direct GitHub Force-Deploy & Live AI Key Portal (https://github.com/malazhub/key → https://malazhub.github.io/key/)";
+      "Key â€” Direct GitHub Force-Deploy & Live AI Key Portal (https://github.com/malazhub/key1 â†’ https://malazhub.github.io/key1/)";
     generatedAppHtml = buildClientKey1ZeroDivergenceHtml();
   } else if (
     hasAppPreview ||
@@ -1160,7 +1160,7 @@ function enrichAndRepairAssistantMessage(
       appTitle = repairedApp.title;
       generatedAppHtml = repairedApp.html;
       if (/Key Live Self-Upgrade Executed/i.test(cleanContent)) {
-        cleanContent = `### ${repairedApp.title}\n\n1. **Live Interactive Application Embedded Directly Below:**\n   - Built and verified for your query: **"${rawUserAsk.slice(0, 120)}"**.\n2. **Interactive Viewport & Full-Screen Mode:**\n   - Interact directly inside the live viewport below or click **\`Expand Full Screen ↗\`**.`;
+        cleanContent = `### ${repairedApp.title}\n\n1. **Live Interactive Application Embedded Directly Below:**\n   - Built and verified for your query: **"${rawUserAsk.slice(0, 120)}"**.\n2. **Interactive Viewport & Full-Screen Mode:**\n   - Interact directly inside the live viewport below or click **\`Expand Full Screen â†—\`**.`;
       }
     }
     hasAppPreview = true;
@@ -1179,7 +1179,7 @@ function enrichAndRepairAssistantMessage(
   <div class="max-w-xl mx-auto rounded-2xl bg-slate-900 border border-slate-800 p-5 shadow-xl space-y-4">
     <div class="flex items-center justify-between border-b border-slate-800 pb-3">
       <h2 class="text-base font-bold text-white">${safeTitle}</h2>
-      <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">● Live Ready</span>
+      <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">â— Live Ready</span>
     </div>
     <div class="space-y-3">
       <input id="liveInp" type="text" placeholder="Type any value or message..." class="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:outline-none focus:border-emerald-400" />
@@ -1199,7 +1199,7 @@ function enrichAndRepairAssistantMessage(
     document.getElementById('liveBtn').addEventListener('click', () => {
       clicks++;
       const v = inp.value.trim() || 'Action Executed';
-      out.innerHTML = '✓ <strong>Button Clicked (#' + clicks + '):</strong> ' + v.replace(/</g, '&lt;');
+      out.innerHTML = 'âœ“ <strong>Button Clicked (#' + clicks + '):</strong> ' + v.replace(/</g, '&lt;');
     });
     document.getElementById('resetBtn').addEventListener('click', () => {
       inp.value = '';
@@ -1280,7 +1280,7 @@ function enrichAndRepairAssistantMessage(
             : `[${modelName} Initial Analysis]: ${angle}. Key focus: ${detailSnippet}.`;
           const computedFinal = isFinalGood
             ? rawFinal
-            : `[${modelName} Final Consensus (${achieved}% Match)]: Converged on the verified solution — ${summarySnippet}. ${
+            : `[${modelName} Final Consensus (${achieved}% Match)]: Converged on the verified solution â€” ${summarySnippet}. ${
                 hasAppPreview
                   ? "Confirmed all interactive buttons (Dashboard, Settings, Sync Now, and Confirm & Send) execute live inside the preview."
                   : "Verified all structured steps and technical details."
@@ -1293,7 +1293,7 @@ function enrichAndRepairAssistantMessage(
           const computedDetailed =
             rawDetailed.length >= 160
               ? rawDetailed
-              : `### ${modelName} — Full Independent Engine Response (${computedScore}% Match)\n\n` +
+              : `### ${modelName} â€” Full Independent Engine Response (${computedScore}% Match)\n\n` +
                 `1. **Engine #${idx + 1} Analytical Perspective:** ${angle}. Specifically evaluated: *"${detailSnippet}"*.\n` +
                 `2. **Round #1 Initial Output:** ${rawInit || computedInit}\n` +
                 `3. **Module & Logic Verification:** ${secondarySnippet}. ${
@@ -1350,9 +1350,9 @@ function enrichAndRepairAssistantMessage(
             cleanSentences[0] ||
             `Verified the complete interactive solution and action controls for "${queryRef}"`;
           const computedInit = `[${modelName} Initial Analysis]: ${angle}. Key focus: ${detailSnippet}.`;
-          const computedFinal = `[${modelName} Final Consensus (${achieved}% Match)]: Converged on the verified solution — ${summarySnippet}.`;
+          const computedFinal = `[${modelName} Final Consensus (${achieved}% Match)]: Converged on the verified solution â€” ${summarySnippet}.`;
           const computedDetailed =
-            `### ${modelName} — Full Independent Engine Response (${achieved}% Match)\n\n` +
+            `### ${modelName} â€” Full Independent Engine Response (${achieved}% Match)\n\n` +
             `1. **Engine #${idx + 1} Analytical Perspective:** ${angle}.\n` +
             `2. **Round #1 Initial Output:** ${computedInit}\n` +
             `3. **Complete Verified Answer Approved by ${modelName}:**\n\n${cleanContent}`;
@@ -1525,7 +1525,7 @@ function buildInstantClientAppFromContext(
   ) {
     return {
       title:
-        "AeroStrike 3D — Windows 11 Integrated-GPU Jet Fighter Flight & Missile Simulator (Arrow Keys + Q Missile)",
+        "AeroStrike 3D â€” Windows 11 Integrated-GPU Jet Fighter Flight & Missile Simulator (Arrow Keys + Q Missile)",
       html: buildUltraJetFlightSimulationPortalHtml(),
     };
   }
@@ -1539,7 +1539,7 @@ function buildInstantClientAppFromContext(
   ) {
     return {
       title:
-        "UltraDrive 3D Pro — Real Street, Traffic, Buildings & V8 Motor Simulator (Windows 11 · Arrow Keys + Q Horn)",
+        "UltraDrive 3D Pro â€” Real Street, Traffic, Buildings & V8 Motor Simulator (Windows 11 Â· Arrow Keys + Q Horn)",
       html: buildUltraCarSimulationPortalHtml(),
     };
   }
@@ -1560,7 +1560,7 @@ function buildInstantClientAppFromContext(
   ) {
     return {
       title:
-        "Key — Direct GitHub Force-Deploy & Live AI Key Portal (https://github.com/malazhub/key → https://malazhub.github.io/key/)",
+        "Key â€” Direct GitHub Force-Deploy & Live AI Key Portal (https://github.com/malazhub/key1 â†’ https://malazhub.github.io/key1/)",
       html: buildClientKey1ZeroDivergenceHtml(),
     };
   }
@@ -1569,7 +1569,7 @@ function buildInstantClientAppFromContext(
     return {
       title:
         existingAppTitle ||
-        `Full-Screen Application Preview — ${cleanQ.slice(0, 48)}`,
+        `Full-Screen Application Preview â€” ${cleanQ.slice(0, 48)}`,
       html: cleanHtml,
     };
   }
@@ -1580,7 +1580,7 @@ function buildInstantClientAppFromContext(
     return {
       title:
         existingAppTitle ||
-        `Full-Screen Application Preview — ${cleanQ.slice(0, 48)}`,
+        `Full-Screen Application Preview â€” ${cleanQ.slice(0, 48)}`,
       html: fencedHtmlMatch[1].trim(),
     };
   }
@@ -1593,7 +1593,7 @@ function buildInstantClientAppFromContext(
     return {
       title:
         existingAppTitle ||
-        `Full-Screen Application Preview — ${cleanQ.slice(0, 48)}`,
+        `Full-Screen Application Preview â€” ${cleanQ.slice(0, 48)}`,
       html: embeddedHtmlBlocks.join("\n\n"),
     };
   }
@@ -1606,7 +1606,7 @@ function buildInstantClientAppFromContext(
   ) {
     return {
       title:
-        "Key — Direct GitHub Force-Deploy & Live AI Key Portal (https://github.com/malazhub/key → https://malazhub.github.io/key/)",
+        "Key â€” Direct GitHub Force-Deploy & Live AI Key Portal (https://github.com/malazhub/key1 â†’ https://malazhub.github.io/key1/)",
       html: buildClientKey1ZeroDivergenceHtml(),
     };
   }
@@ -1646,11 +1646,11 @@ function buildInstantClientAppFromContext(
           <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
           <h1 class="text-lg font-extrabold text-white">ProScan Live Wi-Fi &amp; Nearby Network Discovery Suite</h1>
         </div>
-        <p class="text-xs text-slate-400 mt-1">Active Context Application · Sweeps 2.4 GHz, 5 GHz &amp; 6 GHz Access Points (SSID, BSSID MAC, RSSI dBm, Channel &amp; WPA3 Security)</p>
+        <p class="text-xs text-slate-400 mt-1">Active Context Application Â· Sweeps 2.4 GHz, 5 GHz &amp; 6 GHz Access Points (SSID, BSSID MAC, RSSI dBm, Channel &amp; WPA3 Security)</p>
       </div>
       <div class="flex items-center gap-2.5">
         <button id="scanWifiNowBtn" type="button" class="px-5 py-2.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-xs cursor-pointer shadow-lg">
-          📡 Scan Nearby Wi-Fi Now
+          ðŸ“¡ Scan Nearby Wi-Fi Now
         </button>
       </div>
     </div>
@@ -1669,7 +1669,7 @@ function buildInstantClientAppFromContext(
       </div>
       <div class="p-4 rounded-xl bg-slate-900 border border-slate-800">
         <div class="text-slate-400">Scanner Status</div>
-        <div id="statStatus" class="text-sm font-bold text-emerald-300 mt-1.5">● Live Sweep Complete</div>
+        <div id="statStatus" class="text-sm font-bold text-emerald-300 mt-1.5">â— Live Sweep Complete</div>
       </div>
     </div>
     <div class="rounded-2xl bg-slate-900 border border-slate-800 overflow-hidden shadow-xl">
@@ -1709,22 +1709,22 @@ function buildInstantClientAppFromContext(
           var tr = document.createElement('tr');
           tr.className = 'hover:bg-slate-800/60 transition';
           tr.innerHTML =
-            '<td class="py-3 px-4 font-bold text-white">📶 ' + n.ssid + '</td>' +
+            '<td class="py-3 px-4 font-bold text-white">ðŸ“¶ ' + n.ssid + '</td>' +
             '<td class="py-3 px-4 font-mono text-slate-300">' + n.bssid + '</td>' +
             '<td class="py-3 px-4 font-mono text-emerald-400 font-bold">' + n.rssi + ' dBm (' + n.quality + '%)</td>' +
-            '<td class="py-3 px-4 font-mono text-sky-300">' + n.band + ' · Ch ' + n.ch + '</td>' +
+            '<td class="py-3 px-4 font-mono text-sky-300">' + n.band + ' Â· Ch ' + n.ch + '</td>' +
             '<td class="py-3 px-4"><span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-slate-200 font-mono text-[11px]">' + n.sec + '</span></td>' +
             '<td class="py-3 px-4 text-right"><button type="button" class="inspect-btn px-3 py-1 rounded-lg bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold cursor-pointer">Inspect AP</button></td>';
           tr.querySelector('.inspect-btn').addEventListener('click', function() {
             banner.classList.remove('hidden');
-            banner.innerHTML = '✓ <strong>Connected / Inspected Access Point:</strong> <code>' + n.ssid + '</code> (' + n.bssid + ') · Signal: ' + n.rssi + ' dBm (' + n.quality + '%) · Band: ' + n.band + ' Channel ' + n.ch + ' · Security: ' + n.sec;
+            banner.innerHTML = 'âœ“ <strong>Connected / Inspected Access Point:</strong> <code>' + n.ssid + '</code> (' + n.bssid + ') Â· Signal: ' + n.rssi + ' dBm (' + n.quality + '%) Â· Band: ' + n.band + ' Channel ' + n.ch + ' Â· Security: ' + n.sec;
           });
           tbody.appendChild(tr);
         });
       }
       document.getElementById('scanWifiNowBtn').addEventListener('click', function() {
         var st = document.getElementById('statStatus');
-        st.textContent = '⏳ Scanning 2.4 / 5 / 6 GHz Channels...';
+        st.textContent = 'â³ Scanning 2.4 / 5 / 6 GHz Channels...';
         setTimeout(function() {
           nets.forEach(function(n) {
             var d = Math.floor(Math.random() * 5) - 2;
@@ -1733,7 +1733,7 @@ function buildInstantClientAppFromContext(
           });
           nets.sort(function(a, b) { return b.rssi - a.rssi; });
           document.getElementById('statBest').textContent = nets[0].rssi + ' dBm (' + nets[0].quality + '%)';
-          st.textContent = '● Live Sweep Updated (' + new Date().toLocaleTimeString() + ')';
+          st.textContent = 'â— Live Sweep Updated (' + new Date().toLocaleTimeString() + ')';
           render();
         }, 350);
       });
@@ -1752,7 +1752,7 @@ function buildInstantClientAppFromContext(
     )
   ) {
     return {
-      title: `Interactive Game Arena — ${cleanQ.slice(0, 42)}`,
+      title: `Interactive Game Arena â€” ${cleanQ.slice(0, 42)}`,
       html: `<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
@@ -1766,7 +1766,7 @@ function buildInstantClientAppFromContext(
     <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-800 pb-4">
       <div>
         <h1 class="text-lg font-extrabold text-white">${safeTitle}</h1>
-        <p class="text-xs text-slate-400 mt-0.5">Full-Screen Interactive Game Preview · Context: "${safeQuery}"</p>
+        <p class="text-xs text-slate-400 mt-0.5">Full-Screen Interactive Game Preview Â· Context: "${safeQuery}"</p>
       </div>
       <div class="flex items-center gap-2.5 text-xs font-mono">
         <span id="scoreBadge" class="px-3 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-bold">You (X): 0 | AI (O): 0</span>
@@ -1774,7 +1774,7 @@ function buildInstantClientAppFromContext(
       </div>
     </div>
     <div id="statusBox" class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-sm text-emerald-300 font-semibold text-center">
-      Your Turn (X) — Click any square below to play!
+      Your Turn (X) â€” Click any square below to play!
     </div>
     <div id="gridBoard" class="grid grid-cols-3 gap-3 max-w-sm mx-auto py-2"></div>
   </div>
@@ -1803,30 +1803,30 @@ function buildInstantClientAppFromContext(
         board[i] = 'X';
         if (won(board, 'X')) {
           pScore++; over = true;
-          status.textContent = '🎉 You Won this Match! Click "New Match" to play again.';
+          status.textContent = 'ðŸŽ‰ You Won this Match! Click "New Match" to play again.';
           badge.textContent = 'You (X): ' + pScore + ' | AI (O): ' + aScore;
           draw(); return;
         }
         var empty = board.map(function(v, idx){ return v===''?idx:-1; }).filter(function(idx){ return idx!==-1; });
         if (!empty.length) {
           over = true;
-          status.textContent = '🤝 Draw Game! Click "New Match" for a rematch.';
+          status.textContent = 'ðŸ¤ Draw Game! Click "New Match" for a rematch.';
           draw(); return;
         }
         var pick = empty.indexOf(4) !== -1 ? 4 : empty[Math.floor(Math.random() * empty.length)];
         board[pick] = 'O';
         if (won(board, 'O')) {
           aScore++; over = true;
-          status.textContent = '⚡ AI Engine Won! Click "New Match" to challenge again.';
+          status.textContent = 'âš¡ AI Engine Won! Click "New Match" to challenge again.';
           badge.textContent = 'You (X): ' + pScore + ' | AI (O): ' + aScore;
         } else {
-          status.textContent = 'Your Turn (X) — Choose your next square!';
+          status.textContent = 'Your Turn (X) â€” Choose your next square!';
         }
         draw();
       }
       document.getElementById('newGameBtn').addEventListener('click', function() {
         board = ['','','','','','','','','']; over = false;
-        status.textContent = 'New Match Started — Your Turn (X)!';
+        status.textContent = 'New Match Started â€” Your Turn (X)!';
         draw();
       });
       draw();
@@ -1854,7 +1854,7 @@ function buildInstantClientAppFromContext(
     const safeCity = defaultCity.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
     return {
-      title: `Live Weather & 5-Day Forecast Application — ${defaultCity}`,
+      title: `Live Weather & 5-Day Forecast Application â€” ${defaultCity}`,
       html: `<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
@@ -1867,7 +1867,7 @@ function buildInstantClientAppFromContext(
   <div class="max-w-4xl mx-auto rounded-2xl bg-slate-900 border border-sky-500/40 p-6 shadow-2xl space-y-6">
     <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-800 pb-4">
       <div>
-        <h1 class="text-xl font-extrabold text-white">☀️ Live Interactive Weather &amp; 5-Day Forecast Station</h1>
+        <h1 class="text-xl font-extrabold text-white">â˜€ï¸ Live Interactive Weather &amp; 5-Day Forecast Station</h1>
         <p class="text-xs text-slate-400 mt-1">Generated from Context: "${safeQuery}"</p>
       </div>
       <div class="flex items-center gap-2">
@@ -1882,15 +1882,15 @@ function buildInstantClientAppFromContext(
       </div>
       <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
         <div class="text-slate-400">Temperature</div>
-        <div id="wTemp" class="text-2xl font-extrabold text-emerald-400 font-mono mt-1">21°C / 70°F</div>
+        <div id="wTemp" class="text-2xl font-extrabold text-emerald-400 font-mono mt-1">21Â°C / 70Â°F</div>
       </div>
       <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
         <div class="text-slate-400">Sky Condition</div>
-        <div id="wCond" class="text-sm font-bold text-sky-300 mt-1.5">⛅ Partly Sunny</div>
+        <div id="wCond" class="text-sm font-bold text-sky-300 mt-1.5">â›… Partly Sunny</div>
       </div>
       <div class="p-4 rounded-xl bg-slate-950 border border-slate-800">
         <div class="text-slate-400">Humidity &amp; Wind</div>
-        <div id="wWind" class="text-sm font-bold text-amber-300 font-mono mt-1.5">56% · 14 km/h</div>
+        <div id="wWind" class="text-sm font-bold text-amber-300 font-mono mt-1.5">56% Â· 14 km/h</div>
       </div>
     </div>
     <div id="forecastRow" class="grid grid-cols-2 sm:grid-cols-5 gap-2.5 text-xs"></div>
@@ -1898,14 +1898,14 @@ function buildInstantClientAppFromContext(
   <script>
     (function() {
       var days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
-      var conds = ['☀️ Sunny', '⛅ Partly Cloudy', '🌤️ Clear Breeze', '🌦️ Light Shower', '🌞 Warm'];
+      var conds = ['â˜€ï¸ Sunny', 'â›… Partly Cloudy', 'ðŸŒ¤ï¸ Clear Breeze', 'ðŸŒ¦ï¸ Light Shower', 'ðŸŒž Warm'];
       function update(city) {
         document.getElementById('wCity').textContent = city;
         var baseC = Math.floor(15 + Math.random() * 14);
         var baseF = Math.round(baseC * 9 / 5 + 32);
-        document.getElementById('wTemp').textContent = baseC + '°C / ' + baseF + '°F';
+        document.getElementById('wTemp').textContent = baseC + 'Â°C / ' + baseF + 'Â°F';
         document.getElementById('wCond').textContent = conds[Math.floor(Math.random() * conds.length)];
-        document.getElementById('wWind').textContent = Math.floor(42 + Math.random() * 35) + '% · ' + Math.floor(8 + Math.random() * 16) + ' km/h';
+        document.getElementById('wWind').textContent = Math.floor(42 + Math.random() * 35) + '% Â· ' + Math.floor(8 + Math.random() * 16) + ' km/h';
         var row = document.getElementById('forecastRow');
         row.innerHTML = '';
         days.forEach(function(d, idx) {
@@ -1914,7 +1914,7 @@ function buildInstantClientAppFromContext(
           card.className = 'p-3.5 rounded-xl bg-slate-950 border border-slate-800 text-center space-y-1';
           card.innerHTML =
             '<div class="font-bold text-slate-300">' + d + '</div>' +
-            '<div class="text-lg font-extrabold text-emerald-400 font-mono">' + c + '°C</div>' +
+            '<div class="text-lg font-extrabold text-emerald-400 font-mono">' + c + 'Â°C</div>' +
             '<div class="text-[11px] text-sky-300">' + conds[idx % conds.length] + '</div>';
           row.appendChild(card);
         });
@@ -1936,7 +1936,7 @@ function buildInstantClientAppFromContext(
     .replace(/#{1,4}\s+/g, "")
     .replace(/\*\*/g, "")
     .split(/\n+/)
-    .map((line) => line.replace(/^[-*•\d.)+\s]+/, "").trim())
+    .map((line) => line.replace(/^[-*â€¢\d.)+\s]+/, "").trim())
     .filter((line) => line.length > 18)
     .slice(0, 6);
 
@@ -1976,7 +1976,7 @@ function buildInstantClientAppFromContext(
         <p class="text-xs text-slate-400 mt-1">Interactive Full-Screen Application Generated from Conversation Context: "${safeQuery}"</p>
       </div>
       <span class="px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-bold font-mono">
-        ● Live Interactive Mode
+        â— Live Interactive Mode
       </span>
     </div>
 
@@ -1990,10 +1990,10 @@ function buildInstantClientAppFromContext(
           <input id="appTestInput" type="text" value="${safeQuery}" placeholder="Enter parameter or command to test..." class="w-full px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-700 text-sm text-white focus:outline-none focus:border-emerald-400" />
           <div class="flex flex-wrap items-center gap-2.5 pt-1">
             <button id="runTestBtn" type="button" class="px-5 py-2.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-xs cursor-pointer shadow-lg transition">
-              ▶ Run &amp; Test Application Now
+              â–¶ Run &amp; Test Application Now
             </button>
             <button id="simStepBtn" type="button" class="px-4 py-2.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-xs cursor-pointer transition">
-              ⚡ Execute Next Context Step
+              âš¡ Execute Next Context Step
             </button>
             <button id="resetAppBtn" type="button" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-xs border border-slate-700 cursor-pointer transition">
               Reset
@@ -2002,8 +2002,8 @@ function buildInstantClientAppFromContext(
         </div>
 
         <div id="liveConsoleBox" class="p-4 rounded-xl bg-slate-950 border border-emerald-500/40 text-xs space-y-2 font-mono">
-          <div class="text-emerald-400 font-bold">● Live Application Output Console:</div>
-          <div id="liveConsoleText" class="text-slate-200 leading-relaxed">Application initialized from your conversation context. Click "▶ Run &amp; Test Application Now" or any module on the right to test live.</div>
+          <div class="text-emerald-400 font-bold">â— Live Application Output Console:</div>
+          <div id="liveConsoleText" class="text-slate-200 leading-relaxed">Application initialized from your conversation context. Click "â–¶ Run &amp; Test Application Now" or any module on the right to test live.</div>
         </div>
       </div>
 
@@ -2031,7 +2031,7 @@ function buildInstantClientAppFromContext(
         btn.innerHTML = '<span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono font-bold">#' + (i + 1) + '</span><span class="flex-1">' + m.replace(/</g, '&lt;') + '</span>';
         btn.addEventListener('click', function() {
           runCount++;
-          consoleText.innerHTML = '✓ <strong>Module #' + (i + 1) + ' Executed (Run #' + runCount + ' at ' + new Date().toLocaleTimeString() + '):</strong><br/>' + m.replace(/</g, '&lt;');
+          consoleText.innerHTML = 'âœ“ <strong>Module #' + (i + 1) + ' Executed (Run #' + runCount + ' at ' + new Date().toLocaleTimeString() + '):</strong><br/>' + m.replace(/</g, '&lt;');
         });
         listEl.appendChild(btn);
       });
@@ -2039,13 +2039,13 @@ function buildInstantClientAppFromContext(
       document.getElementById('runTestBtn').addEventListener('click', function() {
         runCount++;
         var val = inp.value.trim() || 'Default Context Input';
-        consoleText.innerHTML = '✓ <strong>Application Executed (#' + runCount + ' at ' + new Date().toLocaleTimeString() + '):</strong><br/>Active Parameter: <code>' + val.replace(/</g, '&lt;') + '</code><br/>Status: All ' + modules.length + ' context modules verified and active.';
+        consoleText.innerHTML = 'âœ“ <strong>Application Executed (#' + runCount + ' at ' + new Date().toLocaleTimeString() + '):</strong><br/>Active Parameter: <code>' + val.replace(/</g, '&lt;') + '</code><br/>Status: All ' + modules.length + ' context modules verified and active.';
       });
 
       document.getElementById('simStepBtn').addEventListener('click', function() {
         var m = modules[stepIdx % modules.length];
         stepIdx++;
-        consoleText.innerHTML = '⚡ <strong>Step #' + ((stepIdx - 1) % modules.length + 1) + ' Verified (' + new Date().toLocaleTimeString() + '):</strong><br/>' + m.replace(/</g, '&lt;');
+        consoleText.innerHTML = 'âš¡ <strong>Step #' + ((stepIdx - 1) % modules.length + 1) + ' Verified (' + new Date().toLocaleTimeString() + '):</strong><br/>' + m.replace(/</g, '&lt;');
       });
 
       document.getElementById('resetAppBtn').addEventListener('click', function() {
@@ -2089,7 +2089,7 @@ function buildUniversalCrossPlatformDownloadHtml(
   const manifestObj = {
     name: cleanTitle,
     short_name: cleanTitle.slice(0, 24),
-    description: `${cleanTitle} — Universal Self-Executing Application (Windows, macOS, Android, iOS Safari, Linux)`,
+    description: `${cleanTitle} â€” Universal Self-Executing Application (Windows, macOS, Android, iOS Safari, Linux)`,
     start_url: ".",
     display: "standalone",
     background_color: "#020617",
@@ -2110,7 +2110,7 @@ function buildUniversalCrossPlatformDownloadHtml(
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
-  <title>${safeTitle} — Universal Executable Application</title>
+  <title>${safeTitle} â€” Universal Executable Application</title>
 
   <!-- iOS / iPadOS Safari Standalone Web App Support -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -2160,19 +2160,19 @@ function buildUniversalCrossPlatformDownloadHtml(
       <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
       <span class="font-extrabold text-xs sm:text-sm text-white truncate">${safeTitle}</span>
       <span id="detectedEnvBadge" class="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 shrink-0">
-        ✓ Auto-Executing (All Environments Ready)
+        âœ“ Auto-Executing (All Environments Ready)
       </span>
     </div>
 
     <div class="flex flex-wrap items-center gap-2">
       <button id="oneClickNativeLauncherBtn" type="button" class="px-3 py-1.5 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-xs cursor-pointer shadow-md transition">
-        ⚡ Create 1-Click Desktop / Mobile Icon
+        âš¡ Create 1-Click Desktop / Mobile Icon
       </button>
       <button id="fullscreenToggleBtn" type="button" class="px-3 py-1.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-extrabold text-xs cursor-pointer shadow-md transition">
-        ⛶ Full Screen Mode
+        â›¶ Full Screen Mode
       </button>
       <button onclick="window.location.reload()" type="button" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 font-semibold text-xs cursor-pointer">
-        ↻ Restart App
+        â†» Restart App
       </button>
     </div>
   </div>
@@ -2180,9 +2180,9 @@ function buildUniversalCrossPlatformDownloadHtml(
   <!-- Zero-Knowledge Auto-Instruction Toast (Dismissible) -->
   <div id="universalGuideBanner" class="bg-emerald-950/80 border-b border-emerald-500/30 px-4 py-1.5 flex items-center justify-between gap-2 text-xs text-emerald-200 shrink-0">
     <span id="universalGuideText">
-      ✓ <strong>Auto-Executed Successfully:</strong> This application is pre-configured and running automatically on your device (Windows, macOS, Android, iOS Safari, or Linux). Just click &amp; use below!
+      âœ“ <strong>Auto-Executed Successfully:</strong> This application is pre-configured and running automatically on your device (Windows, macOS, Android, iOS Safari, or Linux). Just click &amp; use below!
     </span>
-    <button onclick="document.getElementById('universalGuideBanner').style.display='none'" type="button" class="text-emerald-300 hover:text-white font-bold px-2 cursor-pointer">✕</button>
+    <button onclick="document.getElementById('universalGuideBanner').style.display='none'" type="button" class="text-emerald-300 hover:text-white font-bold px-2 cursor-pointer">âœ•</button>
   </div>
 
   <!-- Live Application Execution Canvas -->
@@ -2206,7 +2206,7 @@ function buildUniversalCrossPlatformDownloadHtml(
 
       var badge = document.getElementById('detectedEnvBadge');
       if (badge) {
-        badge.textContent = '✓ Running on ' + platform;
+        badge.textContent = 'âœ“ Running on ' + platform;
       }
 
       var deferredPrompt = null;
@@ -2238,11 +2238,11 @@ function buildUniversalCrossPlatformDownloadHtml(
           if (guide && guideText) {
             guide.style.display = 'flex';
             if (platform.indexOf('iOS') !== -1 || platform.indexOf('Safari') !== -1) {
-              guideText.innerHTML = '📱 <strong>iOS / Safari 1-Tap App Icon:</strong> Tap the <strong>Share</strong> button in Safari and select <strong>"Add to Home Screen"</strong> (or on Mac/Windows, double-click this downloaded file anytime to run immediately).';
+              guideText.innerHTML = 'ðŸ“± <strong>iOS / Safari 1-Tap App Icon:</strong> Tap the <strong>Share</strong> button in Safari and select <strong>"Add to Home Screen"</strong> (or on Mac/Windows, double-click this downloaded file anytime to run immediately).';
             } else if (platform.indexOf('Android') !== -1) {
-              guideText.innerHTML = '🤖 <strong>Android 1-Tap App Icon:</strong> Tap the browser menu <strong>(⋮) → Add to Home screen / Install app</strong>, or open this downloaded file anytime to run offline &amp; online.';
+              guideText.innerHTML = 'ðŸ¤– <strong>Android 1-Tap App Icon:</strong> Tap the browser menu <strong>(â‹®) â†’ Add to Home screen / Install app</strong>, or open this downloaded file anytime to run offline &amp; online.';
             } else {
-              guideText.innerHTML = '💻 <strong>Windows / Mac Instant Execution:</strong> This downloaded file (<code>${filename}</code>) is already a standalone executable! Double-click it anytime from your Downloads or Desktop folder to launch immediately.';
+              guideText.innerHTML = 'ðŸ’» <strong>Windows / Mac Instant Execution:</strong> This downloaded file (<code>${filename}</code>) is already a standalone executable! Double-click it anytime from your Downloads or Desktop folder to launch immediately.';
             }
           }
         });
@@ -2329,7 +2329,7 @@ function hydrateMirroredSnapshotToLocalStorage(snapshot: any): void {
 hydrateMirroredSnapshotToLocalStorage(mirroredKeyStateJson);
 
 export default function App() {
-  // 10 AI Engine Slots (Left Sidebar) — Zero-Divergence Cloning + Isolated Session Persistence
+  // 10 AI Engine Slots (Left Sidebar) â€” Zero-Divergence Cloning + Isolated Session Persistence
   const [models, setModels] = useState<string[]>(() => {
     try {
       const savedIsolated = localStorage.getItem(ENGINE_SLOTS_STORAGE_KEY);
@@ -2581,7 +2581,7 @@ export default function App() {
   const [previewTab, setPreviewTab] = useState<"live" | "code">("live");
   const [previewReloadKey, setPreviewReloadKey] = useState<number>(0);
 
-  // Admin Authentication & 1-Click Force-Deploy State (https://github.com/malazhub/key & https://malazhub.github.io/key/)
+  // Admin Authentication & 1-Click Force-Deploy State (https://github.com/malazhub/key1 & https://malazhub.github.io/key1/)
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState<boolean>(
     () => {
       try {
@@ -2989,7 +2989,7 @@ export default function App() {
     }
   }, [target]);
 
-  // Direct Launcher for Live AI Key Entry Point (https://malazhub.github.io/key/) & Force-Deploy Portal
+  // Direct Launcher for Live AI Key Entry Point (https://malazhub.github.io/key1/) & Force-Deploy Portal
   const launchLiveAiKeyEntry = useCallback(() => {
     try {
       window.open(PRIMARY_AI_KEY_LIVE_URL, "_blank", "noopener,noreferrer");
@@ -2998,14 +2998,14 @@ export default function App() {
     }
     const portalHtml = buildClientKey1ZeroDivergenceHtml();
     saveCumulativeBuildState(
-      "Key — Direct GitHub Force-Deploy & Live AI Key Portal (https://malazhub.github.io/key/)",
+      "Key â€” Direct GitHub Force-Deploy & Live AI Key Portal (https://malazhub.github.io/key1/)",
       portalHtml
     );
     setPreviewTab("live");
     setPreviewReloadKey((k) => k + 1);
     setActivePreviewModal({
       title:
-        "Key — Direct GitHub Force-Deploy & Live AI Key Portal (https://malazhub.github.io/key/)",
+        "Key â€” Direct GitHub Force-Deploy & Live AI Key Portal (https://malazhub.github.io/key1/)",
       html: portalHtml,
       versionTag: "key",
       repoUrl: PRIMARY_GITHUB_REPO_URL,
@@ -3209,7 +3209,7 @@ export default function App() {
     setAdminLoginError(null);
   };
 
-  // Admit / Commit Admin Upgrade directly to https://github.com/malazhub/key
+  // Admit / Commit Admin Upgrade directly to https://github.com/malazhub/key1
   const handleAdmitAdminUpgrade = async (upgradeData?: {
     taskDescription: string;
     summary: string;
@@ -3237,7 +3237,7 @@ export default function App() {
         setAdminVersions(Array.isArray(data.versions) ? data.versions : []);
         setPendingAdminUpgrade(null);
         setAdminBannerNote(
-          "Direct Force-Deploy Complete: Pushed Key structure to https://github.com/malazhub/key (Live Entry Point: https://malazhub.github.io/key/)."
+          "Direct Force-Deploy Complete: Pushed Key structure to https://github.com/malazhub/key1 (Live Entry Point: https://malazhub.github.io/key1/)."
         );
       }
     } catch (e) {
@@ -3282,11 +3282,11 @@ export default function App() {
           setGithubDeviceAuth(null);
           setAdminDeploying(false);
           const pushedCount = Number(data.pushedCount) || 21;
-          const repoUrl = data.repoUrl || "https://github.com/malazhub/key";
+          const repoUrl = data.repoUrl || "https://github.com/malazhub/key1";
           const actionsUrl =
-            data.actionsUrl || "https://github.com/malazhub/key/actions";
+            data.actionsUrl || "https://github.com/malazhub/key1/actions";
           const liveDeployUrl =
-            data.liveDeployUrl || "https://malazhub.github.io/key/";
+            data.liveDeployUrl || "https://malazhub.github.io/key1/";
           const commitSha = data.commitSha || "main";
           const deployedAt = data.deployedAt || new Date().toISOString();
           const pushedFiles = Array.isArray(data.pushedFiles)
@@ -3309,7 +3309,7 @@ export default function App() {
     return () => clearInterval(timer);
   }, [githubDeviceAuth]);
 
-  // Build exact live snapshot of the current Key workspace for 1:1 mirroring to GitHub (https://github.com/malazhub/key & https://malazhub.github.io/key/)
+  // Build exact live snapshot of the current Key workspace for 1:1 mirroring to GitHub (https://github.com/malazhub/key1 & https://malazhub.github.io/key1/)
   const buildLiveMirroredStateSnapshot = useCallback(() => {
     return {
       uiState: {
@@ -3494,7 +3494,7 @@ export default function App() {
     }
   }, [buildLiveMirroredStateSnapshot, applyIncomingMirroredSnapshot]);
 
-  // 1-Click Automated Full Structure Force-Deploy to https://github.com/malazhub/key
+  // 1-Click Automated Full Structure Force-Deploy to https://github.com/malazhub/key1
   const handleOneClickAdminDeploy = useCallback(
     async (overrideToken?: string) => {
       if (adminDeploying) return;
@@ -3590,11 +3590,11 @@ export default function App() {
         if (res.ok && data.success) {
           setGithubDeviceAuth(null);
           const pushedCount = Number(data.pushedCount) || 21;
-          const repoUrl = data.repoUrl || "https://github.com/malazhub/key";
+          const repoUrl = data.repoUrl || "https://github.com/malazhub/key1";
           const actionsUrl =
-            data.actionsUrl || "https://github.com/malazhub/key/actions";
+            data.actionsUrl || "https://github.com/malazhub/key1/actions";
           const liveDeployUrl =
-            data.liveDeployUrl || "https://malazhub.github.io/key/";
+            data.liveDeployUrl || "https://malazhub.github.io/key1/";
           const commitSha = data.commitSha || "main";
           const deployedAt = data.deployedAt || new Date().toISOString();
           const pushedFiles = Array.isArray(data.pushedFiles)
@@ -3629,7 +3629,7 @@ export default function App() {
     [adminDeploying, manualGithubTokenInput, buildLiveMirroredStateSnapshot]
   );
 
-  // Forward PC Keyboard Arrow Keys (↑ ↓ ← →) and Q (Horn) to any active Car Simulation iframe when not typing in an input/textarea
+  // Forward PC Keyboard Arrow Keys (â†‘ â†“ â† â†’) and Q (Horn) to any active Car Simulation iframe when not typing in an input/textarea
   useEffect(() => {
     const forwardCarSimKey = (e: KeyboardEvent) => {
       const activeEl = document.activeElement;
@@ -3693,7 +3693,7 @@ export default function App() {
 
   const handleLaunchCarSimulationModal = useCallback(() => {
     const carTitle =
-      "UltraDrive 3D Pro — Real Street, Traffic, Buildings & V8 Motor Simulator (Windows 11 · Arrow Keys + Q Horn)";
+      "UltraDrive 3D Pro â€” Real Street, Traffic, Buildings & V8 Motor Simulator (Windows 11 Â· Arrow Keys + Q Horn)";
     const carHtml = buildUltraCarSimulationPortalHtml();
     saveCumulativeBuildState(carTitle, carHtml);
     setPreviewTab("live");
@@ -4033,7 +4033,7 @@ export default function App() {
       return;
     }
 
-    // Direct repository targeting: all deployments target https://github.com/malazhub/key without authentication gates
+    // Direct repository targeting: all deployments target https://github.com/malazhub/key1 without authentication gates
     const effectiveAdminMode = isAdminAuthenticated;
 
     setErrorBanner(null);
@@ -4061,7 +4061,7 @@ export default function App() {
               ...t,
               title:
                 t.messages.length === 0
-                  ? queryText.slice(0, 42) + (queryText.length > 42 ? "…" : "")
+                  ? queryText.slice(0, 42) + (queryText.length > 42 ? "â€¦" : "")
                   : t.title,
               updatedAt: nowTime,
               messages: updatedMessages,
@@ -4486,9 +4486,9 @@ export default function App() {
       if (data.autoDeployResult && data.autoDeployResult.success) {
         setGithubDeviceAuth(null);
         setAdminDeployResult({
-          repoUrl: data.autoDeployResult.repoUrl || "https://github.com/malazhub/key",
-          actionsUrl: data.autoDeployResult.actionsUrl || "https://github.com/malazhub/key/actions",
-          liveDeployUrl: data.autoDeployResult.liveDeployUrl || "https://malazhub.github.io/key/",
+          repoUrl: data.autoDeployResult.repoUrl || "https://github.com/malazhub/key1",
+          actionsUrl: data.autoDeployResult.actionsUrl || "https://github.com/malazhub/key1/actions",
+          liveDeployUrl: data.autoDeployResult.liveDeployUrl || "https://malazhub.github.io/key1/",
           pushedCount: Number(data.autoDeployResult.pushedCount) || 21,
           commitSha: data.autoDeployResult.commitSha || "main",
           deployedAt: data.autoDeployResult.deployedAt || new Date().toISOString(),
@@ -4606,7 +4606,7 @@ export default function App() {
         content: isGreeting
           ? clientRel.savedPairsCount === 0
             ? `Hello! Welcome to **Key Multi-AI Consensus**. All **${activeModels.length} active AI engines** are online and synchronized with the **Full-History Indexing Engine** and **Working Memory Ledger**.\n\nHow can I help you today?`
-            : `Hello again! (Turn **#${clientRel.savedPairsCount + 1}** in our continuous session — cross-referenced against **${clientRel.savedPairsCount}** prior turn${clientRel.savedPairsCount > 1 ? "s" : ""} in the **Working Memory Ledger**). What topic or task would you like us to work on next?`
+            : `Hello again! (Turn **#${clientRel.savedPairsCount + 1}** in our continuous session â€” cross-referenced against **${clientRel.savedPairsCount}** prior turn${clientRel.savedPairsCount > 1 ? "s" : ""} in the **Working Memory Ledger**). What topic or task would you like us to work on next?`
           : `### Response to "${queryText}" (Turn #${clientRel.savedPairsCount + 1})\n\nAll **${activeModels.length} active AI engines** (${activeModels.join(", ")}) cross-referenced your session history (${clientRel.savedPairsCount} prior turns in the Working Memory Ledger) and converged at **${achieved}% agreement**.`,
         timestamp: new Date().toLocaleTimeString([], {
           hour: "2-digit",
@@ -4693,7 +4693,7 @@ export default function App() {
       <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">Full-Screen Application Preview</span>
     </div>
     <button onclick="window.close()" type="button" class="px-4 py-1.5 rounded-xl bg-rose-500 hover:bg-rose-400 text-slate-950 font-extrabold text-xs cursor-pointer shadow-md">
-      ✕ Close Application &amp; Return to Previous
+      âœ• Close Application &amp; Return to Previous
     </button>
   </div>
   <iframe srcdoc="${enhanced
@@ -5171,7 +5171,7 @@ export default function App() {
               target="_blank"
               rel="noopener noreferrer"
               className="text-base font-bold tracking-tight text-white whitespace-nowrap flex items-center gap-2"
-              title="Primary Entry Point: https://malazhub.github.io/key/"
+              title="Primary Entry Point: https://malazhub.github.io/key1/"
             >
               <span id="keyHeaderTitleText">
                 {headerTitleColors.length > 0
@@ -5193,7 +5193,7 @@ export default function App() {
                   id="keyHeaderUrlBadge"
                   className="text-[11px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/50 text-emerald-300"
                 >
-                  https://malazhub.github.io/key/
+                  https://malazhub.github.io/key1/
                 </span>
               )}
             </a>
@@ -5204,7 +5204,7 @@ export default function App() {
         </header>
       )}
 
-      {/* ≥ 80% Cloud Storage Notification Alert Banner for Signed-In Users */}
+      {/* â‰¥ 80% Cloud Storage Notification Alert Banner for Signed-In Users */}
       {isOver80Percent && !dismissed80Alert && (
         <div className="shrink-0 bg-amber-500/15 border-b border-amber-500/40 px-4 lg:px-6 py-2.5 flex flex-wrap items-center justify-between gap-3 text-xs z-20">
           <div className="flex items-center gap-2 text-amber-200">
@@ -5212,8 +5212,8 @@ export default function App() {
             <span>
               <strong>Storage Alert ({usagePercent}% Used):</strong> Your
               signed-in cloud history space has reached{" "}
-              <strong className="font-mono">{usagePercent}%</strong> (≥ 80%
-              threshold — {formatBytes(usedBytes)} of {formatBytes(quotaBytes)}
+              <strong className="font-mono">{usagePercent}%</strong> (â‰¥ 80%
+              threshold â€” {formatBytes(usedBytes)} of {formatBytes(quotaBytes)}
               ). Please clean old conversations to free up cloud space.
             </span>
           </div>
@@ -5298,7 +5298,7 @@ export default function App() {
                       className="px-2.5 py-1.5 text-xs font-semibold text-slate-200 bg-slate-950 border border-slate-700/80 rounded-lg hover:bg-slate-800 transition-colors whitespace-nowrap cursor-pointer flex items-center gap-1.5"
                     >
                       <UserIcon className="w-3.5 h-3.5 text-sky-400" />
-                      <span>Guest · Sign In</span>
+                      <span>Guest Â· Sign In</span>
                     </button>
                   )}
 
@@ -5409,7 +5409,7 @@ export default function App() {
                               aria-label={`Select engine for Engine #${idx + 1}`}
                               className="px-2 py-1 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded text-[11px] text-slate-300 shrink-0 cursor-pointer"
                             >
-                              ▼
+                              â–¼
                             </button>
                           </div>
 
@@ -5451,11 +5451,11 @@ export default function App() {
                                     How to write engine format / URL:
                                   </div>
                                   <div>
-                                    • Name: Provider / Model (e.g. OpenAI/o3)
+                                    â€¢ Name: Provider / Model (e.g. OpenAI/o3)
                                   </div>
-                                  <div>• Web URL: https://chat.openai.com</div>
+                                  <div>â€¢ Web URL: https://chat.openai.com</div>
                                   <div>
-                                    • API URL: https://api.deepseek.com/v1
+                                    â€¢ API URL: https://api.deepseek.com/v1
                                   </div>
                                 </div>
                               </div>
@@ -5473,7 +5473,7 @@ export default function App() {
                                   className="w-full text-left px-2 py-1.5 mb-1 rounded bg-slate-950/90 hover:bg-rose-950/50 border border-slate-800 hover:border-rose-700/60 text-xs text-slate-400 hover:text-rose-200 flex items-center justify-between gap-1 cursor-pointer transition-colors"
                                 >
                                   <span className="italic">
-                                    [ Empty Space — Clear Engine #{idx + 1} ]
+                                    [ Empty Space â€” Clear Engine #{idx + 1} ]
                                   </span>
                                   <span className="text-[10px] font-mono text-slate-500">
                                     Empty
@@ -5617,7 +5617,7 @@ export default function App() {
                     {adminDeployResult && !githubDeviceAuth && (
                       <div className="space-y-1.5">
                         <div className="text-center font-mono text-[11px] text-emerald-400 py-1 bg-emerald-500/10 rounded-lg border border-emerald-500/30">
-                          ✓ Deployed ({adminDeployResult.commitSha})
+                          âœ“ Deployed ({adminDeployResult.commitSha})
                         </div>
                         <div className="grid grid-cols-2 gap-1.5 text-[11px]">
                           <a
@@ -5905,7 +5905,7 @@ export default function App() {
                           {msg.content}
                         </div>
                         <div className="text-[11px] text-slate-400 font-mono tabular-nums text-right">
-                          You · {msg.timestamp}
+                          You Â· {msg.timestamp}
                         </div>
                       </div>
                     </div>
@@ -5939,7 +5939,7 @@ export default function App() {
                         msg.groundingSources.length > 0 && (
                           <div className="rounded-xl bg-slate-950/90 border border-slate-800 p-3 space-y-2 text-xs">
                             <div className="font-semibold text-sky-400 flex items-center gap-1.5">
-                              <span>🌐 Live Google Search Grounding Sources:</span>
+                              <span>ðŸŒ Live Google Search Grounding Sources:</span>
                             </div>
                             <div className="flex flex-wrap gap-2">
                               {msg.groundingSources.map((src, sIdx) => (
@@ -5986,7 +5986,7 @@ export default function App() {
                                     </strong>
                                     , click{" "}
                                     <strong className="text-amber-300">
-                                      🚗 Car
+                                      ðŸš— Car
                                     </strong>{" "}
                                     or{" "}
                                     <strong className="text-sky-300">
@@ -6010,7 +6010,7 @@ export default function App() {
                                     setActivePreviewModal({
                                       title:
                                         msg.appTitle ||
-                                        "Live Application — Full Screen",
+                                        "Live Application â€” Full Screen",
                                       html: msg.generatedAppHtml || "",
                                       isSyncingWithEngines: false,
                                     });
@@ -6018,7 +6018,7 @@ export default function App() {
                                   className="px-3.5 py-1.5 rounded-lg bg-sky-400 hover:bg-sky-300 text-slate-950 font-extrabold text-xs flex items-center gap-1.5 cursor-pointer shadow-md"
                                 >
                                   <Eye className="w-3.5 h-3.5" />
-                                  <span>Launch Full Screen ↗</span>
+                                  <span>Launch Full Screen â†—</span>
                                 </button>
                                 <button
                                   type="button"
@@ -6060,14 +6060,14 @@ export default function App() {
                                   setActivePreviewModal({
                                     title:
                                       msg.appTitle ||
-                                      "Interactive Application — Full Screen",
+                                      "Interactive Application â€” Full Screen",
                                     html: msg.generatedAppHtml || "",
                                     isSyncingWithEngines: false,
                                   });
                                 }}
                                 className="px-2.5 py-1 rounded-lg bg-sky-500/20 hover:bg-sky-500/30 border border-sky-500/40 text-sky-300 font-bold cursor-pointer"
                               >
-                                Expand Full Screen ↗
+                                Expand Full Screen â†—
                               </button>
                             </div>
                             <iframe
@@ -6087,10 +6087,10 @@ export default function App() {
                             {msg.achievedAgreement}% Matched Agreement
                           </span>
                           <span className="text-slate-600 hidden sm:inline">
-                            ·
+                            Â·
                           </span>
                           <span className="text-slate-400 font-mono tabular-nums hidden sm:inline">
-                            Desired ≥ {msg.targetAgreement}% (
+                            Desired â‰¥ {msg.targetAgreement}% (
                             {participating.length} AI Engines)
                           </span>
                         </div>
@@ -6142,7 +6142,7 @@ export default function App() {
                           <div className="flex flex-wrap items-center justify-between gap-2 pb-2.5 border-b border-slate-800/80">
                             <span className="font-semibold text-slate-200">
                               Iterative Multi-AI Loop (
-                              {msg.iterationsRequired || 2} Rounds to reach ≥{" "}
+                              {msg.iterationsRequired || 2} Rounds to reach â‰¥{" "}
                               {msg.targetAgreement}%)
                             </span>
                             <span className="font-mono tabular-nums text-emerald-400 font-semibold">
@@ -6156,15 +6156,15 @@ export default function App() {
                               <div className="flex flex-wrap items-center justify-between gap-2 text-[11px]">
                                 <span className="font-semibold text-amber-400">
                                   {msg.contextMode === "MERGED_WITH_SAVED"
-                                    ? "Context Matched Saved History → Merged Query Sent to New Engine Sessions"
-                                    : "New Unrelated Topic → Only New Query Sent to New Engine Sessions (Saved Cumulatively)"}
+                                    ? "Context Matched Saved History â†’ Merged Query Sent to New Engine Sessions"
+                                    : "New Unrelated Topic â†’ Only New Query Sent to New Engine Sessions (Saved Cumulatively)"}
                                 </span>
                                 <span className="font-mono tabular-nums text-slate-400">
                                   {typeof msg.historyMatchScore === "number" &&
                                     `History Match: ${msg.historyMatchScore}%`}
                                   {typeof msg.cumulativeSavedPairsCount ===
                                     "number" &&
-                                    ` · Saved Memory: ${msg.cumulativeSavedPairsCount} Q&A`}
+                                    ` Â· Saved Memory: ${msg.cumulativeSavedPairsCount} Q&A`}
                                 </span>
                               </div>
                               <div className="text-slate-200 font-medium">
@@ -6196,14 +6196,14 @@ export default function App() {
                                     <span className="text-slate-300">
                                       runId: <code>{normalizedRun.runId}</code>
                                     </span>
-                                    <span className="text-slate-500">·</span>
+                                    <span className="text-slate-500">Â·</span>
                                     <span>
-                                      Adapter: ConsensusRun → TelemetryNormalizer → UIViewModel
+                                      Adapter: ConsensusRun â†’ TelemetryNormalizer â†’ UIViewModel
                                     </span>
                                   </div>
                                   <span className="px-2 py-0.5 rounded bg-amber-500/15 border border-amber-500/30 text-amber-300 font-semibold">
                                     Separate Cost Estimate: {normalizedRun.cost.formattedUsd}{" "}
-                                    ({normalizedRun.cost.currency} · estimated)
+                                    ({normalizedRun.cost.currency} Â· estimated)
                                   </span>
                                 </div>
 
@@ -6248,7 +6248,7 @@ export default function App() {
                                   </div>
                                 </div>
 
-                                {/* KEY v3.0 — Autonomous Persistent Multi-Agent Engineering OS Control Plane */}
+                                {/* KEY v3.0 â€” Autonomous Persistent Multi-Agent Engineering OS Control Plane */}
                                 {normalizedRun.keyEngineeringOS && (
                                   <div className="mt-2 p-2.5 rounded-xl bg-slate-950/95 border border-emerald-500/35 space-y-2.5">
                                     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-1.5">
@@ -6260,11 +6260,11 @@ export default function App() {
                                           GOLDEN v{normalizedRun.keyEngineeringOS.goldenState.version} (@{normalizedRun.keyEngineeringOS.goldenState.commit})
                                         </span>
                                         <span className="px-2 py-0.5 rounded bg-amber-500/20 border border-amber-500/40 text-amber-300 font-mono text-[10px]">
-                                          Task: {normalizedRun.keyEngineeringOS.durableState.taskState.queryClass} · Scope: {normalizedRun.keyEngineeringOS.durableState.taskState.scope} · Risk: {normalizedRun.keyEngineeringOS.durableState.taskState.risk}
+                                          Task: {normalizedRun.keyEngineeringOS.durableState.taskState.queryClass} Â· Scope: {normalizedRun.keyEngineeringOS.durableState.taskState.scope} Â· Risk: {normalizedRun.keyEngineeringOS.durableState.taskState.risk}
                                         </span>
                                       </div>
                                       <span className="font-mono text-[10px] text-emerald-400 font-bold">
-                                        STATUS: {normalizedRun.keyEngineeringOS.finalResponseContract.status} · Tests: {normalizedRun.keyEngineeringOS.goldenState.tests} · Rollback: v{normalizedRun.keyEngineeringOS.goldenState.rollbackVersion}
+                                        STATUS: {normalizedRun.keyEngineeringOS.finalResponseContract.status} Â· Tests: {normalizedRun.keyEngineeringOS.goldenState.tests} Â· Rollback: v{normalizedRun.keyEngineeringOS.goldenState.rollbackVersion}
                                       </span>
                                     </div>
 
@@ -6313,7 +6313,7 @@ export default function App() {
                                           Immutable 13-Step Execution Journal &amp; Verification Gate ({normalizedRun.keyEngineeringOS.durableState.taskState.patchPolicy}):
                                         </span>
                                         <span>
-                                          Retrieval: {normalizedRun.keyEngineeringOS.taskLevelTelemetry.retrievalLatencyMs}ms · Synthesis: {normalizedRun.keyEngineeringOS.taskLevelTelemetry.synthesisLatencyMs}ms · Verify: {normalizedRun.keyEngineeringOS.taskLevelTelemetry.verificationLatencyMs}ms · Repairs: {normalizedRun.keyEngineeringOS.taskLevelTelemetry.repairCount}/3
+                                          Retrieval: {normalizedRun.keyEngineeringOS.taskLevelTelemetry.retrievalLatencyMs}ms Â· Synthesis: {normalizedRun.keyEngineeringOS.taskLevelTelemetry.synthesisLatencyMs}ms Â· Verify: {normalizedRun.keyEngineeringOS.taskLevelTelemetry.verificationLatencyMs}ms Â· Repairs: {normalizedRun.keyEngineeringOS.taskLevelTelemetry.repairCount}/3
                                         </span>
                                       </div>
                                       <div className="flex flex-wrap gap-1 text-[9px] font-mono">
@@ -6324,7 +6324,7 @@ export default function App() {
                                               title={`${j.phase}: ${j.detail} (${j.latencyMs}ms)`}
                                               className="px-1.5 py-0.5 rounded bg-slate-900 border border-emerald-500/30 text-emerald-300"
                                             >
-                                              {j.stepNumber}.{j.phase} ✓
+                                              {j.stepNumber}.{j.phase} âœ“
                                             </span>
                                           )
                                         )}
@@ -6333,7 +6333,7 @@ export default function App() {
                                   </div>
                                 )}
 
-                                {/* KEY v2.1 — Multi-Engine Orchestration & Adaptive Response Architecture */}
+                                {/* KEY v2.1 â€” Multi-Engine Orchestration & Adaptive Response Architecture */}
                                 {normalizedRun.adaptiveOrchestrationV21 && (
                                   <div className="mt-2 p-2.5 rounded-xl bg-slate-950/95 border border-cyan-500/35 space-y-2.5 text-[10px] font-mono">
                                     <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-1.5">
@@ -6349,7 +6349,7 @@ export default function App() {
                                         </span>
                                       </div>
                                       <span className="text-emerald-400 font-bold">
-                                        DoD: {normalizedRun.adaptiveOrchestrationV21.definitionOfDone.completionStatus} ✓
+                                        DoD: {normalizedRun.adaptiveOrchestrationV21.definitionOfDone.completionStatus} âœ“
                                       </span>
                                     </div>
 
@@ -6406,12 +6406,12 @@ export default function App() {
                                           History: {normalizedRun.adaptiveOrchestrationV21.contextPacket.relevant_history}
                                         </div>
                                         <div className="text-slate-400 truncate">
-                                          Depth: <span className="text-emerald-300">{normalizedRun.adaptiveOrchestrationV21.contextPacket.requested_depth}</span> · Fallback: {normalizedRun.adaptiveOrchestrationV21.dynamicFallbackRouting.activeNodes} nodes
+                                          Depth: <span className="text-emerald-300">{normalizedRun.adaptiveOrchestrationV21.contextPacket.requested_depth}</span> Â· Fallback: {normalizedRun.adaptiveOrchestrationV21.dynamicFallbackRouting.activeNodes} nodes
                                         </div>
                                       </div>
                                     </div>
 
-                                    {/* KEY v2.6 — 2026 OWASP & MITRE ATLAS Security & Resilience Taxonomy (Parts I–IV) */}
+                                    {/* KEY v2.6 â€” 2026 OWASP & MITRE ATLAS Security & Resilience Taxonomy (Parts Iâ€“IV) */}
                                     {normalizedRun.adaptiveOrchestrationV21.securityTaxonomy2026 && (
                                       <details className="group rounded-lg bg-slate-900/90 border border-rose-500/30 p-2.5 text-[10px] font-mono">
                                         <summary className="cursor-pointer flex flex-wrap items-center justify-between gap-2 select-none">
@@ -6420,7 +6420,7 @@ export default function App() {
                                               {normalizedRun.adaptiveOrchestrationV21.securityTaxonomy2026.version}
                                             </span>
                                             <span className="text-slate-200 font-bold">
-                                              2026 OWASP LLM/Agentic Top 10 &amp; MITRE ATLAS Matrix (Parts I–IV)
+                                              2026 OWASP LLM/Agentic Top 10 &amp; MITRE ATLAS Matrix (Parts Iâ€“IV)
                                             </span>
                                           </div>
                                           <div className="flex items-center gap-1.5">
@@ -6428,7 +6428,7 @@ export default function App() {
                                               {normalizedRun.adaptiveOrchestrationV21.securityTaxonomy2026.activeScanStatus}
                                             </span>
                                             <span className="text-slate-400 group-open:rotate-180 transition-transform">
-                                              ▼
+                                              â–¼
                                             </span>
                                           </div>
                                         </summary>
@@ -6451,7 +6451,7 @@ export default function App() {
                                                         Rec #{rec.recNumber}
                                                       </span>
                                                       <span className="text-[9px] text-emerald-300">
-                                                        ✓ TESTED
+                                                        âœ“ TESTED
                                                       </span>
                                                     </div>
                                                     <div className="text-slate-200 font-semibold leading-tight">
@@ -6469,7 +6469,7 @@ export default function App() {
                                           {/* Part II: 10 Standardized 2026 Additions */}
                                           <div className="space-y-1">
                                             <div className="text-rose-300 font-bold">
-                                              II. 10 Standardized 2026 Framework Additions (OWASP Agentic Top 10 &amp; MITRE ATLAS AML.0058–0062)
+                                              II. 10 Standardized 2026 Framework Additions (OWASP Agentic Top 10 &amp; MITRE ATLAS AML.0058â€“0062)
                                             </div>
                                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                                               {normalizedRun.adaptiveOrchestrationV21.securityTaxonomy2026.partIIStandardized2026Additions.map(
@@ -6530,10 +6530,10 @@ export default function App() {
                                             </div>
                                           </div>
 
-                                          {/* Part I: Retained & Amended Methods (A.1–A.12, B.11–B.22) */}
+                                          {/* Part I: Retained & Amended Methods (A.1â€“A.12, B.11â€“B.22) */}
                                           <div className="space-y-1">
                                             <div className="text-violet-300 font-bold">
-                                              I. Retained &amp; Amended Original Report Methods (A.1–A.12 &amp; B.11–B.22 · 25 Vectors)
+                                              I. Retained &amp; Amended Original Report Methods (A.1â€“A.12 &amp; B.11â€“B.22 Â· 25 Vectors)
                                             </div>
                                             <div className="grid grid-cols-1 sm:grid-cols-3 gap-1">
                                               {normalizedRun.adaptiveOrchestrationV21.securityTaxonomy2026.partIRetainedAndAmended.map(
@@ -6573,35 +6573,35 @@ export default function App() {
                               <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-2">
                                 <div className="flex flex-wrap items-center gap-2">
                                   <span className="px-2 py-0.5 rounded bg-violet-500/20 border border-violet-500/40 text-violet-300 font-mono text-[10px] font-bold">
-                                    {msg.metadata.memoryOS.architectureVersion || "KEY-MemOS-v3.0 (L0–L5)"}
+                                    {msg.metadata.memoryOS.architectureVersion || "KEY-MemOS-v3.0 (L0â€“L5)"}
                                   </span>
                                   <span className="px-2 py-0.5 rounded bg-amber-500/20 border border-amber-500/40 text-amber-300 font-mono text-[10px] font-bold">
-                                    {msg.metadata.memoryOS.goldenRuleFormula || "Qₜ ≠ WMₜ ≠ LTM ≠ ESₑ"}
+                                    {msg.metadata.memoryOS.goldenRuleFormula || "Qâ‚œ â‰  WMâ‚œ â‰  LTM â‰  ESâ‚‘"}
                                   </span>
                                   <span className="font-bold text-slate-200 text-[11px]">
                                     Ultra-Enhanced Self-Developing Memory Operating System
                                   </span>
                                 </div>
                                 <span className="font-mono text-[10px] text-emerald-300">
-                                  Do I need history? →{" "}
+                                  Do I need history? â†’{" "}
                                   <strong>
                                     {msg.metadata.memoryOS.memoryRouter
                                       .doINeedHistory
                                       ? "YES"
                                       : "NO (Isolated)"}
                                   </strong>{" "}
-                                  · Mode:{" "}
+                                  Â· Mode:{" "}
                                   {msg.metadata.memoryOS.memoryRouter.routingMode}
                                 </span>
                               </div>
 
-                              {/* 4 Foundational Layers: Qₜ ≠ WMₜ ≠ LTM ≠ ESₑ */}
+                              {/* 4 Foundational Layers: Qâ‚œ â‰  WMâ‚œ â‰  LTM â‰  ESâ‚‘ */}
                               {msg.metadata.memoryOS.foundationalLayers && (
                                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-[10px]">
                                   <div className="p-2 rounded-lg bg-slate-950/95 border border-sky-500/30 space-y-0.5">
                                     <div className="flex items-center justify-between font-mono">
                                       <span className="font-bold text-sky-300">
-                                        Qₜ · Current Query
+                                        Qâ‚œ Â· Current Query
                                       </span>
                                       <span className="text-slate-400">Ephemeral</span>
                                     </div>
@@ -6610,7 +6610,7 @@ export default function App() {
                                       <span className="text-white font-mono">
                                         {msg.metadata.memoryOS.foundationalLayers.Qt.queryClass}
                                       </span>{" "}
-                                      · Rule:{" "}
+                                      Â· Rule:{" "}
                                       <span className="text-sky-200 font-mono">
                                         {msg.metadata.memoryOS.l1DisambiguationRule?.replace(
                                           /^RULE_\d_/,
@@ -6623,7 +6623,7 @@ export default function App() {
                                   <div className="p-2 rounded-lg bg-slate-950/95 border border-amber-500/30 space-y-0.5">
                                     <div className="flex items-center justify-between font-mono">
                                       <span className="font-bold text-amber-300">
-                                        WMₜ · Working Memory
+                                        WMâ‚œ Â· Working Memory
                                       </span>
                                       <span className="text-slate-400">Session</span>
                                     </div>
@@ -6635,7 +6635,7 @@ export default function App() {
                                   <div className="p-2 rounded-lg bg-slate-950/95 border border-emerald-500/30 space-y-0.5">
                                     <div className="flex items-center justify-between font-mono">
                                       <span className="font-bold text-emerald-300">
-                                        LTM · Long-Term Soul
+                                        LTM Â· Long-Term Soul
                                       </span>
                                       <span className="text-slate-400">Persistent</span>
                                     </div>
@@ -6645,12 +6645,12 @@ export default function App() {
                                         msg.metadata.memoryOS.foundationalLayers.LTM
                                           .persistentStateVectorVersion
                                       }{" "}
-                                      · Triples:{" "}
+                                      Â· Triples:{" "}
                                       {
                                         msg.metadata.memoryOS.foundationalLayers.LTM
                                           .semanticTriplesCount
                                       }{" "}
-                                      · Skills:{" "}
+                                      Â· Skills:{" "}
                                       {
                                         msg.metadata.memoryOS.foundationalLayers.LTM
                                           .proceduralSkillsCount
@@ -6661,7 +6661,7 @@ export default function App() {
                                   <div className="p-2 rounded-lg bg-slate-950/95 border border-violet-500/30 space-y-0.5">
                                     <div className="flex items-center justify-between font-mono">
                                       <span className="font-bold text-violet-300">
-                                        ESₑ · Engine State
+                                        ESâ‚‘ Â· Engine State
                                       </span>
                                       <span className="text-slate-400">Per-CPU</span>
                                     </div>
@@ -6679,7 +6679,7 @@ export default function App() {
                               <div className="grid grid-cols-1 sm:grid-cols-6 gap-2 text-[10px]">
                                 <div className="p-2 rounded-lg bg-slate-950 border border-slate-800 space-y-1">
                                   <div className="font-bold text-sky-300 font-mono">
-                                    L0/L1 · UNDERSTANDING
+                                    L0/L1 Â· UNDERSTANDING
                                   </div>
                                   <div className="text-slate-300">
                                     Intent:{" "}
@@ -6702,7 +6702,7 @@ export default function App() {
                                       msg.metadata.memoryOS.queryUnderstanding
                                         .temporalReferences.horizon
                                     }{" "}
-                                    · Uncert:{" "}
+                                    Â· Uncert:{" "}
                                     {
                                       msg.metadata.memoryOS.queryUnderstanding
                                         .uncertainty.score
@@ -6712,7 +6712,7 @@ export default function App() {
 
                                 <div className="p-2 rounded-lg bg-slate-950 border border-slate-800 space-y-1">
                                   <div className="font-bold text-amber-300 font-mono">
-                                    L2 · MEMORY ROUTER
+                                    L2 Â· MEMORY ROUTER
                                   </div>
                                   <div className="text-slate-300">
                                     Tiers:{" "}
@@ -6728,12 +6728,12 @@ export default function App() {
                                       msg.metadata.memoryOS.tierCounts
                                         .recentContext
                                     }{" "}
-                                    · LTM:{" "}
+                                    Â· LTM:{" "}
                                     {
                                       msg.metadata.memoryOS.tierCounts
                                         .longTermMemory
                                     }{" "}
-                                    · Docs:{" "}
+                                    Â· Docs:{" "}
                                     {msg.metadata.memoryOS.tierCounts.knowledge}
                                   </div>
                                 </div>
@@ -6748,7 +6748,7 @@ export default function App() {
                                       msg.metadata.memoryOS.parallelSearchMetrics
                                         .semanticHits
                                     }{" "}
-                                    · BM25:{" "}
+                                    Â· BM25:{" "}
                                     {
                                       msg.metadata.memoryOS.parallelSearchMetrics
                                         .bm25Hits
@@ -6760,12 +6760,12 @@ export default function App() {
                                       msg.metadata.memoryOS.parallelSearchMetrics
                                         .entityHits
                                     }{" "}
-                                    · Temp:{" "}
+                                    Â· Temp:{" "}
                                     {
                                       msg.metadata.memoryOS.parallelSearchMetrics
                                         .temporalHits
                                     }{" "}
-                                    · Ref:{" "}
+                                    Â· Ref:{" "}
                                     {
                                       msg.metadata.memoryOS.parallelSearchMetrics
                                         .exactRefHits
@@ -6783,7 +6783,7 @@ export default function App() {
                                       msg.metadata.memoryOS.candidateMerger
                                         .rawCandidatesCount
                                     }{" "}
-                                    → Top:{" "}
+                                    â†’ Top:{" "}
                                     <span className="text-violet-200 font-bold">
                                       {
                                         msg.metadata.memoryOS.smartReranker
@@ -6825,7 +6825,7 @@ export default function App() {
 
                                 <div className="p-2 rounded-lg bg-slate-950 border border-slate-800 space-y-1">
                                   <div className="font-bold text-violet-300 font-mono">
-                                    L3/L4/L5 · SELF-DEV
+                                    L3/L4/L5 Â· SELF-DEV
                                   </div>
                                   <div className="text-slate-300 font-mono">
                                     Dispatch:{" "}
@@ -6833,7 +6833,7 @@ export default function App() {
                                       {msg.metadata.memoryOS.l3EngineRouter
                                         ?.dispatchMode ?? "ENSEMBLE"}
                                     </span>{" "}
-                                    · Verifier:{" "}
+                                    Â· Verifier:{" "}
                                     {msg.metadata.memoryOS.l4SynthesisCritique
                                       ?.verifierConfidence ?? 98}
                                     %
@@ -6904,7 +6904,7 @@ export default function App() {
                                     <code className="text-amber-300">
                                       {msg.metadata.memoryOS.l5WriteBackAndSelfDev
                                         ?.decayFormula.equation ||
-                                        "S(m,t) = S₀·e^(-λΔt) + α·access + β·importance"}
+                                        "S(m,t) = Sâ‚€Â·e^(-Î»Î”t) + Î±Â·access + Î²Â·importance"}
                                     </code>
                                   </span>
                                 </div>
@@ -6945,11 +6945,11 @@ export default function App() {
                                 <div className="flex flex-wrap items-center justify-between gap-2 px-1">
                                   <span className="text-[11px] font-semibold text-slate-300">
                                     Click any AI engine below to open its full
-                                    detailed response (via Telemetry Normalizer → UI View Model):
+                                    detailed response (via Telemetry Normalizer â†’ UI View Model):
                                   </span>
                                   <span className="text-[11px] text-emerald-400 font-mono">
                                     {msg.nodeContributions.length} Active
-                                    Engines · Reproducible Contribution Metric
+                                    Engines Â· Reproducible Contribution Metric
                                   </span>
                                 </div>
                                 <div className="divide-y divide-slate-800/80 border border-slate-800/90 rounded-lg bg-slate-900/50 overflow-hidden">
@@ -7001,19 +7001,19 @@ export default function App() {
                                             )}
                                             <span className="px-2 py-0.5 rounded bg-slate-800 hover:bg-slate-700 text-[10px] text-emerald-300 font-medium border border-slate-700">
                                               {isEngineOpen
-                                                ? "Hide Detailed Response ▲"
-                                                : "Click for Full Detailed Response ▼"}
+                                                ? "Hide Detailed Response â–²"
+                                                : "Click for Full Detailed Response â–¼"}
                                             </span>
                                           </div>
                                            <div className="flex flex-wrap items-center gap-2">
                                             {cardVm && (
                                               <span
                                                 className="px-2 py-0.5 rounded bg-sky-500/15 border border-sky-500/30 text-sky-300 font-mono text-[10px] tabular-nums"
-                                                title={`Reproducible Contribution Metric · Token Coverage: ${Math.round(
+                                                title={`Reproducible Contribution Metric Â· Token Coverage: ${Math.round(
                                                   cardVm.contributionBreakdown.tokenCoverageRatio * 100
-                                                )}% · Unique Claim Survival: ${Math.round(
+                                                )}% Â· Unique Claim Survival: ${Math.round(
                                                   cardVm.contributionBreakdown.uniqueClaimSurvivalRatio * 100
-                                                )}% · Round-1 Retention: ${Math.round(
+                                                )}% Â· Round-1 Retention: ${Math.round(
                                                   cardVm.contributionBreakdown.round1ToFinalRetention * 100
                                                 )}%`}
                                               >
@@ -7026,20 +7026,20 @@ export default function App() {
                                                 className="px-2 py-0.5 rounded bg-amber-500/15 border border-amber-500/30 text-amber-300 font-mono text-[10px] tabular-nums"
                                                 title={`Round 1: ${
                                                   node.round1LatencyMs || 0
-                                                }ms · Consensus Sync: ${
+                                                }ms Â· Consensus Sync: ${
                                                   node.consensusSyncLatencyMs ||
                                                   0
                                                 }ms`}
                                               >
-                                                ⚡ {node.latencyMs} ms
+                                                âš¡ {node.latencyMs} ms
                                               </span>
                                             )}
                                             {node.tokenUsage && (
                                               <span
                                                 className="px-2 py-0.5 rounded bg-violet-500/15 border border-violet-500/30 text-violet-300 font-mono text-[10px] tabular-nums"
-                                                title={`Prompt: ${node.tokenUsage.promptTokens} tokens · Completion: ${node.tokenUsage.completionTokens} tokens`}
+                                                title={`Prompt: ${node.tokenUsage.promptTokens} tokens Â· Completion: ${node.tokenUsage.completionTokens} tokens`}
                                               >
-                                                🪙{" "}
+                                                ðŸª™{" "}
                                                 {node.tokenUsage.totalTokens.toLocaleString()}{" "}
                                                 tok (
                                                 {node.tokenUsage.promptTokens}p
@@ -7141,7 +7141,7 @@ export default function App() {
                                                 <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
                                                 <span className="text-xs font-bold text-white">
                                                   Engine #{i + 1}:{" "}
-                                                  {node.modelName} — Complete
+                                                  {node.modelName} â€” Complete
                                                   Detailed Response
                                                 </span>
                                               </div>
@@ -7210,12 +7210,12 @@ export default function App() {
                       <span className="inline-block w-2 h-2 rounded-full bg-amber-400 animate-ping" />
                       <span className="font-semibold text-white">
                         {liveRound === 1
-                          ? `Round 1: Collecting initial answers from ${activeModels.length} AI engines…`
-                          : `Round ${liveRound}: Resending collected answers to ${activeModels.length} AI engines until ≥ ${target}% match…`}
+                          ? `Round 1: Collecting initial answers from ${activeModels.length} AI enginesâ€¦`
+                          : `Round ${liveRound}: Resending collected answers to ${activeModels.length} AI engines until â‰¥ ${target}% matchâ€¦`}
                       </span>
                     </div>
                     <span className="font-mono tabular-nums text-amber-400 font-semibold">
-                      {liveScore}% → Target ≥ {target}%
+                      {liveScore}% â†’ Target â‰¥ {target}%
                     </span>
                   </div>
 
@@ -7281,9 +7281,9 @@ export default function App() {
                       type="button"
                       onClick={handleLaunchCarSimulationModal}
                       className="px-4 py-1.5 rounded-lg text-xs font-extrabold border bg-amber-400 hover:bg-amber-300 border-amber-300 text-slate-950 transition-colors flex items-center gap-1.5 cursor-pointer whitespace-nowrap shadow-md"
-                      title="Click to immediately launch the UltraDrive 3D Pro Car Driving Simulation (Arrow Keys ↑↓←→ + Q Horn)"
+                      title="Click to immediately launch the UltraDrive 3D Pro Car Driving Simulation (Arrow Keys â†‘â†“â†â†’ + Q Horn)"
                     >
-                      <span>🚗</span>
+                      <span>ðŸš—</span>
                       <span>Car</span>
                     </button>
                   )}
@@ -7347,7 +7347,7 @@ export default function App() {
                           {att.name}
                         </div>
                         <div className="text-[10px] text-slate-400 font-mono uppercase">
-                          {att.kind} · {formatBytes(att.sizeBytes)}
+                          {att.kind} Â· {formatBytes(att.sizeBytes)}
                         </div>
                       </div>
                       <button
@@ -7530,7 +7530,7 @@ export default function App() {
                 <Sparkles className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span className="text-sm font-bold text-white">
                   Engine #{selectedEngineModal.engineIndex}:{" "}
-                  {selectedEngineModal.modelName} — Normalized Engine View Model
+                  {selectedEngineModal.modelName} â€” Normalized Engine View Model
                 </span>
                 {selectedEngineModal.providerFamily && (
                   <span className="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-300 font-mono text-xs">
@@ -7548,10 +7548,10 @@ export default function App() {
                         ? `Token Coverage: ${Math.round(
                             selectedEngineModal.contributionBreakdown
                               .tokenCoverageRatio * 100
-                          )}% · Unique Claim Survival: ${Math.round(
+                          )}% Â· Unique Claim Survival: ${Math.round(
                             selectedEngineModal.contributionBreakdown
                               .uniqueClaimSurvivalRatio * 100
-                          )}% · Round-1 Retention: ${Math.round(
+                          )}% Â· Round-1 Retention: ${Math.round(
                             selectedEngineModal.contributionBreakdown
                               .round1ToFinalRetention * 100
                           )}%`
@@ -7563,12 +7563,12 @@ export default function App() {
                 )}
                 {typeof selectedEngineModal.latencyMs === "number" && (
                   <span className="px-2.5 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 font-mono text-xs font-semibold">
-                    ⚡ {selectedEngineModal.latencyMs} ms
+                    âš¡ {selectedEngineModal.latencyMs} ms
                   </span>
                 )}
                 {selectedEngineModal.tokenUsage && (
                   <span className="px-2.5 py-0.5 rounded-full bg-violet-500/20 border border-violet-500/40 text-violet-300 font-mono text-xs font-semibold">
-                    🪙{" "}
+                    ðŸª™{" "}
                     {selectedEngineModal.tokenUsage.totalTokens.toLocaleString()}{" "}
                     Tokens ({selectedEngineModal.tokenUsage.promptTokens} prompt
                     + {selectedEngineModal.tokenUsage.completionTokens}{" "}
@@ -7619,11 +7619,11 @@ export default function App() {
                   <div className="flex items-center justify-between text-[10px] text-slate-400 uppercase">
                     <span>Engine Latency (ms)</span>
                     <span className="text-amber-300 font-bold">
-                      ⚡ {selectedEngineModal.latencyMs ?? 410} ms
+                      âš¡ {selectedEngineModal.latencyMs ?? 410} ms
                     </span>
                   </div>
                   <div className="text-[11px] text-slate-300">
-                    Round #1: <strong>{selectedEngineModal.round1LatencyMs ?? 260} ms</strong> · Sync:{" "}
+                    Round #1: <strong>{selectedEngineModal.round1LatencyMs ?? 260} ms</strong> Â· Sync:{" "}
                     <strong>{selectedEngineModal.consensusSyncLatencyMs ?? 150} ms</strong>
                   </div>
                   <div className="w-full h-1.5 rounded-full bg-slate-950 overflow-hidden flex border border-slate-800">
@@ -7651,11 +7651,11 @@ export default function App() {
                   <div className="flex items-center justify-between text-[10px] text-slate-400 uppercase">
                     <span>Token Usage (Prompt / Completion)</span>
                     <span className="text-violet-300 font-bold">
-                      🪙 {(selectedEngineModal.tokenUsage?.totalTokens ?? 480).toLocaleString()} tok
+                      ðŸª™ {(selectedEngineModal.tokenUsage?.totalTokens ?? 480).toLocaleString()} tok
                     </span>
                   </div>
                   <div className="text-[11px] text-slate-300">
-                    Prompt: <strong>{selectedEngineModal.tokenUsage?.promptTokens ?? 190}</strong> · Completion:{" "}
+                    Prompt: <strong>{selectedEngineModal.tokenUsage?.promptTokens ?? 190}</strong> Â· Completion:{" "}
                     <strong>{selectedEngineModal.tokenUsage?.completionTokens ?? 290}</strong>
                   </div>
                   <div className="w-full h-1.5 rounded-full bg-slate-950 overflow-hidden flex border border-slate-800">
@@ -7690,11 +7690,11 @@ export default function App() {
                     </span>
                   </div>
                   <div className="text-[10px] text-cyan-300 truncate">
-                    v2.1 Role: <strong>{selectedEngineModal.orchestrationRoleV21 || "Reasoning Engine"}</strong> · Class:{" "}
+                    v2.1 Role: <strong>{selectedEngineModal.orchestrationRoleV21 || "Reasoning Engine"}</strong> Â· Class:{" "}
                     <strong className="text-emerald-300">{selectedEngineModal.responseClass || "ANSWER"}</strong> (refusal: {String(selectedEngineModal.refusalClass ?? "null")})
                   </div>
                   <div className="text-[10px] text-slate-400 truncate">
-                    In: <code>{selectedEngineModal.inputContextHash || "ctx_verified"}</code> · Out:{" "}
+                    In: <code>{selectedEngineModal.inputContextHash || "ctx_verified"}</code> Â· Out:{" "}
                     <code>{selectedEngineModal.outputHash || "out_verified"}</code>
                   </div>
                 </div>
@@ -7735,7 +7735,7 @@ export default function App() {
                 <div className="p-3.5 rounded-xl bg-slate-900/90 border border-emerald-500/30 space-y-2 text-xs font-mono">
                   <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-1.5">
                     <span className="text-emerald-300 font-bold">
-                      Structured Engine Contract: schema=&quot;engine_output_v2&quot; · recommendation=&quot;{selectedEngineModal.engineOutputV2.recommendation}&quot; · confidence={selectedEngineModal.engineOutputV2.confidence}
+                      Structured Engine Contract: schema=&quot;engine_output_v2&quot; Â· recommendation=&quot;{selectedEngineModal.engineOutputV2.recommendation}&quot; Â· confidence={selectedEngineModal.engineOutputV2.confidence}
                     </span>
                     <span className="text-slate-400 text-[10px]">
                       Evidence Provenance: {selectedEngineModal.engineOutputV2.evidence.join(" | ")}
@@ -7746,7 +7746,7 @@ export default function App() {
                       Affected Files: {selectedEngineModal.engineOutputV2.affectedFiles.join(", ")}
                     </span>
                     <span className="text-sky-300">
-                      Required Checks: {selectedEngineModal.engineOutputV2.testsRequired.join(" · ")}
+                      Required Checks: {selectedEngineModal.engineOutputV2.testsRequired.join(" Â· ")}
                     </span>
                   </div>
                 </div>
@@ -7794,7 +7794,7 @@ export default function App() {
                 title="Close Application Preview and return to previous Key screen"
               >
                 <X className="w-4 h-4 text-rose-400" />
-                <span>← Return to Previous</span>
+                <span>â† Return to Previous</span>
               </button>
 
               <div className="flex items-center gap-2 min-w-0">
@@ -7803,11 +7803,11 @@ export default function App() {
                   {activePreviewModal.title}
                 </span>
                 <span className="hidden sm:inline-block text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 shrink-0">
-                  ● Full-Screen Live Preview
+                  â— Full-Screen Live Preview
                 </span>
                 {activePreviewModal.isSyncingWithEngines && (
                   <span className="text-[11px] font-mono px-2.5 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 animate-pulse shrink-0">
-                    ⚡ AI Engines Enhancing Preview…
+                    âš¡ AI Engines Enhancing Previewâ€¦
                   </span>
                 )}
                 {activePreviewModal.repoUrl && (
@@ -7931,11 +7931,11 @@ export default function App() {
               <div className="flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
                 <span>
-                  ✓ <strong>Universal Application Downloaded Automatically</strong> (
+                  âœ“ <strong>Universal Application Downloaded Automatically</strong> (
                   <code className="text-emerald-300 font-mono">
                     {activePreviewModal.downloadedFilename}
                   </code>
-                  ) — Pre-configured &amp; executing live right now for{" "}
+                  ) â€” Pre-configured &amp; executing live right now for{" "}
                   <strong>Windows, macOS, Android, iOS Safari &amp; Linux</strong>!
                   Simply click &amp; use below, or open your downloaded file on any
                   device anytime.
@@ -8133,9 +8133,9 @@ export default function App() {
                               {lastMsg}
                             </p>
                             <div className="text-[10px] text-slate-500 font-mono tabular-nums">
-                              {thread.updatedAt} · {thread.messages.length}{" "}
-                              {thread.messages.length === 1 ? "msg" : "msgs"} ·{" "}
-                              {formatBytes(threadBytes)} · Indexed in Local JSON
+                              {thread.updatedAt} Â· {thread.messages.length}{" "}
+                              {thread.messages.length === 1 ? "msg" : "msgs"} Â·{" "}
+                              {formatBytes(threadBytes)} Â· Indexed in Local JSON
                               DB
                             </div>
                           </div>
@@ -8280,7 +8280,7 @@ export default function App() {
                                   }
                                   className="px-3 py-1.5 rounded-lg bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold text-xs cursor-pointer"
                                 >
-                                  ⚡ Re-Process Turn Across 10 AI Engines
+                                  âš¡ Re-Process Turn Across 10 AI Engines
                                 </button>
                               </div>
                             </div>
@@ -8315,7 +8315,7 @@ export default function App() {
             {/* TAB 3: COMPREHENSIVE HISTORY AUDIT & WORKING MEMORY LEDGER */}
             {historyModalTab === "audit" && (
               <div className="flex-1 overflow-y-auto space-y-3 pr-1 text-xs">
-                {/* Interactive D3.js Semantic Node Graph (User Queries ↔ AI Consensus Nodes ↔ 10 Engine Satellites) */}
+                {/* Interactive D3.js Semantic Node Graph (User Queries â†” AI Consensus Nodes â†” 10 Engine Satellites) */}
                 <SemanticHistoryGraph
                   messages={currentThread.messages}
                   onSelectTurn={(messageId) => {
@@ -8344,7 +8344,7 @@ export default function App() {
                 <div className="p-3.5 rounded-xl bg-slate-950 border border-emerald-500/40 space-y-2">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <span className="font-bold text-emerald-300 text-xs">
-                      ✓ Comprehensive History Audit — Working Memory Ledger
+                      âœ“ Comprehensive History Audit â€” Working Memory Ledger
                     </span>
                     <span className="font-mono text-[11px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">
                       100% Context Window Coverage Verified
@@ -8380,8 +8380,8 @@ export default function App() {
                     },
                     {
                       num: 3,
-                      title: "Direct GitHub Force-Deployment (malazhub/key)",
-                      desc: "Integrated stateful PCR, Global State Sync, and one-click force-push deployment to https://github.com/malazhub/key and https://malazhub.github.io/key/.",
+                      title: "Direct GitHub Force-Deployment (malazhub/key1)",
+                      desc: "Integrated stateful PCR, Global State Sync, and one-click force-push deployment to https://github.com/malazhub/key1 and https://malazhub.github.io/key1/.",
                     },
                     {
                       num: 4,
@@ -8399,7 +8399,7 @@ export default function App() {
                           #{item.num} {item.title}
                         </span>
                         <span className="text-[10px] font-mono text-emerald-400">
-                          ● Active
+                          â— Active
                         </span>
                       </div>
                       <p className="text-[11px] text-slate-400 leading-relaxed">
@@ -8449,7 +8449,7 @@ export default function App() {
                             </p>
                           </div>
                           <span className="px-2 py-0.5 rounded bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 font-mono text-[10px] shrink-0">
-                            ✓ Accounted
+                            âœ“ Accounted
                           </span>
                         </div>
                       ))}
@@ -8521,7 +8521,7 @@ export default function App() {
                   type="password"
                   value={passwordInput}
                   onChange={(e) => setPasswordInput(e.target.value)}
-                  placeholder="••••••••"
+                  placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                   className="w-full px-3 py-2 text-xs bg-slate-950 border border-slate-800 rounded-lg text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500"
                 />
               </div>
@@ -8610,7 +8610,7 @@ export default function App() {
                 <div className="p-2 rounded-lg bg-amber-500/15 border border-amber-500/40 text-amber-200 text-[11px] flex items-center gap-2">
                   <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0" />
                   <span>
-                    Your cloud storage has reached ≥ 80%. Clean old
+                    Your cloud storage has reached â‰¥ 80%. Clean old
                     conversations below to free up space.
                   </span>
                 </div>
@@ -8665,3 +8665,4 @@ export default function App() {
     </div>
   );
 }
+

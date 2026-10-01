@@ -1,11 +1,11 @@
-{
+﻿{
   "name": "key",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://malazhub.github.io/key/",
+  "homepage": "https://malazhub.github.io/key1/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/malazhub/key.git"
+    "url": "https://github.com/malazhub/key1.git"
   },
   "type": "module",
   "scripts": {
@@ -43,3 +43,4 @@
     "@types/express": "^4.17.21"
   }
 }
+

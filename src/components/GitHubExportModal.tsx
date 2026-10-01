@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+﻿import React, { useEffect, useState } from "react";
 import {
   FolderGit2,
   FileCode2,
@@ -30,7 +30,7 @@ interface GitHubExportModalProps {
 /**
  * Generates a 100% standalone, self-contained index.html application that has the EXACT SAME VIEW,
  * LAYOUT, AND LIVE SEARCH & ANSWER LOGIC as https://ais-dev-f2uayjdkh47dvk4xbjqlp7-790065884957.europe-west2.run.app/
- * when opened from GitHub Pages (https://malazhub.github.io/key/) or locally.
+ * when opened from GitHub Pages (https://malazhub.github.io/key1/) or locally.
  */
 function buildStandaloneGitHubPagesHtml(): string {
   return `<!DOCTYPE html>
@@ -38,7 +38,7 @@ function buildStandaloneGitHubPagesHtml(): string {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Key — Multi-AI Consensus Engine (https://malazhub.github.io/key/)</title>
+  <title>Key â€” Multi-AI Consensus Engine (https://malazhub.github.io/key1/)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { background-color: #020617; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; }
@@ -51,18 +51,18 @@ function buildStandaloneGitHubPagesHtml(): string {
   <header class="h-13 py-2.5 shrink-0 flex items-center justify-between px-4 lg:px-6 border-b border-slate-800/90 bg-slate-950/95 z-30">
     <div class="flex items-center gap-2.5">
       <button id="openSidebarBtn" type="button" class="hidden px-2.5 py-1 text-xs text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-lg cursor-pointer">
-        ☰ Engines
+        â˜° Engines
       </button>
       <a href="#top" class="text-base font-bold tracking-tight text-white flex items-center gap-2">
         <span>Key</span>
         <span id="headerAdminBadge" class="hidden text-[11px] font-mono px-2 py-0.5 rounded bg-amber-500/20 border border-amber-500/50 text-amber-300">
-          Admin · key → key1
+          Admin Â· key â†’ key1
         </span>
       </a>
     </div>
     <div class="flex items-center gap-2">
-      <a href="https://github.com/malazhub/key" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-xs font-semibold text-slate-200">
-        malazhub/key
+      <a href="https://github.com/malazhub/key1" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-900 hover:bg-slate-800 border border-slate-700/80 text-xs font-semibold text-slate-200">
+        malazhub/key1
       </a>
       <button id="newChatBtn" type="button" class="px-3 py-1.5 text-xs font-semibold text-slate-200 bg-slate-900 border border-slate-700/80 rounded-lg hover:bg-slate-800 cursor-pointer">
         + New Chat
@@ -79,9 +79,9 @@ function buildStandaloneGitHubPagesHtml(): string {
     <aside id="leftSidebar" class="w-80 xl:w-96 border-r shrink-0 bg-slate-900/75 border-slate-800/90 flex flex-col overflow-hidden select-none">
       <div class="flex-1 overflow-y-auto p-4 space-y-4">
         <div class="flex items-center justify-between">
-          <span class="text-xs font-semibold text-emerald-400">● 10 AI Engines Ready</span>
+          <span class="text-xs font-semibold text-emerald-400">â— 10 AI Engines Ready</span>
           <button id="collapseSidebarBtn" type="button" title="Collapse Left Panel" class="px-2 py-1 text-xs text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 border border-slate-800 cursor-pointer">
-            ◀ Collapse
+            â—€ Collapse
           </button>
         </div>
 
@@ -95,14 +95,14 @@ function buildStandaloneGitHubPagesHtml(): string {
           </div>
         </section>
 
-        <!-- Admin Upgrade Section (malazhub/key -> malazhub/key1 locked by malazjanbeih@gmail.com + mjkey1971) -->
+        <!-- Admin Upgrade Section (malazhub/key1 -> malazhub/key1 locked by malazjanbeih@gmail.com + mjkey1971) -->
         <section class="space-y-3 pt-2 border-t border-slate-800/80">
           <div class="bg-slate-950/90 rounded-xl border border-slate-800 p-3.5 space-y-2.5">
             <button id="sidebarAdminBtn" type="button" class="w-full py-2.5 px-3 bg-slate-900 hover:bg-slate-800 text-amber-300 font-semibold text-xs rounded-lg border border-slate-700/80 flex items-center justify-center gap-2 cursor-pointer">
-              <span>🔒 Admin Upgrade (key → key1)</span>
+              <span>ðŸ”’ Admin Upgrade (key â†’ key1)</span>
             </button>
             <div id="adminStatusBox" class="hidden p-2.5 rounded-lg bg-amber-500/10 border border-amber-500/40 text-[11px] text-amber-200 space-y-1">
-              <div class="font-bold text-amber-300">✓ Admin Verified: malazjanbeih@gmail.com</div>
+              <div class="font-bold text-amber-300">âœ“ Admin Verified: malazjanbeih@gmail.com</div>
               <div>Upgrade Target: <span class="font-mono text-emerald-300">https://github.com/malazhub/key1</span></div>
             </div>
           </div>
@@ -138,13 +138,13 @@ function buildStandaloneGitHubPagesHtml(): string {
 
             <div class="flex flex-wrap items-center gap-2">
               <button id="allowAppBtn" type="button" class="px-3 py-1.5 rounded-lg text-xs font-bold border bg-slate-900 border-slate-700 text-slate-200 hover:bg-slate-800 flex items-center gap-1.5 cursor-pointer">
-                <span>✨ Allow Application</span>
+                <span>âœ¨ Allow Application</span>
               </button>
               <button id="previewAppTopBtn" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold border bg-sky-500/15 border-sky-500/50 text-sky-300 hover:bg-sky-500/25 flex items-center gap-1.5 cursor-pointer">
-                <span>👁 Preview Application</span>
+                <span>ðŸ‘ Preview Application</span>
               </button>
               <button id="upgradeKeyTopBtn" type="button" class="px-3 py-1.5 rounded-lg text-xs font-semibold border bg-slate-900 border-slate-800 text-amber-300 hover:bg-slate-800 flex items-center gap-1.5 cursor-pointer">
-                <span id="upgradeKeyTopLabel">🔒 Upgrade key → key1</span>
+                <span id="upgradeKeyTopLabel">ðŸ”’ Upgrade key â†’ key1</span>
               </button>
             </div>
           </div>
@@ -154,7 +154,7 @@ function buildStandaloneGitHubPagesHtml(): string {
             <input id="filePickerInput" type="file" multiple accept="*/*" class="hidden" />
             <div class="flex flex-wrap items-center gap-2">
               <button id="attachFileBtn" type="button" class="px-3 py-1 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-700 text-xs font-semibold text-emerald-300 flex items-center gap-1.5 cursor-pointer">
-                <span>📎 Attach Photo / File / Text / Any</span>
+                <span>ðŸ“Ž Attach Photo / File / Text / Any</span>
               </button>
               <button id="toggleTextAttachBtn" type="button" class="px-2.5 py-1 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-xs font-medium text-slate-300 cursor-pointer">
                 + Attach Text
@@ -197,10 +197,10 @@ function buildStandaloneGitHubPagesHtml(): string {
   <div id="adminLoginModal" class="hidden fixed inset-0 z-50 bg-slate-950/85 flex items-center justify-center p-4">
     <div class="w-full max-w-md rounded-2xl bg-slate-900 border border-slate-800 p-5 space-y-4 shadow-2xl">
       <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-        <h3 class="text-sm font-bold text-white">🔒 Admin Access Verification (key → key1)</h3>
-        <button id="closeAdminModalBtn" type="button" class="text-slate-400 hover:text-white cursor-pointer">✕</button>
+        <h3 class="text-sm font-bold text-white">ðŸ”’ Admin Access Verification (key â†’ key1)</h3>
+        <button id="closeAdminModalBtn" type="button" class="text-slate-400 hover:text-white cursor-pointer">âœ•</button>
       </div>
-      <p class="text-xs text-slate-300">No one can upgrade <code class="text-emerald-300">https://github.com/malazhub/key</code> to <code class="text-amber-300">https://github.com/malazhub/key1</code> unless you input username <code class="text-white">malazjanbeih@gmail.com</code> and password <code class="text-white">mjkey1971</code>.</p>
+      <p class="text-xs text-slate-300">No one can upgrade <code class="text-emerald-300">https://github.com/malazhub/key1</code> to <code class="text-amber-300">https://github.com/malazhub/key1</code> unless you input username <code class="text-white">malazjanbeih@gmail.com</code> and password <code class="text-white">mjkey1971</code>.</p>
       <form id="adminLoginForm" class="space-y-3">
         <div>
           <label class="text-xs font-medium text-slate-300 block mb-1">Admin Username / Email</label>
@@ -208,7 +208,7 @@ function buildStandaloneGitHubPagesHtml(): string {
         </div>
         <div>
           <label class="text-xs font-medium text-slate-300 block mb-1">Admin Password</label>
-          <input id="adminPassInp" type="password" required placeholder="••••••••" class="w-full px-3 py-2 text-xs bg-slate-950 border border-slate-800 rounded-lg text-white" />
+          <input id="adminPassInp" type="password" required placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" class="w-full px-3 py-2 text-xs bg-slate-950 border border-slate-800 rounded-lg text-white" />
         </div>
         <div class="flex gap-2 pt-2">
           <button id="cancelAdminBtn" type="button" class="flex-1 py-2 bg-slate-800 text-slate-200 font-semibold text-xs rounded-lg cursor-pointer">Cancel</button>
@@ -223,7 +223,7 @@ function buildStandaloneGitHubPagesHtml(): string {
     <div class="w-full max-w-6xl mx-auto flex-1 flex flex-col rounded-2xl bg-slate-900 border border-slate-700 overflow-hidden shadow-2xl">
       <div class="px-4 py-3 bg-slate-950 border-b border-slate-800 flex items-center justify-between gap-3">
         <span id="previewModalTitle" class="text-sm font-bold text-white">Live Application Preview</span>
-        <button id="closePreviewModalBtn" type="button" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold cursor-pointer">✕ Close Preview</button>
+        <button id="closePreviewModalBtn" type="button" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold cursor-pointer">âœ• Close Preview</button>
       </div>
       <iframe id="previewModalIframe" class="w-full flex-1 border-0 bg-slate-950" sandbox="allow-scripts allow-forms allow-modals allow-popups"></iframe>
     </div>
@@ -262,7 +262,7 @@ function buildStandaloneGitHubPagesHtml(): string {
             <span class="text-slate-300 font-semibold">Engine #\${idx + 1}</span>
           </div>
           <select data-idx="\${idx}" class="eng-select w-full text-xs px-2 py-1 bg-slate-950 border border-slate-800 rounded text-slate-100 focus:outline-none focus:border-emerald-400">
-            <option value="">[ Empty Space — Clear Engine #\${idx + 1} ]</option>
+            <option value="">[ Empty Space â€” Clear Engine #\${idx + 1} ]</option>
             \${TOP_20_MODELS.map((name) => \`<option value="\${name}" \${name === m ? "selected" : ""}>\${name}</option>\`).join("")}
           </select>
         \`;
@@ -323,10 +323,10 @@ function buildStandaloneGitHubPagesHtml(): string {
     function updateAllowAppBtn() {
       if (allowApplicationMode) {
         allowAppBtn.className = "px-3 py-1.5 rounded-lg text-xs font-bold border bg-emerald-500/20 border-emerald-500/60 text-emerald-300 flex items-center gap-1.5 cursor-pointer";
-        allowAppBtn.innerHTML = "<span>✨ Allow Application: ON</span>";
+        allowAppBtn.innerHTML = "<span>âœ¨ Allow Application: ON</span>";
       } else {
         allowAppBtn.className = "px-3 py-1.5 rounded-lg text-xs font-bold border bg-slate-900 border-slate-700 text-slate-200 hover:bg-slate-800 flex items-center gap-1.5 cursor-pointer";
-        allowAppBtn.innerHTML = "<span>✨ Allow Application</span>";
+        allowAppBtn.innerHTML = "<span>âœ¨ Allow Application</span>";
       }
     }
     allowAppBtn.addEventListener("click", () => {
@@ -373,7 +373,7 @@ function buildStandaloneGitHubPagesHtml(): string {
       isAdminAuthenticated = true;
       document.getElementById("headerAdminBadge").classList.remove("hidden");
       document.getElementById("adminStatusBox").classList.remove("hidden");
-      document.getElementById("upgradeKeyTopLabel").textContent = "✓ Admin Verified (key → key1)";
+      document.getElementById("upgradeKeyTopLabel").textContent = "âœ“ Admin Verified (key â†’ key1)";
       closeAdminModal();
     }
 
@@ -385,7 +385,7 @@ function buildStandaloneGitHubPagesHtml(): string {
         activateAdminMode();
       } else {
         closeAdminModal();
-        showBanner('Upgrade denied: Only username "malazjanbeih@gmail.com" and password "mjkey1971" can upgrade https://github.com/malazhub/key to https://github.com/malazhub/key1.');
+        showBanner('Upgrade denied: Only username "malazjanbeih@gmail.com" and password "mjkey1971" can upgrade https://github.com/malazhub/key1 to https://github.com/malazhub/key1.');
       }
     });
 
@@ -406,7 +406,7 @@ function buildStandaloneGitHubPagesHtml(): string {
       attachmentsList.innerHTML = pendingAttachments.map((att, i) => \`
         <div class="flex items-center gap-2 bg-slate-900 border border-slate-700 rounded-xl px-3 py-1.5 text-xs">
           <span class="font-medium text-emerald-300 truncate max-w-44">\${att.name}</span>
-          <button type="button" data-rm="\${i}" class="rm-att text-slate-400 hover:text-rose-400 cursor-pointer">✕</button>
+          <button type="button" data-rm="\${i}" class="rm-att text-slate-400 hover:text-rose-400 cursor-pointer">âœ•</button>
         </div>
       \`).join("");
       attachmentsList.querySelectorAll(".rm-att").forEach((btn) => {
@@ -514,7 +514,7 @@ function buildStandaloneGitHubPagesHtml(): string {
         .replace(/\\*\\*([^*]+)\\*\\*/g, '<strong class="font-bold text-white">$1</strong>')
         .replace(/\`([^\`]+)\`/g, '<code class="px-1.5 py-0.5 text-xs font-mono bg-slate-800 text-emerald-300 rounded">$1</code>')
         .replace(/^(\\d+)\\.\\s+(.+)$/gm, '<div class="flex items-start gap-2.5 my-1.5"><span class="px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 font-mono text-xs font-bold shrink-0">$1</span><div class="flex-1">$2</div></div>')
-        .replace(/^[-*]\\s+(.+)$/gm, '<div class="flex items-start gap-2 my-1 pl-2"><span class="text-emerald-400">•</span><div class="flex-1">$1</div></div>')
+        .replace(/^[-*]\\s+(.+)$/gm, '<div class="flex items-start gap-2 my-1 pl-2"><span class="text-emerald-400">â€¢</span><div class="flex-1">$1</div></div>')
         .replace(/\\n\\n/g, '<div class="h-3"></div>');
     }
 
@@ -550,7 +550,7 @@ function buildStandaloneGitHubPagesHtml(): string {
           activateAdminMode();
         } else {
           openAdminModal();
-          showBanner('Upgrade locked: No one can upgrade "https://github.com/malazhub/key" to "https://github.com/malazhub/key1" unless you input username "malazjanbeih@gmail.com" and password "mjkey1971".');
+          showBanner('Upgrade locked: No one can upgrade "https://github.com/malazhub/key1" to "https://github.com/malazhub/key1" unless you input username "malazjanbeih@gmail.com" and password "mjkey1971".');
           return;
         }
       }
@@ -572,7 +572,7 @@ function buildStandaloneGitHubPagesHtml(): string {
       userBubble.className = "flex justify-end chat-turn-node current-turn-node";
       userBubble.innerHTML = \`
         <div class="max-w-[85%] sm:max-w-[75%] rounded-2xl bg-slate-800/90 border border-slate-700/80 px-4 py-3 text-slate-100 space-y-2">
-          \${sentAttachments.length > 0 ? \`<div class="text-xs text-emerald-300 font-mono">📎 \${sentAttachments.map((a) => a.name).join(", ")}</div>\` : ""}
+          \${sentAttachments.length > 0 ? \`<div class="text-xs text-emerald-300 font-mono">ðŸ“Ž \${sentAttachments.map((a) => a.name).join(", ")}</div>\` : ""}
           <div class="text-[15px] leading-relaxed whitespace-pre-wrap">\${queryText.replace(/</g, "&lt;")}</div>
         </div>
       \`;
@@ -611,7 +611,7 @@ function buildStandaloneGitHubPagesHtml(): string {
             agreementScore: achieved,
             initialReply: "[" + m + " Initial Analysis]: Evaluated core requirements and structured step-by-step execution.",
             finalMatchedReply: "[" + m + " Final Consensus]: Converged on the verified multi-engine response.",
-            detailedResponse: "### " + m + " — Complete Independent Engine Response\\n\\n1. **Analytical Focus:** Evaluated query parameters and verified technical accuracy.\\n\\n2. **Consensus Confirmation:** Confirmed " + achieved + "% match across all active engines."
+            detailedResponse: "### " + m + " â€” Complete Independent Engine Response\\n\\n1. **Analytical Focus:** Evaluated query parameters and verified technical accuracy.\\n\\n2. **Consensus Confirmation:** Confirmed " + achieved + "% match across all active engines."
           }))
         };
       }
@@ -663,13 +663,13 @@ function buildStandaloneGitHubPagesHtml(): string {
         \${hasPreview ? \`
           <div class="rounded-2xl bg-slate-950 border border-emerald-500/50 overflow-hidden shadow-xl">
             <div class="px-4 py-2.5 bg-slate-900 border-b border-slate-800 flex flex-wrap items-center justify-between gap-2">
-              <span class="text-xs font-bold text-white">▶ \${data.appTitle || "Live Interactive Button & Application Preview"}</span>
+              <span class="text-xs font-bold text-white">â–¶ \${data.appTitle || "Live Interactive Button & Application Preview"}</span>
               <div class="flex flex-wrap items-center gap-1.5">
                 <button type="button" class="toggle-inline-code-btn px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-300 font-semibold text-xs cursor-pointer">
                   View Source Code
                 </button>
                 <button type="button" class="open-preview-btn px-3 py-1 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-semibold text-xs cursor-pointer">
-                  👁 Open Full Window Preview
+                  ðŸ‘ Open Full Window Preview
                 </button>
               </div>
             </div>
@@ -683,12 +683,12 @@ function buildStandaloneGitHubPagesHtml(): string {
         <div class="flex flex-wrap items-center justify-between gap-2 pt-2.5 border-t border-slate-800/70 text-xs">
           <div>
             <span class="font-mono text-emerald-400 font-semibold">\${data.achievedAgreement || targetAgreement}% Matched Agreement</span>
-            <span class="text-slate-500 mx-1">·</span>
-            <span class="text-slate-400 font-mono">Desired ≥ \${targetAgreement}% (\${activeModels.length} AI Engines)</span>
+            <span class="text-slate-500 mx-1">Â·</span>
+            <span class="text-slate-400 font-mono">Desired â‰¥ \${targetAgreement}% (\${activeModels.length} AI Engines)</span>
           </div>
           <div class="flex items-center gap-2">
             <button type="button" class="toggle-loop-btn px-2.5 py-1 rounded-lg bg-slate-950 hover:bg-slate-800 border border-slate-800 text-xs font-medium text-slate-300 cursor-pointer">
-              View Engine Loop ▼
+              View Engine Loop â–¼
             </button>
           </div>
         </div>
@@ -702,7 +702,7 @@ function buildStandaloneGitHubPagesHtml(): string {
                   <div class="flex items-center gap-2">
                     <span class="font-mono text-slate-400 font-semibold">Engine #\${idx + 1}</span>
                     <span class="font-bold text-sky-300">\${node.modelName}</span>
-                    <span class="px-2 py-0.5 rounded bg-slate-800 text-[10px] text-emerald-300 border border-slate-700">Click for Full Detailed Response ▼</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-800 text-[10px] text-emerald-300 border border-slate-700">Click for Full Detailed Response â–¼</span>
                   </div>
                   <span class="font-mono text-emerald-400 font-semibold">\${node.agreementScore || data.achievedAgreement}% Match</span>
                 </div>
@@ -744,7 +744,7 @@ function buildStandaloneGitHubPagesHtml(): string {
       const loopBox = aiCard.querySelector(".engine-loop-box");
       toggleLoopBtn.addEventListener("click", () => {
         loopBox.classList.toggle("hidden");
-        toggleLoopBtn.textContent = loopBox.classList.contains("hidden") ? "View Engine Loop ▼" : "Hide Engine Loop ▲";
+        toggleLoopBtn.textContent = loopBox.classList.contains("hidden") ? "View Engine Loop â–¼" : "Hide Engine Loop â–²";
       });
 
       aiCard.querySelectorAll(".eng-item").forEach((item) => {
@@ -772,7 +772,7 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
   const [loading, setLoading] = useState<boolean>(false);
   const [copiedPath, setCopiedPath] = useState<string | null>(null);
 
-  // Direct GitHub API Push State (Defaults to malazhub/key with zero manual inputs required)
+  // Direct GitHub API Push State (Defaults to malazhub/key1 with zero manual inputs required)
   const [githubToken, setGithubToken] = useState<string>("");
   const [repoOwner, setRepoOwner] = useState<string>("malazhub");
   const [repoName, setRepoName] = useState<string>("key");
@@ -810,7 +810,7 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
         setPushStatus({
           type: "success",
           message: `Deployed all ${data.pushedCount} project files & full directory structure directly to ${data.repoUrl} (Commit ${data.commitSha || "main"}) with zero manual steps!`,
-          repoUrl: data.repoUrl || "https://github.com/malazhub/key",
+          repoUrl: data.repoUrl || "https://github.com/malazhub/key1",
         });
       }
     } catch (err: unknown) {
@@ -836,7 +836,7 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
     const loadFromGitHubTreeFallback = async () => {
       try {
         const treeRes = await fetch(
-          "https://api.github.com/repos/malazhub/key/git/trees/main?recursive=1"
+          "https://api.github.com/repos/malazhub/key1/git/trees/main?recursive=1"
         );
         if (!treeRes.ok) return;
         const treeData = await treeRes.json();
@@ -849,7 +849,7 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
             let content = "";
             try {
               const rawRes = await fetch(
-                `https://raw.githubusercontent.com/malazhub/key/main/${b.path}`
+                `https://raw.githubusercontent.com/malazhub/key1/main/${b.path}`
               );
               if (rawRes.ok) {
                 content = await rawRes.text();
@@ -879,8 +879,8 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
           setSelectedPath(loaded[0].path);
           setPushStatus({
             type: "success",
-            message: `Live Repository Structure Synchronized (${loaded.length} files on https://github.com/malazhub/key · Live: https://malazhub.github.io/key/)`,
-            repoUrl: "https://github.com/malazhub/key",
+            message: `Live Repository Structure Synchronized (${loaded.length} files on https://github.com/malazhub/key1 Â· Live: https://malazhub.github.io/key1/)`,
+            repoUrl: "https://github.com/malazhub/key1",
           });
         }
       } catch {
@@ -909,7 +909,7 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
       .catch(() => loadFromGitHubTreeFallback())
       .finally(() => setLoading(false));
 
-    // Automatically execute the full structure copy & deployment to https://github.com/malazhub/key when opened locally
+    // Automatically execute the full structure copy & deployment to https://github.com/malazhub/key1 when opened locally
     triggerImmediateDeploy();
   }, [isOpen]);
 
@@ -953,7 +953,7 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
               <h2 className="text-sm sm:text-base font-bold text-white">
                 Automated 1-Click Full Structure Deploy to{" "}
                 <code className="text-emerald-300">
-                  https://github.com/malazhub/key
+                  https://github.com/malazhub/key1
                 </code>
               </h2>
               <p className="text-[11px] text-slate-400">
@@ -977,7 +977,7 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
               <span>
                 {pushing
                   ? "Deploying Full Structure..."
-                  : "Deploy All to https://github.com/malazhub/key"}
+                  : "Deploy All to https://github.com/malazhub/key1"}
               </span>
             </button>
             <button
@@ -1021,7 +1021,7 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
         <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
           <div className="w-full md:w-72 border-b md:border-b-0 md:border-r border-slate-800 bg-slate-950/80 overflow-y-auto p-3 space-y-1.5 shrink-0">
             <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 px-2 py-1">
-              Folder Structure (malazhub/key)
+              Folder Structure (malazhub/key1)
             </div>
             {loading ? (
               <div className="p-4 text-xs text-slate-400">
@@ -1121,3 +1121,4 @@ export const GitHubExportModal: React.FC<GitHubExportModalProps> = ({
     </div>
   );
 };
+

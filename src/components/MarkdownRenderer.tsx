@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+﻿import React, { useState } from "react";
 import {
   Check,
   Copy,
@@ -153,15 +153,15 @@ export function buildClientKey1ZeroDivergenceHtml(): string {
       ? window.location.origin
       : "https://ais-dev-f2uayjdkh47dvk4xbjqlp7-790065884957.europe-west2.run.app";
 
-  const liveKeyPagesUrl = "https://malazhub.github.io/key/";
-  const githubRepoUrl = "https://github.com/malazhub/key";
+  const liveKeyPagesUrl = "https://malazhub.github.io/key1/";
+  const githubRepoUrl = "https://github.com/malazhub/key1";
 
   return `<!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Key — Direct GitHub Force-Deploy &amp; Live AI Key Portal (malazhub/key)</title>
+  <title>Key â€” Direct GitHub Force-Deploy &amp; Live AI Key Portal (malazhub/key1)</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body { background-color: #020617; color: #f8fafc; font-family: system-ui, -apple-system, sans-serif; margin: 0; }
@@ -175,7 +175,7 @@ export function buildClientKey1ZeroDivergenceHtml(): string {
         type="button"
         class="px-4 py-2 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-extrabold text-xs tracking-wide shadow-md cursor-pointer flex items-center gap-2 border border-emerald-300"
       >
-        <span>🚀 Force Git Commit &amp; Deploy Key to GitHub</span>
+        <span>ðŸš€ Force Git Commit &amp; Deploy Key to GitHub</span>
       </button>
       <a
         href="${liveKeyPagesUrl}"
@@ -183,7 +183,7 @@ export function buildClientKey1ZeroDivergenceHtml(): string {
         rel="noopener noreferrer"
         class="px-4 py-2 rounded-xl bg-sky-400 hover:bg-sky-300 text-slate-950 font-extrabold text-xs tracking-wide shadow-md cursor-pointer flex items-center gap-1.5"
       >
-        <span>🌐 Open AI Key (${liveKeyPagesUrl})</span>
+        <span>ðŸŒ Open AI Key (${liveKeyPagesUrl})</span>
       </a>
       <a
         href="${githubRepoUrl}"
@@ -191,17 +191,17 @@ export function buildClientKey1ZeroDivergenceHtml(): string {
         rel="noopener noreferrer"
         class="px-3 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-100 font-bold text-xs border border-slate-700 cursor-pointer"
       >
-        📂 ${githubRepoUrl}
+        ðŸ“‚ ${githubRepoUrl}
       </a>
       <div id="clientDeployStatus" class="text-slate-300 text-xs font-mono flex items-center gap-2 flex-wrap">
-        Target: <strong class="text-emerald-300">malazhub/key (main)</strong> → <strong class="text-sky-300">${liveKeyPagesUrl}</strong>
+        Target: <strong class="text-emerald-300">malazhub/key1 (main)</strong> â†’ <strong class="text-sky-300">${liveKeyPagesUrl}</strong>
       </div>
     </div>
   </div>
   <iframe
     id="keyLiveFrame"
     src="${originUrl}"
-    title="Key — Multi-AI Consensus Engine"
+    title="Key â€” Multi-AI Consensus Engine"
     class="flex-1 w-full border-0 bg-slate-950"
   ></iframe>
   <script>
@@ -221,7 +221,7 @@ export function buildClientKey1ZeroDivergenceHtml(): string {
             clearInterval(pollTimer);
             try { if (pd.accessToken && !/x{4,}/i.test(pd.accessToken)) localStorage.setItem('malaz_github_oauth_token_v1', pd.accessToken); } catch(e){}
             var st = document.getElementById('clientDeployStatus');
-            st.innerHTML = '✓ <strong class="text-emerald-300">Force-Deployed ' + pd.pushedCount + ' files (Commit ' + pd.commitSha + ')!</strong> <a href="${liveKeyPagesUrl}?v=' + pd.commitSha + '" target="_blank" class="px-2.5 py-1 rounded bg-emerald-400 text-slate-950 font-extrabold underline">Open Live AI Key</a>';
+            st.innerHTML = 'âœ“ <strong class="text-emerald-300">Force-Deployed ' + pd.pushedCount + ' files (Commit ' + pd.commitSha + ')!</strong> <a href="${liveKeyPagesUrl}?v=' + pd.commitSha + '" target="_blank" class="px-2.5 py-1 rounded bg-emerald-400 text-slate-950 font-extrabold underline">Open Live AI Key</a>';
           }
         } catch (e) {}
       }, 5000);
@@ -245,7 +245,7 @@ export function buildClientKey1ZeroDivergenceHtml(): string {
 
     async function runDirectDeploy() {
       var st = document.getElementById('clientDeployStatus');
-      st.innerHTML = '⏳ Executing clean-slate Git force-commit &amp; deploy to <strong>malazhub/key</strong>...';
+      st.innerHTML = 'â³ Executing clean-slate Git force-commit &amp; deploy to <strong>malazhub/key1</strong>...';
       try {
         var savedToken = findSavedBrowserToken();
         var r = await fetch('${originUrl}/api/admin/deploy', {
@@ -255,7 +255,7 @@ export function buildClientKey1ZeroDivergenceHtml(): string {
         });
         var d = await r.json();
         if (d.success) {
-          st.innerHTML = '✓ <strong class="text-emerald-300">Force-Deployed ' + d.pushedCount + ' files (Commit ' + d.commitSha + ')!</strong> <a href="${liveKeyPagesUrl}?v=' + d.commitSha + '" target="_blank" class="px-2.5 py-1 rounded bg-emerald-400 text-slate-950 font-extrabold underline">Open Live AI Key</a>';
+          st.innerHTML = 'âœ“ <strong class="text-emerald-300">Force-Deployed ' + d.pushedCount + ' files (Commit ' + d.commitSha + ')!</strong> <a href="${liveKeyPagesUrl}?v=' + d.commitSha + '" target="_blank" class="px-2.5 py-1 rounded bg-emerald-400 text-slate-950 font-extrabold underline">Open Live AI Key</a>';
         } else if (d.needsGitHubAuth) {
           var devRes = await fetch('${originUrl}/api/admin/github-device-start', { method: 'POST', headers: { 'Content-Type': 'application/json' } });
           var devData = await devRes.json();
@@ -266,12 +266,12 @@ export function buildClientKey1ZeroDivergenceHtml(): string {
               }
             } catch(e){}
             var verifyUri = devData.verification_uri || 'https://github.com/login/device';
-            st.innerHTML = '🔒 Code <strong class="text-amber-300 text-sm px-1.5 py-0.5 bg-slate-950 rounded border border-amber-400">' + devData.user_code + '</strong> (Copied!) → <a href="' + verifyUri + '" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold underline">Click Here to Open GitHub &amp; Paste Code</a>';
+            st.innerHTML = 'ðŸ”’ Code <strong class="text-amber-300 text-sm px-1.5 py-0.5 bg-slate-950 rounded border border-amber-400">' + devData.user_code + '</strong> (Copied!) â†’ <a href="' + verifyUri + '" target="_blank" rel="noopener noreferrer" class="px-3 py-1 rounded-lg bg-amber-400 hover:bg-amber-300 text-slate-950 font-extrabold underline">Click Here to Open GitHub &amp; Paste Code</a>';
             startPollingDevice(devData.device_code);
           }
         }
       } catch (e) {
-        st.innerHTML = '⚠️ Network error while reaching deploy endpoint.';
+        st.innerHTML = 'âš ï¸ Network error while reaching deploy endpoint.';
       }
     }
 
@@ -603,7 +603,7 @@ export function InteractivePortalController({
             >
               <span>key1</span>
               <span className="text-[10px] font-mono bg-slate-950/20 px-1.5 py-0.5 rounded">
-                ↗ New Browser
+                â†— New Browser
               </span>
             </button>
           )}
@@ -775,7 +775,7 @@ export function InteractivePortalController({
               onClick={handleCopyHtml}
               className="text-emerald-400 hover:text-emerald-300 font-sans font-semibold cursor-pointer"
             >
-              {copiedCode ? "✓ Copied" : "Copy Full Code"}
+              {copiedCode ? "âœ“ Copied" : "Copy Full Code"}
             </button>
           </div>
           <pre className="p-4 text-xs font-mono text-slate-200 overflow-x-auto bg-slate-950 max-h-96">
@@ -796,7 +796,7 @@ export function InteractivePortalController({
               onClick={handleCopyBundle}
               className="px-3 py-1 rounded-lg bg-emerald-400 hover:bg-emerald-300 text-slate-950 font-bold cursor-pointer"
             >
-              {copiedBundle ? "✓ Copied Multi-File Bundle" : "Copy Multi-File Project Bundle"}
+              {copiedBundle ? "âœ“ Copied Multi-File Bundle" : "Copy Multi-File Project Bundle"}
             </button>
           </div>
           <pre className="p-4 text-xs font-mono text-emerald-200 overflow-x-auto bg-slate-950 max-h-96">
@@ -1119,14 +1119,14 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
                   return;
                 }
 
-                const bulletMatch = trimmed.match(/^[-*•]\s+(.*)$/);
+                const bulletMatch = trimmed.match(/^[-*â€¢]\s+(.*)$/);
                 if (bulletMatch) {
                   if (listItems && listItems.ordered) {
                     // Append sub-bullets cleanly inside the current ordered list item if one is active
                     const lastOrdered =
                       listItems.items[listItems.items.length - 1];
                     if (lastOrdered) {
-                      lastOrdered.text += ` — ${bulletMatch[1]}`;
+                      lastOrdered.text += ` â€” ${bulletMatch[1]}`;
                       return;
                     }
                     flushList(`${segIdx}-${lineIdx}`);
@@ -1171,7 +1171,7 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
                   )
                 ) {
                   const lastItem = listItems.items[listItems.items.length - 1];
-                  lastItem.text += ` · ${trimmed}`;
+                  lastItem.text += ` Â· ${trimmed}`;
                   return;
                 }
 
@@ -1197,3 +1197,4 @@ export const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
     </div>
   );
 };
+
