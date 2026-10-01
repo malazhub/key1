@@ -1,0 +1,122 @@
+{
+  "mirrorVersion": 3,
+  "deployId": "deploy_1790846531800",
+  "updatedAt": "2026-10-01T09:22:11.800Z",
+  "uiState": {
+    "resetButtonPosition": "hidden",
+    "headerTitleAlign": "left",
+    "showHeaderUrlBadge": false,
+    "showHeaderBar": true,
+    "customHeaderTitle": "Key",
+    "headerTitleColors": [
+      "#ef4444",
+      "#facc15",
+      "#3b82f6"
+    ],
+    "sidebarPosition": "left",
+    "sidebarOpen": true,
+    "enginesExpanded": false,
+    "composerPosition": "bottom",
+    "showCarButton": false,
+    "showAttachButton": true,
+    "showPreviewButton": true,
+    "showDownloadButton": true,
+    "customCssPatch": "#keyBottomCarLauncherBtn, #replicaCarBtn { display: none !important; }\n#keyBottomCarLauncherBtn, #replicaCarBtn { display: none !important; }\n#keyBottomCarLauncherBtn, #replicaCarBtn { display: none !important; }\n#keyBottomCarLauncherBtn, #replicaCarBtn { display: none !important; }\n#keyResetBtn, #replicaResetBtn { display: none !important; }\n#keyBottomCarLauncherBtn, #replicaCarBtn { display: none !important; }",
+    "isAdminAuthenticated": true
+  },
+  "models": [
+    "ChatGPT 4o",
+    "Claude 3.5 Sonnet",
+    "DeepSeek V3",
+    "Gemini 2.5",
+    "Qwen 2.5",
+    "Llama 3.3 70B",
+    "Grok 2",
+    "Mistral Large 2",
+    "Perplexity Pro",
+    "Command R+"
+  ],
+  "target": 95,
+  "threads": [
+    {
+      "id": "thread-1790750540438",
+      "title": "hi",
+      "updatedAt": "08:20 PM",
+      "messages": [
+        {
+          "id": "user-1790750647141",
+          "role": "user",
+          "content": "hi",
+          "timestamp": "09:44 AM"
+        },
+        {
+          "id": "user-1790750756051",
+          "role": "user",
+          "content": "could u upgrade ur self as ai and refresh and give display upgraded copy",
+          "timestamp": "09:45 AM"
+        },
+        {
+          "id": "user-1790754856586",
+          "role": "user",
+          "content": "remove the buttom called car above user input box , delete ths button and refresh ur display",
+          "timestamp": "10:54 AM"
+        },
+        {
+          "id": "user-1790755001848",
+          "role": "user",
+          "content": "remove the buttom called car above user input box , delete ths button and refresh ur display",
+          "timestamp": "10:56 AM"
+        },
+        {
+          "id": "user-1790758064907",
+          "role": "user",
+          "content": "delete reset button into this input box and refresh to new updated view",
+          "timestamp": "11:47 AM"
+        },
+        {
+          "id": "user-1790758648075",
+          "role": "user",
+          "content": "delete the button called car above the input box in key display",
+          "timestamp": "11:57 AM"
+        },
+        {
+          "id": "user-1790760403402",
+          "role": "user",
+          "content": "i need car simulation",
+          "timestamp": "12:26 PM"
+        },
+        {
+          "id": "user-1790761792443",
+          "role": "user",
+          "content": "i need application to scan wifi in nearby and display them on a list to view",
+          "timestamp": "12:49 PM"
+        },
+        {
+          "id": "user-1790762602571",
+          "role": "user",
+          "content": "hi",
+          "timestamp": "01:03 PM"
+        },
+        {
+          "id": "user-1790765035383",
+          "role": "user",
+          "content": "color the text called key in the top box left side make it red yellow blue",
+          "timestamp": "01:43 PM"
+        },
+        {
+          "id": "user-1790784074697",
+          "role": "user",
+          "content": "could u upgrade ur self if i need enhancement to ur strentgh",
+          "timestamp": "07:01 PM"
+        },
+        {
+          "id": "user-1790788822652",
+          "role": "user",
+          "content": "hello dear",
+          "timestamp": "08:20 PM"
+        }
+      ]
+    }
+  ],
+  "adminDeployResult": null
+}
